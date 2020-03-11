@@ -72,8 +72,6 @@ Status object:
 |Field|Type|Mandatory|Description
 |---|---|---|---
 |status|string|N|Must be 'active', 'inactive' or 'testing'
-|status_reason|N|string|
-
 
 
 Returns:
@@ -161,6 +159,7 @@ Allows for a powerful search operation on patients
 |fts_fullname|string|See bellow
 |status|string|
 |status_reason|string|
+|activation_time| string or null
 |ehr_id|string|
 |phone|string|
 |phone_sms|string|
@@ -284,6 +283,9 @@ Orders a call to patient_phone, using patient's office as caller, but calling me
 |---|---|---|---
 |patient_uid|string|Y|UID of patient
 |caller_uid|string|Y|UID of caller (medical)
+|patient_phone|string|N
+|caller_phone|string|N
+|intermediate_phone|string|N
 
 
 ## Reports
