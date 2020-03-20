@@ -116,6 +116,7 @@ Allows for a powerful search operation on devicehubs
 |in_office|binary|Office this device is assigned to. Use `null` to find hubs without office.
 |in_organization|binary|Organization 
 this device is assigned to
+|expand_patients|boolean|If true, field `extra` will appear with additional info (patient, office and organization)
 |creation_date|string|Creation date in RFC3339 format
 |update_date|string|Last update date in RFC3339 format
 |from|integer|Starting point (for pagination)
