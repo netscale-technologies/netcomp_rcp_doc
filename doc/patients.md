@@ -101,7 +101,13 @@ If successful, full information will be retrieved:
 |---|---|---
 |spec|spec|See bellow
 |metadata|metadata|See bellow
-|devicehubs|[devicehub]|Only present if expand_devices is true. See bellow.
+|extra|extra|Only present if any expansion is requested. See bellow.
+
+
+
+
+
+
 |devices|[device]|Only present if expand_devices is true. See bellow.
 |survey_cronjobs|[survey_cronjob]|Only present if expand_surveys is true. See bellow.
 |reminder_cronjobs|[reminder_cronjob]|Only present if expand_reminders is true. See bellow.
@@ -117,40 +123,52 @@ Metadata description:
 |generation|integer|Increases at each update
 
 
+Extra description:
+
+|Field|Type|Description
+|---|---|---
+|devicehubs|[devicehub]|Present if expand_devices was true
+|devices|[device]|Present if expand_devices was true
+|surveys|[survey]|Present if expand_surveys was true
+|reminders|[reminder]|Present if expand_reminders was true
+
+
 Devicehub description:
 
 |Field|Description
 |---|---
-|devicehub_uid|UID of devicehub
+|hub_uid|UID of devicehub
+|hub_id|Serial
 |label|
-|serial|
 
 
 Device description:
 
 |Field|Description
 |---|---
-|devicehub_uid|UID of devicehub
+|device_uid|UID of devicehub
+|device_id|Serial
 |label|
-|serial|
+|class|
+|type|
 
 
 Survey description:
 
 |Field|Description
 |---|---
-|cronjob_uid|UID of devicehub
-|label|
-|serial|
+|uid|UID of cronjob
+|schedule|
+|meta|
 
 
 Reminder description:
 
 |Field|Description
 |---|---
-|cronjob_uid|UID of devicehub
-|label|
-|serial|
+|uid|UID of cronjob
+|schedule|
+|meta|
 
 
 
