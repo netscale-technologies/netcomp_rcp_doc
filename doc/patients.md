@@ -12,7 +12,6 @@ Creates a new Patient object
 |id|string|N|Unique (for domain) id of patient, no special characters allowed. Generated if not included.
 |domain|string|N|Domain to use (like "zone1.type")
 |spec|spec|Y|See bellow
-|status|spec|N|See bellow
 
 Spec object:
 
@@ -68,12 +67,6 @@ Medical object:
 |role|string|Y|
 
 
-Status object:
-|Field|Type|Mandatory|Description
-|---|---|---|---
-|status|string|N|Must be 'active', 'inactive' or 'testing'
-
-
 Returns:
 
 |Field|Type|Description
@@ -88,12 +81,18 @@ Gets the data of an existing patient. Two formats available:
 |Field|Type|Mandatory|Description
 |---|---|---|---
 |uid|string|Y|UID of patient
+|expand_devices|boolean|N|True to get an expanded list of devices
+|expand_surveys|boolean|N|True to get an expanded list of surveys cronjobs
+|expand_reminders|boolean|N|True to get an expanded list of reminder cronjobs
 
 
 |Field|Type|Mandatory|Description
 |---|---|---|---
 |id|string|Y|ID of patient
 |domain|string|N|Domain of creation
+|expand_devices|boolean|N|True to get an expanded list of devices
+|expand_surveys|boolean|N|True to get an expanded list of surveys cronjobs
+|expand_reminders|boolean|N|True to get an expanded list of reminder cronjobs
 
 
 If successful, full information will be retrieved:
@@ -102,7 +101,10 @@ If successful, full information will be retrieved:
 |---|---|---
 |spec|spec|See bellow
 |metadata|metadata|See bellow
-
+|devicehubs|[devicehub]|Only present if expand_devices is true. See bellow.
+|devices|[device]|Only present if expand_devices is true. See bellow.
+|survey_cronjobs|[survey_cronjob]|Only present if expand_surveys is true. See bellow.
+|reminder_cronjobs|[reminder_cronjob]|Only present if expand_reminders is true. See bellow.
 
 Metadata description:
 
@@ -113,6 +115,42 @@ Metadata description:
 |creation_date|string|Creation date in RFC3339 format
 |update_date|string|Last update date in RFC3339 format
 |generation|integer|Increases at each update
+
+
+Devicehub description:
+
+|Field|Description
+|---|---
+|devicehub_uid|UID of devicehub
+|label|
+|serial|
+
+
+Device description:
+
+|Field|Description
+|---|---
+|devicehub_uid|UID of devicehub
+|label|
+|serial|
+
+
+Survey description:
+
+|Field|Description
+|---|---
+|cronjob_uid|UID of devicehub
+|label|
+|serial|
+
+
+Reminder description:
+
+|Field|Description
+|---|---
+|cronjob_uid|UID of devicehub
+|label|
+|serial|
 
 
 
@@ -242,7 +280,7 @@ Two forms are available:
 |parameters|object|Y|S
 
 
-### add_patient_survey_rule
+### add_patient_survey_rule (TO BE REMOVED)
 
 Adds a new schedule rule that, when fired, will create a survey
 
@@ -288,41 +326,76 @@ Orders a call to patient_phone, using patient's office as caller, but calling me
 |intermediate_phone|string|N
 
 
-## Reports
 
-A number of reports are available related to patients:
+### add_patient_survey_cronjob
 
-### report_patients_created
-
-Reports created patients, withing a date range, and filtering by program.
-
-If type is "patients" a full list of patients is returned. If it is "daily" a sum of created patients each day is returned.
-
+Creates a new scheduled crobjob for launching surveys
 
 |Field|Type|Mandatory|Description
 |---|---|---|---
-|start_date|string|N|Finds patients created from this date on
-|stop_date|string|N|Finds patients created up to this date
-|with_ccm|boolean|N|If true, only patients within CCM
-|with_rcm|boolean|N|If true, only patients within RCM
-|type|string|N|"patients" or "daily"
-|make_csv|boolean|N|Return a CSV
+|patient_uid|string|Y|UID of patient
+|domain|string|N|
+|script_id|string|Y|
+|careplan_uid|string|Y|
+|schedule|schedule|Y|
+|timeout_secs|integer|N|Timeout to wait for survey results
 
+Returns `cronjob_uid`
 
+### del_patient_survey_cronjob
 
-### report_patients_usage
-
-Reports for each patient, number or readings over a period of time
+Deletes a previously created survey cronjob. No more surveys will be launched
 
 |Field|Type|Mandatory|Description
 |---|---|---|---
-|start_date|string|N|Finds patients created from this date on
-|stop_date|string|N|Finds patients created up to this date
-|with_ccm|boolean|N|If true, only patients within CCM
-|with_rcm|boolean|N|If true, only patients within RCM
-|in_office|string|N|Filter patients for this office
-|in_organization|string|N|Filter patients for this organization
-|with_medical|string|N|Filter patients for this medical
-|make_csv|boolean|N|Return a CSV
+|cronjob_uid|string|Y|
 
+
+### update_patrient_survey_cronjob 
+
+Allows to update an existing cronjob
+
+|Field|Type|Mandatory|Description
+|---|---|---|---
+|cronjob_uid|string|Y|
+|script_id|string|Y|
+|careplan_uid|string|Y|
+|schedule|schedule|Y|
+|timeout_secs|integer|N|Timeout to wait for survey results
+
+
+### add_patient_reminder_cronjob
+
+Creates a new schedule cronjob to send reminders for devices with no reading.
+Each cronjob can track multiple devices, and will check for possible readings from the included `check_start_hour` to
+current launch time. If not included, it will be considered midnight, according to timezone in schedule
+
+|Field|Type|Mandatory|Description
+|---|---|---|---
+|patient_iud|string|Y|
+|schedule|schedule|Y|
+|check_start_hour|integer|N|0-23, default to 0
+|device_types| [string] |Y|List of devices, for example `["thermometer","bpm"]`
+
+Returns `cronjob_uid`
+
+### del_patient_reminder_cronjob
+
+Deletes a previously created reminder cronjob. No more reminders will be launched because of this cronjob
+
+|Field|Type|Mandatory|Description
+|---|---|---|---
+|cronjob_uid|string|Y|
+
+
+### update_patient_reminder_cronjob
+
+Allows to update a previously created reminder cronjob
+
+|Field|Type|Mandatory|Description
+|---|---|---|---
+|cronjob_iud|string|Y|
+|schedule|schedule|Y|
+|check_start_hour|integer|N|0-23, default to 0
+|device_types| [string] |Y|List of devices, for example `["thermometer","bpm"]`
 
