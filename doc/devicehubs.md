@@ -144,7 +144,7 @@ Assigns the hub to an existing patient
 |patient_uid|string|Y|UID of the patient. Empty to remove
 
 
-### add_device_to_devicehub
+### add_device_to_devicehub (TO BE REMOVED)
 Assigns an existing device to the hub
 
 |Field|Type|Mandatory|Description
@@ -153,7 +153,7 @@ Assigns an existing device to the hub
 |device_uid|string|Y|UID of the patient. Empty to remove
 
 
-### rm_device_from_devicehub
+### rm_device_from_devicehub (TO BE REMOVED)
 Remove an existing device from the hub
 
 |Field|Type|Mandatory|Description
