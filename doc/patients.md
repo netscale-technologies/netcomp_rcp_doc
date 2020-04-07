@@ -104,14 +104,6 @@ If successful, full information will be retrieved:
 |extra|extra|Only present if any expansion is requested. See bellow.
 
 
-
-
-
-
-|devices|[device]|Only present if expand_devices is true. See bellow.
-|survey_cronjobs|[survey_cronjob]|Only present if expand_surveys is true. See bellow.
-|reminder_cronjobs|[reminder_cronjob]|Only present if expand_reminders is true. See bellow.
-
 Metadata description:
 
 |Field|Type|Description
