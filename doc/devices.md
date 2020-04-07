@@ -136,7 +136,19 @@ Returns ok or error
 Allows to delete an existing device. Same parameters as get_device
 
 
-### is_rule_compatible_device
+### device_assign_patient
+
+Allows to assign a patient to an existing device. Use `null` to detach any patient from the device.
+
+
+|Field|Type|Mandatory|Description
+|---|---|---|---
+|device_uid|string|Y*|Unique UUID
+|patient_uid|string or `null`|Y|
+
+
+
+### is_rule_compatible_device (TO BE REMOVED)
 
 Checks if a rule is compatible with a device
 
@@ -148,7 +160,7 @@ Checks if a rule is compatible with a device
 Returns `{"is_compatible": "yes"|"no"}`
 
 
-### add_device_rule
+### add_device_rule (TO BE REMOVED)
 
 Allows to add a new rule to the device.
 This call *will not* check id a rule of the same type exists previously, and will always add a new rule to the device.
@@ -165,7 +177,7 @@ Returns created rule_uid
 
 
 
-### del_device_rule
+### del_device_rule (TO BE REMOVED)
 
 Allows to remove a rule from a device
 
@@ -211,7 +223,7 @@ Allows for a powerful search operation on devices
 * Operations on field 'name' will be performed over a 'normalized' version of the field (without uppercase, utf8, etc.)
 
 
-### update_device_check_time_daily
+### update_device_check_time_daily (TO BE REMOVED)
 
 Allows to update device's check up daily time.
 This call will delete any previous rule existing on the device of this same type.
@@ -227,7 +239,7 @@ This call will delete any previous rule existing on the device of this same type
 Returns ok or error
 
 
-### update_device_weight_range
+### update_device_weight_range (TO BE REMOVED)
 
 Allows to update device's weight range (only valid for scales).
 This call will delete any previous rule existing on the device of this same type.
@@ -243,7 +255,7 @@ This call will delete any previous rule existing on the device of this same type
 Returns ok or error
 
 
-### update_device_bpm_range
+### update_device_bpm_range (TO BE REMOVED)
 
 Allows to update device's bpm range (only valid for bpm).
 This call will delete any previous rule existing on the device of this same type.
@@ -265,7 +277,7 @@ This call will delete any previous rule existing on the device of this same type
 Returns ok or error
 
 
-### update_device_pulseoximeter_range
+### update_device_pulseoximeter_range (TO BE REMOVED)
 
 Allows to update device's pulseoximeter range (only valid for pulseoximeters).
 This call will delete any previous rule existing on the device of this same type.
@@ -285,7 +297,7 @@ This call will delete any previous rule existing on the device of this same type
 Returns ok or error
 
 
-### update_device_thermometer_range
+### update_device_thermometer_range (TO BE REMOVED)
 
 Allows to update device's temperature range (only valid for thermometers).
 This call will delete any previous rule existing on the device of this same type.
@@ -303,7 +315,7 @@ This call will delete any previous rule existing on the device of this same type
 Returns ok or error
 
 
-### update_device_glucose_range
+### update_device_glucose_range (TO BE REMOVED)
 
 Allows to update device's glucose range (only valid for glucuose meters).
 This call will delete any previous rule existing on the device of this same type.
@@ -319,7 +331,7 @@ This call will delete any previous rule existing on the device of this same type
 Returns ok or error
 
 
-### device_test_notification
+### device_test_notification (TO BE REMOVED)
 
 Forces a trigger of some rules applied to this device
 
@@ -331,7 +343,7 @@ Forces a trigger of some rules applied to this device
 Returns ok or error
 
 
-### move_device_to_environment
+### move_device_to_environment (TO BE REMOVED)
 
 Moves a device to a new environment
 * Device must not be linked to a hub
