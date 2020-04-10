@@ -173,16 +173,16 @@ Allows to update patient's data
 |status|string|Y|New status
 |reason|string|N|
 
+Returns ok or error
+
+
+### update_patient_send_reminders
+Allows to update patient's "send_reminders" flag
+
 |Field|Type|Mandatory|Description
 |---|---|---|---
-|id|string|Y|ID of patient
-|domain|string|N|Domain of creation
-|status|string|Y|New status
-|reason|string|N|
-
-Must supply either UID or Id (possibly with domain). 
-
-Returns ok or error
+|uid|string|Y|Unique UUID
+|send_reminders|boolean|Y|New status
 
 
 ### delete_patient
