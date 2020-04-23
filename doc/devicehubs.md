@@ -162,6 +162,7 @@ Assigns the hub to an existing patient
 |---|---|---|---
 |devicehub_uid|string|Y|UID of the Hub
 |patient_uid|string|Y|UID of the patient. `null` to remove
+|force_date|string|N|If present, updates the assignation date of patient. Device must be already assigned.
 
 
 ### assign_office_to_devicehub
