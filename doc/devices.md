@@ -48,8 +48,9 @@ Status description:
 
 |Field|Type|Description
 |---|---|---
-|hub_uid|string|Assigned hub UID or `null`
-|patient_uid|string|Assigned patient for hub UID or `null`
+|patient|patient|See bellow
+|office|patient|See bellow
+|owner|patient|See bellow
 |battery|number|
 |class|string|
 |type|string|See bellow for available types
@@ -90,6 +91,33 @@ Check time daily
 |timezone|string|
 |hour|object|
 |minute|object|
+
+Patient info:
+
+|Field|Type|Description
+|---|---|---
+|uid|string|Current UID or `null`
+|prev_uid|string|Previous UID
+|time|string|Time of last change
+
+Office info:
+
+|Field|Type|Description
+|---|---|---
+|uid|string|Current UID or `null`
+|prev_uid|string|Previous UID
+|time|string|Time of last change
+
+Owner info:
+
+|Field|Type|Description
+|---|---|---
+|type|string|Current type: `null`, `rcp`, `office` or `patient` 
+|uid|string|Current UID or `null`
+|prev_type|string|Previous type
+|prev_uid|string|Previous UID
+|time|string|Time of last change
+
 
 
 #### Type
@@ -136,15 +164,33 @@ Returns ok or error
 Allows to delete an existing device. Same parameters as get_device
 
 
-### device_assign_patient
-
-Allows to assign a patient to an existing device. Use `null` to detach any patient from the device.
-
+### assign_patient_to_device
+Assigns the device to an existing patient
 
 |Field|Type|Mandatory|Description
 |---|---|---|---
-|device_uid|string|Y*|Unique UUID
-|patient_uid|string or `null`|Y|
+|device_uid|string|Y|UID of the Device
+|patient_uid|string|Y|UID of the patient. `null` to remove
+|force_date|string|N|If present, updates the assignation date of patient. Device must be already assigned.
+
+
+### assign_office_to_device
+Assigns the device to an existing office
+
+|Field|Type|Mandatory|Description
+|---|---|---|---
+|device_uid|string|Y|UID of the Device
+|office_uid|string|Y|UID of office. `null` to remove
+
+
+### assign_owner_to_device
+Assigns the device to an owner
+
+|Field|Type|Mandatory|Description
+|---|---|---|---
+|device_uid|string|Y|UID of the Hub
+|owner_type|string|Y|Can be `rcp`, `office` or `patient`
+|owner_uid|string|N|If available, UID of office or patient
 
 
 
@@ -201,11 +247,12 @@ Allows for a powerful search operation on devices
 |class|string|
 |status|string|
 |in_office|string|Office this device is assigned to. Use `null` for devices with no office
-|with_hub|string|Filter devices connected to this hub. Use `null` for devices not connected
+|in_organization|string|Organization this device is assigned to
 |with_patient|Filter devices connected to hubs connected to this patient. Use `null` for devices without any patient
 |with_rule|string|Filter devices with this rule uids
 |with_ruleclass|string|Filter devices hacing a rule based on this ruleclass.
-|creation_date|string|Creation date in RFC3339 format
+|with_owner_type|binary|Owner type or `null`
+|with_owner_uid|binary|Owner uid or `null`|creation_date|string|Creation date in RFC3339 format
 |update_date|string|Last update date in RFC3339 format
 |from|integer|Starting point (for pagination)
 |size|integer|Number or records to retrieve
