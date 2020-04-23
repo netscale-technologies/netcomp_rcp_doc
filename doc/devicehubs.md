@@ -19,7 +19,6 @@ Spec object:
 |label|string|Y|Label of device
 |status|string|N|Like "available". . OPTIONS NOT YET DEFINED
 |meta|map|N|
-|office_uid|string|N|Office this device is assigned to. Use `null` to set to no office.
 |test_device|boolean|N|If true, no real connection is done
 |device_is_master|boolean|N|If true, devices are copied from device and overwritten in db
 
@@ -52,24 +51,44 @@ Status description:
 
 |Field|Type|Description
 |---|---|---
+|patient|patient|See bellow
+|office|patient|See bellow
+|owner|patient|See bellow
 |os_vsn|string|
 |app_vsn|string|
 |last_status|string|
 |last_status_time|date|
-|patient_uid|string|
-|devices|\[device\]|
 |state_hash|string|
 |last_serial|date|
 |gps_data|object|
 |gsm_data|object|
 
-Device info:
+Patient info:
 
 |Field|Type|Description
 |---|---|---
-|uid|string|
-|mac|string|
-|protocol|string|
+|uid|string|Current UID or `null`
+|prev_uid|string|Previous UID
+|time|string|Time of last change
+
+Office info:
+
+|Field|Type|Description
+|---|---|---
+|uid|string|Current UID or `null`
+|prev_uid|string|Previous UID
+|time|string|Time of last change
+
+Owner info:
+
+|Field|Type|Description
+|---|---|---
+|type|string|Current type: `null`, `rcp`, `office` or `patient` 
+|uid|string|Current UID or `null`
+|prev_type|string|Previous type
+|prev_uid|string|Previous UID
+|time|string|Time of last change
+
 
 Metadata description:
 
@@ -114,8 +133,9 @@ Allows for a powerful search operation on devicehubs
 |status|string|
 |with_patient|binary|Filter for devicehubs linked to this patient. Use `null` to find hubs not associated to any patient.
 |in_office|binary|Office this device is assigned to. Use `null` to find hubs without office.
-|in_organization|binary|Organization 
-this device is assigned to
+|in_organization|binary|Organization this device is assigned to
+|with_owner_type|binary|Owner type or `null`
+|with_owner_uid|binary|Owner uid or `null`
 |expand_patients|boolean|If true, field `extra` will appear with additional info (patient, office and organization)
 |creation_date|string|Creation date in RFC3339 format
 |update_date|string|Last update date in RFC3339 format
@@ -141,25 +161,26 @@ Assigns the hub to an existing patient
 |Field|Type|Mandatory|Description
 |---|---|---|---
 |devicehub_uid|string|Y|UID of the Hub
-|patient_uid|string|Y|UID of the patient. Empty to remove
+|patient_uid|string|Y|UID of the patient. `null` to remove
 
 
-### add_device_to_devicehub (TO BE REMOVED)
-Assigns an existing device to the hub
-
-|Field|Type|Mandatory|Description
-|---|---|---|---
-|devicehub_uid|string|Y|UID of the Hub
-|device_uid|string|Y|UID of the patient. Empty to remove
-
-
-### rm_device_from_devicehub (TO BE REMOVED)
-Remove an existing device from the hub
+### assign_office_to_devicehub
+Assigns the hub to an existing office
 
 |Field|Type|Mandatory|Description
 |---|---|---|---
 |devicehub_uid|string|Y|UID of the Hub
-|device_uid|string|Y|UID of the patient. Empty to remove
+|office_uid|string|Y|UID of office. `null` to remove
+
+
+### assign_owner_to_devicehub
+Assigns the hub to an owner
+
+|Field|Type|Mandatory|Description
+|---|---|---|---
+|devicehub_uid|string|Y|UID of the Hub
+|owner_type|string|Y|Can be `rcp`, `office` or `patient`
+|owner_uid|string|N|If available, UID of office or patient
 
 
 ### move_devicehub_to_environment
@@ -175,3 +196,5 @@ Moves a hub to a new environment
 |environment|string|Y|`dev`, `qa` or `prod`
 
 Returns ok or error
+
+
