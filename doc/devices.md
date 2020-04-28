@@ -286,6 +286,20 @@ This call will delete any previous rule existing on the device of this same type
 Returns ok or error
 
 
+### update_device_spirometer_range (TO BE REMOVED)
+
+|Field|Type|Mandatory|Description
+|---|---|---|---
+|device_uid|string|Y|Device UUID
+|active|boolean|Y|To activate or deactivate
+|min_fev_liters|N|
+|max_fev_liters|N|
+|min_pef_liters_per_minute|N|
+|max_pef_liters_per_minute|N|
+
+Returns ok or error
+
+
 ### update_device_weight_range (TO BE REMOVED)
 
 Allows to update device's weight range (only valid for scales).
