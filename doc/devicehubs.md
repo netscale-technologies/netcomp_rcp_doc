@@ -175,3 +175,13 @@ Moves a hub to a new environment
 |environment|string|Y|`dev`, `qa` or `prod`
 
 Returns ok or error
+
+
+### reset_devicehub_serial
+
+|Field|Type|Mandatory|Description
+|---|---|---|---
+|devicehub_uid|string|Y|Device UUID
+|serial|integer|Y|Default 0
+
+Returns ok or error
