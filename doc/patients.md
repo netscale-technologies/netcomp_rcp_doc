@@ -35,6 +35,7 @@ Spec object:
 |insurance_meta|object|Free field to store insurance data
 |avatar|string|N|
 |programs|\[string\]|N|List of programs (["CCM", "RCP"])
+|main_program|\[string\]|N|Program for filtering
 |risk_factor|integer|N|Risk factor (0, 1, 2)
 |contact_preference|string|N|"SMS", "VOICE"
 |meta|object|N|
@@ -168,6 +169,7 @@ Allows for a powerful search operation on patients
 |in_office|string|Filter for patients belonging to this office. Use `null` to find patients with no office.
 |in_organization|string|Filter for patients belonging to this organization
 |with_medical|string|Filter for patients linked to this medical
+|with_main_program|string|Filter for patients having this main program
 |with_program|string|Filter for patients having this program
 |risk_factor|string|"gte:1"
 |contact_preference|string|
