@@ -187,3 +187,25 @@ Fields:
 |batch|string|Y|Like "C01"
 
 Returns generated label
+
+
+### start_hub_app
+
+Finds if the logged patient has a devicehub with class "HB10". If true, returns its data. If false, it will create one, associate with the patient and return data.
+
+Returned data:
+
+|Field|Type
+|---|---
+|patient_uid|string|
+|devicehub_uid|string|
+|devicehub_id|string|
+|label|string|
+
+
+
+
+
+
+
+
