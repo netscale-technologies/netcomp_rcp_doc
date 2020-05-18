@@ -142,7 +142,6 @@ Allows for a powerful search operation on orders
 |id|string|Actor generated id
 |name|string|User friendly description
 |fts_name|string|See bellow
-|type|string|
 |status|string|N|
 |assignee_uid|string|N|
 |quantity|integer|
