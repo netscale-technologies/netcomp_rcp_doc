@@ -201,6 +201,19 @@ Returned data:
 |devicehub_uid|string|
 |devicehub_id|string|
 |label|string|
+|info|string|See bellow
+
+Data in "info" will have the followig fields interpolated:
+
+
+|Field|Type
+|---|---
+|{env}|Current environment
+|{hub_id}|string|Created or selected hub id
+|{label}|Created or selected hub label
+
+
+
 
 
 
