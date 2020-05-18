@@ -212,7 +212,7 @@ Data in "info" will have the followig fields interpolated:
 |{hub_id}|string|Created or selected hub id
 |{label}|Created or selected hub label
 
-
+If the hub is created, "owner" will be set to "patient" and field "uid" will point to patient's uid. Also office will be copied from patient's office
 
 
 
