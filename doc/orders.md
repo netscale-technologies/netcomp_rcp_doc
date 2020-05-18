@@ -26,8 +26,18 @@ Spec object:
 |timezone|string|N|
 |locale|string|N|
 |address|address|N|See bellow
-|device_types| [string] |Y|Like 'scale'
+|device_types| [string] |N|Only to support old versions of app. Use 'devices' now. TO REMOVE.
+|devices| [ device ] |Y|Not mandatory for now
 |meta|map|N|
+
+Device objecy:
+
+|Field|Type|Mandatory|Description
+|---|---|---|---
+|type|string|Y|Like 'scale'
+|units|integer|Y|
+
+
 
 
 Address object:
