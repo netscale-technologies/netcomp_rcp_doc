@@ -322,7 +322,7 @@ Two forms are available:
 
 
 ### update_patient_condition
-Allows to add or update a condition.
+Allows to add, update or delete a condition.
 Currently only two conditions are supported: "primary" and "secondary"
 
 |Field|Type|Mandatory|Description
