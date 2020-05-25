@@ -94,6 +94,7 @@ Gets the data of an existing patient. Two formats available:
 |expand_devices|boolean|N|True to get an expanded list of devices
 |expand_surveys|boolean|N|True to get an expanded list of surveys cronjobs
 |expand_reminders|boolean|N|True to get an expanded list of reminder cronjobs
+|expand_timeslots|boolean|N|True to get an expanded list of this month's timeslots
 
 
 If successful, full information will be retrieved:
@@ -101,9 +102,29 @@ If successful, full information will be retrieved:
 |Field|Type|Description
 |---|---|---
 |spec|spec|See bellow
+|status|spec|See bellow
 |metadata|metadata|See bellow
 |extra|extra|Only present if any expansion is requested. See bellow.
 
+
+Status description:
+
+|Field|Type|Description
+|---|---|---
+|conditions| [ condition ] | See bellow
+|parameters| object | See parameters discussion bellow
+|send_reminders|boolean|
+|status|string|"inative", "testing" or "active"
+|status_reason|string|
+
+Condition object
+
+|Field|Type|Description
+|---|---|---
+|type|string|"primary" or "secondary"
+|code|string|
+|text|string|
+|date|string|
 
 Metadata description:
 
@@ -298,6 +319,26 @@ Two forms are available:
 |domain|string|N|Domain of creation
 |merge|boolean|N|Default true
 |parameters|object|Y|S
+
+
+### update_patient_condition
+Allows to add or update a condition.
+Currently only two conditions are supported: "primary" and "secondary"
+
+|Field|Type|Mandatory|Description
+|---|---|---|---
+|uid|string|Y|Unique UUID
+|condition| condition |Y|
+|delete|boolean|N|true to delete the condition
+
+Condition objet
+
+|Field|Type|Mandatory|Description
+|---|---|---|---
+|type|string|Y|Primary or secondary
+|code|string|N|Code of the condition
+|text|string|N|Text for it
+
 
 
 ### add_patient_survey_rule (TO BE REMOVED)
