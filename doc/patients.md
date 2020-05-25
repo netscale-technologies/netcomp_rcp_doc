@@ -84,6 +84,7 @@ Gets the data of an existing patient. Two formats available:
 |expand_devices|boolean|N|True to get an expanded list of devices
 |expand_surveys|boolean|N|True to get an expanded list of surveys cronjobs
 |expand_reminders|boolean|N|True to get an expanded list of reminder cronjobs
+|expand_timeslots|boolean|N|True to get an expanded list of this month's timeslots
 
 
 |Field|Type|Mandatory|Description
@@ -123,6 +124,7 @@ Extra description:
 |devices|[device]|Present if expand_devices was true
 |surveys|[survey]|Present if expand_surveys was true
 |reminders|[reminder]|Present if expand_reminders was true
+|timeslots|timeslot|Present if expand_timeslots was true
 
 
 Devicehub description:
@@ -162,6 +164,14 @@ Reminder description:
 |schedule|
 |meta|
 
+Timeslot description:
+
+|Field|Description
+|---|---
+|secs|Total secs for this month
+|cache_uid|UID of the cache actor
+|loaded_time|Time when the actor was refreshed
+|created|True if we just created the cache actor
 
 
 ### update_patient_status
