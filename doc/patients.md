@@ -65,6 +65,7 @@ Medical object:
 |---|---|---|---
 |uid|string|Y|UID of medical
 |role|string|Y|
+|primary|boolean|N
 
 
 Returns:
