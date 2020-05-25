@@ -86,6 +86,7 @@ Gets the data of an existing patient. Two formats available:
 |expand_surveys|boolean|N|True to get an expanded list of surveys cronjobs
 |expand_reminders|boolean|N|True to get an expanded list of reminder cronjobs
 |expand_timeslots|boolean|N|True to get an expanded list of this month's timeslots
+|expand_default_ranges|boolean|N|True to get an expandeded list of default ranges
 
 
 |Field|Type|Mandatory|Description
