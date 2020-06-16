@@ -28,6 +28,7 @@ Spec object:
 |timezone|string|N|Must be a valid timezone
 |locale|string|N|Must be a valid locale
 |address|address|N|See bellow
+|alternative_id|string|N|Alternative Id
 |ehr_id|string|Y|Alternative Id (MRW)
 |ehr|ehr|N|See bellow
 |office_uid|string|Y|UID of patient's office
@@ -161,6 +162,7 @@ Allows for a powerful search operation on patients
 |status|string|
 |status_reason|string|
 |activation_time| string or null
+|alternative_id|string|
 |ehr_id|string|
 |phone|string|
 |phone_sms|string|
