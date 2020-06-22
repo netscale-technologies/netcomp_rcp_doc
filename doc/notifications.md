@@ -17,6 +17,7 @@ Spec object:
 
 |Field|Type|Mandatory|Description
 |---|---|---|---
+|group|string|Y|Must be `medical` or `staff` 
 |class|string|Y|Class for the notification
 |type|string|N|For a class, a specific type
 |status|string|N|No yet used
@@ -149,8 +150,67 @@ Allows for a powerful search operation on notifications. This api can however pr
 * Operations on field 'name' will be performed over a 'normalized' version of the field (without uppercase, utf8, etc.)
 
 
+### search_medical_notifications
 
-### list_notifications_by_time
+Fast search of medical notifications.
+Must provide either a medical_uid or an office_uid.
+Full notification actors will be retrieved
+
+|Field|Type|Description
+|---|---|---
+|medical_uid|string|
+|office_uid|string|
+|is_read|boolean|If not used, reads and unreads will be found
+|start_time|string|Starting date
+|stop_time|string|Stopping date
+|from|integer|Starting point (for pagination)
+|size|integer|Number or records to retrieve
+
+
+### count_medical_notifications
+
+Fast count of medical notifications.
+Must provide either a medical_uid or an office_uid
+
+|Field|Type|Description
+|---|---|---
+|medical_uid|string|
+|office_uid|string|
+|is_read|boolean|If not used, reads and unreads will be found
+|start_time|string|Starting date
+|stop_time|string|Stopping date
+
+
+### search_staff_notifications
+
+Fast search of non-medical notifications.
+Full notification actors will be retrieved
+
+|Field|Type|Description
+|---|---|---
+|office_uid|string|*Mandatory
+|is_read|boolean|If not used, reads and unreads will be found
+|start_time|string|Starting date
+|stop_time|string|Stopping date
+|from|integer|Starting point (for pagination)
+|size|integer|Number or records to retrieve
+
+
+### count_staff_notifications
+
+Fast count of non-medical notifications.
+
+|Field|Type|Description
+|---|---|---
+|office_uid|string|*Mandatory
+|is_read|boolean|If not used, reads and unreads will be found
+|start_time|string|Starting date
+|stop_time|string|Stopping date
+
+
+
+### list_notifications_by_time (TO BE REMOVED)
+
 
 Produces a list of notifications sorted by creation date (ascending or descending). Allowed additional filters are:
 
@@ -171,7 +231,7 @@ Produces a list of notifications sorted by creation date (ascending or descendin
 No operators are allowed on fields
 
 
-### list_notifications_by_priority
+### list_notifications_by_priority (TO BE RMEMOVED)
 
 Produces a list of notifications sorted by priority. Notifications with higher priority will be shown first, even if they have an older creation date.
 
