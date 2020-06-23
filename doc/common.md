@@ -187,3 +187,38 @@ Fields:
 |batch|string|Y|Like "C01"
 
 Returns generated label
+
+
+### start_hub_app
+
+Finds if the logged patient has a devicehub with class "HB10". If true, returns its data. If false, it will create one, associate with the patient and return data.
+
+Returned data:
+
+|Field|Type
+|---|---
+|patient_uid|string|
+|devicehub_uid|string|
+|devicehub_id|string|
+|label|string|
+|info|string|See bellow
+
+Data in "info" will have the followig fields interpolated:
+
+
+|Field|Type
+|---|---
+|{env}|Current environment
+|{hub_id}|string|Created or selected hub id
+|{label}|Created or selected hub label
+
+If the hub is created, "owner" will be set to "patient" and field "uid" will point to patient's uid. Also office will be copied from patient's office
+
+
+
+
+
+
+
+
+

@@ -26,8 +26,18 @@ Spec object:
 |timezone|string|N|
 |locale|string|N|
 |address|address|N|See bellow
-|device_types| [string] |Y|Like 'scale'
+|device_types| [string] |N|Only to support old versions of app. Use 'devices' now. TO REMOVE.
+|devices| [ device ] |Y|Not mandatory for now
 |meta|map|N|
+
+Device objecy:
+
+|Field|Type|Mandatory|Description
+|---|---|---|---
+|type|string|Y|Like 'scale'
+|units|integer|Y|
+
+
 
 
 Address object:
@@ -132,7 +142,6 @@ Allows for a powerful search operation on orders
 |id|string|Actor generated id
 |name|string|User friendly description
 |fts_name|string|See bellow
-|type|string|
 |status|string|N|
 |assignee_uid|string|N|
 |quantity|integer|

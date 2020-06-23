@@ -48,8 +48,9 @@ Status description:
 
 |Field|Type|Description
 |---|---|---
-|hub_uid|string|Assigned hub UID or `null`
-|patient_uid|string|Assigned patient for hub UID or `null`
+|patient|patient|See bellow
+|office|patient|See bellow
+|owner|patient|See bellow
 |battery|number|
 |class|string|
 |type|string|See bellow for available types
@@ -90,6 +91,33 @@ Check time daily
 |timezone|string|
 |hour|object|
 |minute|object|
+
+Patient info:
+
+|Field|Type|Description
+|---|---|---
+|uid|string|Current UID or `null`
+|prev_uid|string|Previous UID
+|time|string|Time of last change
+
+Office info:
+
+|Field|Type|Description
+|---|---|---
+|uid|string|Current UID or `null`
+|prev_uid|string|Previous UID
+|time|string|Time of last change
+
+Owner info:
+
+|Field|Type|Description
+|---|---|---
+|type|string|Current type: `null`, `rcp`, `office` or `patient` 
+|uid|string|Current UID or `null`
+|prev_type|string|Previous type
+|prev_uid|string|Previous UID
+|time|string|Time of last change
+
 
 
 #### Type
@@ -136,7 +164,37 @@ Returns ok or error
 Allows to delete an existing device. Same parameters as get_device
 
 
-### is_rule_compatible_device
+### assign_patient_to_device
+Assigns the device to an existing patient
+
+|Field|Type|Mandatory|Description
+|---|---|---|---
+|device_uid|string|Y|UID of the Device
+|patient_uid|string|Y|UID of the patient. `null` to remove
+|force_date|string|N|If present, updates the assignation date of patient. Device must be already assigned.
+
+
+### assign_office_to_device
+Assigns the device to an existing office
+
+|Field|Type|Mandatory|Description
+|---|---|---|---
+|device_uid|string|Y|UID of the Device
+|office_uid|string|Y|UID of office. `null` to remove
+
+
+### assign_owner_to_device
+Assigns the device to an owner
+
+|Field|Type|Mandatory|Description
+|---|---|---|---
+|device_uid|string|Y|UID of the Hub
+|owner_type|string|Y|Can be `rcp`, `office` or `patient`
+|owner_uid|string|N|If available, UID of office or patient
+
+
+
+### is_rule_compatible_device (TO BE REMOVED)
 
 Checks if a rule is compatible with a device
 
@@ -148,7 +206,7 @@ Checks if a rule is compatible with a device
 Returns `{"is_compatible": "yes"|"no"}`
 
 
-### add_device_rule
+### add_device_rule (TO BE REMOVED)
 
 Allows to add a new rule to the device.
 This call *will not* check id a rule of the same type exists previously, and will always add a new rule to the device.
@@ -165,7 +223,7 @@ Returns created rule_uid
 
 
 
-### del_device_rule
+### del_device_rule (TO BE REMOVED)
 
 Allows to remove a rule from a device
 
@@ -189,11 +247,12 @@ Allows for a powerful search operation on devices
 |class|string|
 |status|string|
 |in_office|string|Office this device is assigned to. Use `null` for devices with no office
-|with_hub|string|Filter devices connected to this hub. Use `null` for devices not connected
+|in_organization|string|Organization this device is assigned to
 |with_patient|Filter devices connected to hubs connected to this patient. Use `null` for devices without any patient
 |with_rule|string|Filter devices with this rule uids
 |with_ruleclass|string|Filter devices hacing a rule based on this ruleclass.
-|creation_date|string|Creation date in RFC3339 format
+|with_owner_type|binary|Owner type or `null`
+|with_owner_uid|binary|Owner uid or `null`|creation_date|string|Creation date in RFC3339 format
 |update_date|string|Last update date in RFC3339 format
 |from|integer|Starting point (for pagination)
 |size|integer|Number or records to retrieve
@@ -211,7 +270,7 @@ Allows for a powerful search operation on devices
 * Operations on field 'name' will be performed over a 'normalized' version of the field (without uppercase, utf8, etc.)
 
 
-### update_device_check_time_daily
+### update_device_check_time_daily (TO BE REMOVED)
 
 Allows to update device's check up daily time.
 This call will delete any previous rule existing on the device of this same type.
@@ -227,7 +286,21 @@ This call will delete any previous rule existing on the device of this same type
 Returns ok or error
 
 
-### update_device_weight_range
+### update_device_spirometer_range (TO BE REMOVED)
+
+|Field|Type|Mandatory|Description
+|---|---|---|---
+|device_uid|string|Y|Device UUID
+|active|boolean|Y|To activate or deactivate
+|min_fev_liters|N|
+|max_fev_liters|N|
+|min_pef_liters_per_minute|N|
+|max_pef_liters_per_minute|N|
+
+Returns ok or error
+
+
+### update_device_weight_range (TO BE REMOVED)
 
 Allows to update device's weight range (only valid for scales).
 This call will delete any previous rule existing on the device of this same type.
@@ -243,7 +316,7 @@ This call will delete any previous rule existing on the device of this same type
 Returns ok or error
 
 
-### update_device_bpm_range
+### update_device_bpm_range (TO BE REMOVED)
 
 Allows to update device's bpm range (only valid for bpm).
 This call will delete any previous rule existing on the device of this same type.
@@ -265,7 +338,7 @@ This call will delete any previous rule existing on the device of this same type
 Returns ok or error
 
 
-### update_device_pulseoximeter_range
+### update_device_pulseoximeter_range (TO BE REMOVED)
 
 Allows to update device's pulseoximeter range (only valid for pulseoximeters).
 This call will delete any previous rule existing on the device of this same type.
@@ -285,7 +358,7 @@ This call will delete any previous rule existing on the device of this same type
 Returns ok or error
 
 
-### update_device_thermometer_range
+### update_device_thermometer_range (TO BE REMOVED)
 
 Allows to update device's temperature range (only valid for thermometers).
 This call will delete any previous rule existing on the device of this same type.
@@ -303,7 +376,7 @@ This call will delete any previous rule existing on the device of this same type
 Returns ok or error
 
 
-### update_device_glucose_range
+### update_device_glucose_range (TO BE REMOVED)
 
 Allows to update device's glucose range (only valid for glucuose meters).
 This call will delete any previous rule existing on the device of this same type.
@@ -319,7 +392,7 @@ This call will delete any previous rule existing on the device of this same type
 Returns ok or error
 
 
-### device_test_notification
+### device_test_notification (TO BE REMOVED)
 
 Forces a trigger of some rules applied to this device
 
@@ -331,7 +404,7 @@ Forces a trigger of some rules applied to this device
 Returns ok or error
 
 
-### move_device_to_environment
+### move_device_to_environment (TO BE REMOVED)
 
 Moves a device to a new environment
 * Device must not be linked to a hub
