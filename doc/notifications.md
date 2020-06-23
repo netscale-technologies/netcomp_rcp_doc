@@ -165,7 +165,7 @@ Full notification actors will be retrieved
 |stop_time|string|Stopping date
 |from|integer|Starting point (for pagination)
 |size|integer|Number or records to retrieve
-
+|sort|string|`asc` or `desc`
 
 ### count_medical_notifications
 
@@ -194,7 +194,7 @@ Full notification actors will be retrieved
 |stop_time|string|Stopping date
 |from|integer|Starting point (for pagination)
 |size|integer|Number or records to retrieve
-
+|sort|string|`asc` or `desc`
 
 ### count_staff_notifications
 
