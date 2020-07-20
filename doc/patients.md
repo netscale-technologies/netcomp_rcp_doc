@@ -464,3 +464,74 @@ Allows to update a previously created reminder cronjob
 |check_start_hour|integer|N|0-23, default to 0
 |device_types| [string] |Y|List of devices, for example `["thermometer","bpm"]`
 
+
+### dashboard_patient_count_program
+
+Allows to count active patients having program CCM, RCM or both in a very efficient way
+Either with_ccm, with_rcm or both must be true
+
+|Field|Type|Mandatory|Description
+|---|---|---|---
+|with_ccm|boolean|N|Default false
+|with_rcm|boolean|N|Default false
+
+
+### dashboard_patient_count_time
+
+Allows to count patients having more or equal to `min_time_secs` seconds reported as for today and within current month.
+If `is_new` is true, only patients activated on current month are used. If false (default) all but patients activated on this month are used.
+Same restrictions apply as for `dashboard_patient_count_program`
+
+
+|Field|Type|Mandatory|Description
+|---|---|---|---
+|min_time_secs|integer|Y|
+|with_ccm|boolean|N|Default false
+|with_rcm|boolean|N|Default false
+|is_new|boolean|N|Default false
+
+### dashboard_patient_count_reading_days
+
+Allows to count patients having more or equal to `min_reading_days` days with readings reported as for today and within current month.
+If `is_new` is true, only patients activated on current month are used. If false (default) all but patients activated on this month are used.
+Same restrictions apply as for `dashboard_patient_count_program`
+
+|Field|Type|Mandatory|Description
+|---|---|---|---
+|min_reading_days|integer|Y|
+|with_ccm|boolean|N|Default false
+|with_rcm|boolean|N|Default false
+|is_new|boolean|N|Default false
+
+
+### dashboard_patient_list_time
+
+Allows to list patients counted by `dashboard_patient_count_time`
+They will be sorted on the number of seconds, descending (default) or ascending
+
+|Field|Type|Mandatory|Description
+|---|---|---|---
+|min_time_secs|integer|Y|
+|with_ccm|boolean|N|Default false
+|with_rcm|boolean|N|Default false
+|is_new|boolean|N|Default false
+|order|string|N|"asc" or "desc"
+|from|integer|N|
+|size|integer|N|
+
+
+### dashboard_patient_list_reading_days
+
+Allows to list patients counted by `dashboard_patient_count_reading_days`
+They will be sorted on the number of days, descending (default) or ascending
+
+|Field|Type|Mandatory|Description
+|---|---|---|---
+|min_reading_days|integer|Y|
+|with_ccm|boolean|N|Default false
+|with_rcm|boolean|N|Default false
+|is_new|boolean|N|Default false
+|order|string|N|"asc" or "desc"
+|from|integer|N|
+|size|integer|N|
+
