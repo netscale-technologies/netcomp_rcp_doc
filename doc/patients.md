@@ -465,42 +465,40 @@ Allows to update a previously created reminder cronjob
 |device_types| [string] |Y|List of devices, for example `["thermometer","bpm"]`
 
 
-### dashboard_patient_count_program
-
-Allows to count active patients having program CCM, RCM or both in a very efficient way
-Either with_ccm, with_rcm or both must be true
-
-|Field|Type|Mandatory|Description
-|---|---|---|---
-|with_ccm|boolean|N|Default false
-|with_rcm|boolean|N|Default false
-
-
 ### dashboard_patient_count_time
 
-Allows to count patients having more or equal to `min_time_secs` seconds reported as for today and within current month.
-If `is_new` is true, only patients activated on current month are used. If false (default) all but patients activated on this month are used.
-Same restrictions apply as for `dashboard_patient_count_program`
+Allows to count patients having more or equal to `min_time_secs` seconds and less or equal to `max_time_secs`,
+reported as for today and within current month.
 
+If `is_new` is true, only patients activated on current month are used. If false (default) all but patients activated on this month are used.
+
+Can filter patientes having a set of programs, using the `programs_and` and/or `programs_or` fields
+Can also filter patientes belonging to specific organizations or offices
 
 |Field|Type|Mandatory|Description
 |---|---|---|---
-|min_time_secs|integer|Y|
-|with_ccm|boolean|N|Default false
-|with_rcm|boolean|N|Default false
+|min_time_secs|integer|N|Default 0
+|max_time_secs|integer|N|Default 999.999
+|programs_and| [string] |N|List of "CCM", "RCM" or any other
+|programs_or| [string] |N|List of "CCM", "RCM" or any other
+|in_office|boolean|N|
+|in_organization|boolean|N|
 |is_new|boolean|N|Default false
 
 ### dashboard_patient_count_reading_days
 
-Allows to count patients having more or equal to `min_reading_days` days with readings reported as for today and within current month.
-If `is_new` is true, only patients activated on current month are used. If false (default) all but patients activated on this month are used.
-Same restrictions apply as for `dashboard_patient_count_program`
+Allows to count patients having more or equal to `min_reading_days` days and less or equal to `max_reading_days` with readings reported as for today and within current month.
+
+See *dashboard_patient_count_time* for description of the filtering fields
 
 |Field|Type|Mandatory|Description
 |---|---|---|---
-|min_reading_days|integer|Y|
-|with_ccm|boolean|N|Default false
-|with_rcm|boolean|N|Default false
+|min_reading_days|integer|N|Default 0
+|max_reading_days|integer|N|Default 31
+|programs_and| [string] |N|List of "CCM", "RCM" or any other
+|programs_or| [string] |N|List of "CCM", "RCM" or any other
+|in_office|boolean|N|
+|in_organization|boolean|N|
 |is_new|boolean|N|Default false
 
 
@@ -511,9 +509,12 @@ They will be sorted on the number of seconds, descending (default) or ascending
 
 |Field|Type|Mandatory|Description
 |---|---|---|---
-|min_time_secs|integer|Y|
-|with_ccm|boolean|N|Default false
-|with_rcm|boolean|N|Default false
+|min_time_secs|integer|N|Default 0
+|max_time_secs|integer|N|Default 999.999
+|programs_and| [string] |N|List of "CCM", "RCM" or any other
+|programs_or| [string] |N|List of "CCM", "RCM" or any other
+|in_office|boolean|N|
+|in_organization|boolean|N|
 |is_new|boolean|N|Default false
 |order|string|N|"asc" or "desc"
 |from|integer|N|
@@ -527,9 +528,12 @@ They will be sorted on the number of days, descending (default) or ascending
 
 |Field|Type|Mandatory|Description
 |---|---|---|---
-|min_reading_days|integer|Y|
-|with_ccm|boolean|N|Default false
-|with_rcm|boolean|N|Default false
+|min_reading_days|integer|N| Default 0
+|max_reading_days|integer|N|Default 31
+|programs_and| [string] |N|List of "CCM", "RCM" or any other
+|programs_or| [string] |N|List of "CCM", "RCM" or any other
+|in_office|boolean|N|
+|in_organization|boolean|N|
 |is_new|boolean|N|Default false
 |order|string|N|"asc" or "desc"
 |from|integer|N|
