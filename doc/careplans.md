@@ -18,6 +18,19 @@ Spec object:
 |Field|Type|Mandatory|Description
 |---|---|---|---
 |patient_uid|string|Y|
+|creator_uid|string|Y
+|creation_time|string|Y|
+|active|boolean|Y
+|version|string|Y|
+|reviewer_uid|string|N
+|review_time|RFC3339|N
+|editor_uid|string|N
+|edition_time|RFC3339|N
+|next_review_time|RFC3339|N
+|validator_uid|string|N
+|validation_time|RFC3339|N
+|review_meeting_type|string|N|One in "phone", "in-person", "videocall"
+|notes|string|N
 |conditions| [condition] string|Y|
 
 #### condition object
@@ -26,6 +39,7 @@ Spec object:
 | ---- | ---- | ---- | ---- |
 | condition_id | string | Y | UID of CarePlanCondition |
 | [goals] | [goal] | Y | See below |
+| [last_month_goals] | [goal] | Y | See below |
 | [symptoms] | [sympton] | Y | See below |
 | [action_steps] | [action_step] | Y | See below |
 | [barriers] | [barrier] | Y | See below |
@@ -149,6 +163,18 @@ Allows for a powerful search operation on careplans
 |deep|boolean|If true, will search in sub-domains
 |id|string|Id of careplan
 |patient_uid|string|User friendly description
+|creator_uid|string|
+|creation_time|string|
+|active|boolean|
+|version|string|
+|reviewer_uid|string|Or null
+|review_time|RFC3339|Or null
+|editor_uid|string|Or null
+|edition_time|RFC3339|Or null
+|next_review_time|RFC3339|Or null
+|validator_uid|string|Or null
+|validation_time|RFC3339|Or null
+|review_meeting_type|string|Or null
 |creation_date|string|Creation date in RFC3339 format
 |update_date|string|Last update date in RFC3339 format
 |from|integer|Starting point (for pagination)
