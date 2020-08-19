@@ -167,14 +167,14 @@ Allows for a powerful search operation on careplans
 |creation_time|string|
 |active|boolean|
 |version|string|
-|reviewer_uid|string|Or null
-|review_time|RFC3339|Or null
-|editor_uid|string|Or null
-|edition_time|RFC3339|Or null
-|next_review_time|RFC3339|Or null
-|validator_uid|string|Or null
-|validation_time|RFC3339|Or null
-|review_meeting_type|string|Or null
+|reviewer_uid| string \| null |
+|review_time| RFC3339 \| null |
+|editor_uid|string \| null |
+|edition_time|RFC3339 \| null |
+|next_review_time|RFC3339 \| null|
+|validator_uid|string \| null |
+|validation_time|RFC3339 \| null|
+|review_meeting_type|string \| null|
 |creation_date|string|Creation date in RFC3339 format
 |update_date|string|Last update date in RFC3339 format
 |from|integer|Starting point (for pagination)
