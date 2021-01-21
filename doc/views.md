@@ -20,7 +20,7 @@ organization_uid|string|
 primary_medical_uid|string|Get patients having this doctor as primary
 main_program|string|Get patients having this "main program"
 name_or_surname_prefix|string|Get patients with name or surname starting with this
-size =>|string|Number of records to return (default 50)
+size|string|Number of records to return (default 50)
 
 Following fields are returned:
 
