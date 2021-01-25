@@ -63,7 +63,7 @@ name_or_surname_prefix|string|Get patients with name or surname starting with th
 device_uid|string|If provided, returns a single hub info
 cursor|string|Last seen cursor, if order=asc, or first if order=desc to provide pagination
 device_id|string|If provided, returns a single hub info
-device_id4|string|Last for digits of device_id
+device_id4|string|Last four digits of device_id
 label|string
 patient_uid|string
 office_uid|string|
