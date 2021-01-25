@@ -87,7 +87,7 @@ patient_uid|string|
 patient_time|string|
 office_uid|string|
 organization_uid|string|
-extra|string|
+extra|object|
 
 ### view_count_devicehubs
 
@@ -95,6 +95,52 @@ Similar to view_list_devicehubs, but it only counts the number of records matchi
 
 |Field|Type|Description
 |---|---|---
+patient_uid|string
+office_uid|string|
+organization_uid|string|
+
+### view_list_devices
+
+|Field|Type|Description
+|---|---|---
+device_uid|string|If provided, returns a single hub info
+cursor|string|Last seen cursor, if order=asc, or first if order=desc to provide pagination
+device_id|string|If provided, returns a single hub info
+device_id_last4|string|Last for digits of device_id
+label|string
+type|string
+patient_uid|string
+office_uid|string|
+organization_uid|string|
+size|string|Number of records to return (default 50)
+order|string|`asc` (default) or `desc`
+
+Following fields are returned:
+
+|Field|Type|Description
+|---|---|---
+device_uid|string|
+label|string|
+cursor|string|
+device_id|string|
+type|string
+status|string|
+owner_type|string|
+owner_uid|string|
+owner_time|string|
+patient_uid|string|
+patient_time|string|
+office_uid|string|
+organization_uid|string|
+extra|object|
+
+### view_count_devices
+
+Similar to view_list_devices, but it only counts the number of records matching the filter
+
+|Field|Type|Description
+|---|---|---
+type|string|
 patient_uid|string
 office_uid|string|
 organization_uid|string|
