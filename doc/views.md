@@ -68,9 +68,9 @@ cursor|string|Last seen cursor, if order=asc, or first if order=desc to provide 
 device_id|string|If provided, returns a single hub info
 device_id4|string|Last four digits of device_id
 label|string
-patient_uid|string
-office_uid|string|
-organization_uid|string|
+patient_uid|string or null
+office_uid|string or null|
+organization_uid|string or null|
 size|string|Number of records to return (default 50)
 order|string|`asc` (default) or `desc`
 
@@ -83,14 +83,14 @@ label|string|
 cursor|string|
 device_id|string|
 status|string|
-owner_type|string|
-owner_uid|string|
-owner_time|string|
+type|string
+is_synced|boolean|
+last_status|string
+last_status_time|string
 patient_uid|string|
-patient_time|string|
 office_uid|string|
 organization_uid|string|
-extra|object|
+extra|object|Includes info about patient, owner, office and device
 
 ### view_count_devicehubs
 
@@ -111,9 +111,9 @@ cursor|string|Last seen cursor, if order=asc, or first if order=desc to provide 
 device_id|string|If provided, returns a single hub info
 label|string|
 type|string|
-patient_uid|string
-office_uid|string|
-organization_uid|string|
+patient_uid|string or null
+office_uid|string or null|
+organization_uid|string or null|
 size|string|Number of records to return (default 50)
 order|string|`asc` (default) or `desc`
 
@@ -125,16 +125,16 @@ device_uid|string|
 label|string|
 cursor|string|
 device_id|string|
-type|string
 status|string|
-owner_type|string|
-owner_uid|string|
-owner_time|string|
+type|string
+is_synced|boolean|
+last_status|string
+last_status_time|string
 patient_uid|string|
-patient_time|string|
 office_uid|string|
 organization_uid|string|
-extra|object|
+extra|object|Includes info about patient, owner, office and device
+
 
 ### view_count_devices
 
