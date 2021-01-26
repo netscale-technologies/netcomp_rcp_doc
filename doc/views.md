@@ -33,12 +33,16 @@ cursor|string|To use in pagination
 full_name|string|
 ehr_id|string|
 status|string|
+birth_date|string|Date of birth
+phone|string|
+gender|string| M,F,U,O
 office_uid|string|
 organization_uid|string|
 primary_medical_uid|string|Get patients having this doctor as primary
 main_program|string|Get patients having this "main program"
 risk_factor|integer|
 devices| [object] |List of devices associated to this patient
+extra| [object] |Additional data (name, surname, programs)
 
 
 ### view_count_patients
