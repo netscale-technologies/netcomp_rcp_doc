@@ -127,9 +127,6 @@ cursor|string|
 device_id|string|
 status|string|
 type|string
-is_synced|boolean|
-last_status|string
-last_status_time|string
 patient_uid|string|
 office_uid|string|
 organization_uid|string|
