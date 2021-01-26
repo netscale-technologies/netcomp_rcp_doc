@@ -30,7 +30,6 @@ Following fields are returned:
 |---|---|---
 patient_uid|string|
 cursor|string|To use in pagination
-full_name|string|
 ehr_id|string|
 status|string|
 birth_date|string|Date of birth
