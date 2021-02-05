@@ -69,7 +69,7 @@ device_uid|string|If provided, returns a single hub info
 cursor|string|Last seen cursor, if order=asc, or first if order=desc to provide pagination
 device_id|string|If provided, returns a single hub info
 device_id4|string|Last four digits of device_id
-label|string
+label_prefix|string
 patient_uid|string or null
 office_uid|string or null|
 organization_uid|string or null|
@@ -99,6 +99,8 @@ Similar to view_list_devicehubs, but it only counts the number of records matchi
 
 |Field|Type|Description
 |---|---|---
+device_id4|string|Last four digits of device_id
+label_prefix|string
 patient_uid|string
 office_uid|string|
 organization_uid|string|
@@ -110,7 +112,7 @@ organization_uid|string|
 device_uid|string|If provided, returns a single hub info
 cursor|string|Last seen cursor, if order=asc, or first if order=desc to provide pagination
 device_id|string|If provided, returns a single hub info
-label|string|
+label_prefix|string|
 type|string|
 patient_uid|string or null
 office_uid|string or null|
@@ -141,6 +143,7 @@ Similar to view_list_devices, but it only counts the number of records matching 
 |Field|Type|Description
 |---|---|---
 type|string|
+label_prefix|string|
 patient_uid|string
 office_uid|string|
 organization_uid|string|
