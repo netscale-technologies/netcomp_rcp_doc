@@ -45,6 +45,8 @@ risk_factor|integer|
 devices| [object] |List of devices associated to this patient
 extra| [object] |Additional data (name, surname, programs)
 
+Order will be by (surname, name) in normalized form, ascending. Can be reversed with `order`
+
 
 ### view_count_patients
 
@@ -75,6 +77,8 @@ office_uid|string or null|
 organization_uid|string or null|
 size|string|Number of records to return (default 50)
 order|string|`asc` (default) or `desc`
+
+Order will be label, ascending. Can be reversed with `order`
 
 Following fields are returned:
 
@@ -135,6 +139,7 @@ office_uid|string|
 organization_uid|string|
 extra|object|Includes info about patient, owner, office and device
 
+Order will be label, ascending. Can be reversed with `order`
 
 ### view_count_devices
 
@@ -147,3 +152,42 @@ label_prefix|string|
 patient_uid|string
 office_uid|string|
 organization_uid|string|
+
+
+### view_list_orders
+
+|Field|Type|Description
+|---|---|---
+order_uid|string|If provided, returns a single patient info
+patient_uid|string|
+cursor|string|Last seen cursor, if order=asc, or first if order=desc to provide pagination
+name_or_surname_prefix|string|Get patients with name or surname starting with this
+last_status|string|
+size|string|Number of records to return (default 50)
+order|string|`asc` (default) or `desc`
+
+Following fields are returned:
+
+|Field|Type|Description
+|---|---|---
+order_uid|sting
+cursor|string|To use in pagination
+patient_uid|string|
+creation_timer|string|
+last_status|string|
+last_status_time|string|
+extra|object|Will include name, surname, address, phone and devices
+
+devices will be a list of devices including 'type' and 'units'
+
+Order will be creation time, descending. Can be reversed with `order`
+
+### view_count_orders
+
+Similar to view_list_orders, but it only counts the number of records matching the filter
+
+|Field|Type|Description
+|---|---|---
+patient_uid|string|
+name_or_surname_prefix|string|Get patients with name or surname starting with this
+last_status|string|
