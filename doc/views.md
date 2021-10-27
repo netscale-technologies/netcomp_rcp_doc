@@ -72,6 +72,7 @@ cursor|string|Last seen cursor, if order=asc, or first if order=desc to provide 
 device_id|string|If provided, returns a single hub info
 device_id4|string|Last four digits of device_id
 label_prefix|string
+has_patient|boolean|Filter devices having or not having a patient
 patient_uid|string or null
 office_uid|string or null|
 organization_uid|string or null|
@@ -105,6 +106,7 @@ Similar to view_list_devicehubs, but it only counts the number of records matchi
 |---|---|---
 device_id4|string|Last four digits of device_id
 label_prefix|string
+has_patient|boolean|Filter devices having or not having a patient
 patient_uid|string
 office_uid|string|
 organization_uid|string|
