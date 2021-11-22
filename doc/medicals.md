@@ -31,6 +31,7 @@ Spec object:
 |locale|string|N|Must be a valid locale
 |address|address|N|See bellow
 |offices|\[office]|N|See bellow
+|is_primary|boolean|N|
 |avatar|string|N|
 
 
@@ -148,7 +149,8 @@ Allows for a powerful search operation on medicals
 |timezone|string|
 |email|string|
 |in_office|binary|Filter for medicals belonging to this office
-|in_organization|binary|Filter for medicals belonging to this organization
+|in_organization|binary|Filter for medicals belonging to this organization|
+|is_primary|boolean|
 |creation_date|string|Creation date in RFC3339 format
 |update_date|string|Last update date in RFC3339 format
 |from|integer|Starting point (for pagination)
