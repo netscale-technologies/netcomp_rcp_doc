@@ -240,3 +240,59 @@ is_read|boolean|
 priority_min|integer|
 priority_max|integer|
 
+
+
+
+### view_list_observations
+
+|Field|Type|Description
+|---|---|---
+observation_uid|string|If provided, returns a single notification
+start_time|string
+type|string
+device_id|string
+device_uid|string
+device_label|string
+hub_id|string
+hub_uid|string
+hub_label|string
+patient_uid|string
+is_valid|boolean
+is_alert|boolean
+size|string|Number of records to return (default 50)
+order|string|`asc` (default) or `desc`
+
+Following fields are returned:
+
+|Field|Type|Description
+|---|---|---
+observation_uid|string
+type|string
+device_uid|string
+hub_uid|string
+patient_uid|string
+time|string
+is_valid|boolean
+is_alert|boolean
+extra|map
+
+Order will be observation's time, descending. Can be reversed with `order`
+
+
+### view_count_observations
+
+Similar to view_list_observations, but it only counts the number of records matching the filter
+
+|Field|Type|Description
+|---|---|---
+type|string
+device_id|string
+device_uid|string
+device_label|string
+hub_id|string
+hub_uid|string
+hub_label|string
+patient_uid|string
+is_valid|boolean
+is_alert|boolean
+
