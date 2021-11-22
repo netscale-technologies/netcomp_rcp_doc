@@ -204,11 +204,10 @@ last_status|string|
 |---|---|---
 notification_uid|string|If provided, returns a single notification
 topic|string|To use in pagination
+start_time|string|Minimum time if order is asc, maximum if order is desc
 is_read|boolean|
 priority_min|integer|
 priority_max|integer|
-time_max|integer|
-time_min|integer|
 size|string|Number of records to return (default 50)
 order|string|`asc` (default) or `desc`
 
@@ -236,6 +235,7 @@ Similar to view_list_notifications, but it only counts the number of records mat
 |Field|Type|Description
 |---|---|---
 topic|string|To use in pagination
+start_time|string|Minimum time if order is asc, maximum if order is desc
 is_read|boolean|
 priority_min|integer|
 priority_max|integer|
@@ -248,7 +248,7 @@ priority_max|integer|
 |Field|Type|Description
 |---|---|---
 observation_uid|string|If provided, returns a single notification
-start_time|string
+start_time|string|Minimum time if order is asc, maximum if order is desc
 type|string
 device_id|string
 device_uid|string
@@ -285,6 +285,7 @@ Similar to view_list_observations, but it only counts the number of records matc
 
 |Field|Type|Description
 |---|---|---
+start_time|string|Minimum time if order is asc, maximum if order is desc
 type|string
 device_id|string
 device_uid|string
