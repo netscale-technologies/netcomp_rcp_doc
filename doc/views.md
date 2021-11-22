@@ -193,3 +193,50 @@ Similar to view_list_orders, but it only counts the number of records matching t
 patient_uid|string|
 name_or_surname_prefix|string|Get patients with name or surname starting with this
 last_status|string|
+
+
+
+
+
+### view_list_notifications
+
+|Field|Type|Description
+|---|---|---
+notification_uid|string|If provided, returns a single notification
+topic|string|To use in pagination
+is_read|boolean|
+priority_min|integer|
+priority_max|integer|
+time_max|integer|
+time_min|integer|
+size|string|Number of records to return (default 50)
+order|string|`asc` (default) or `desc`
+
+Following fields are returned:
+
+|Field|Type|Description
+|---|---|---
+notification_uid|string
+topic|string,
+group|string
+class|string
+type|string
+priority|integer
+is_read|boolean
+time|date
+extra|map
+
+Order will be update time, descending. Can be reversed with `order`
+
+
+### view_count_notifications
+
+Similar to view_list_notifications, but it only counts the number of records matching the filter
+
+|Field|Type|Description
+|---|---|---
+topic|string|To use in pagination
+is_read|boolean|
+priority_min|integer|
+priority_max|integer|
+
