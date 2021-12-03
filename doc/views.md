@@ -249,6 +249,7 @@ priority_max|integer|
 |---|---|---
 observation_uid|string|If provided, returns a single notification
 start_time|string|Minimum time if order is asc, maximum if order is desc
+stop_time|string|Maximum time if order is asc, minimum if order is desc
 type|string
 device_id|string
 device_uid|string
@@ -259,6 +260,7 @@ hub_label|string
 patient_uid|string
 is_valid|boolean
 is_alert|boolean
+is_test|boolean
 size|string|Number of records to return (default 50)
 order|string|`asc` (default) or `desc`
 
@@ -269,11 +271,16 @@ Following fields are returned:
 observation_uid|string
 type|string
 device_uid|string
+device_type|string
+device_protocol|string
+device_label|string
 hub_uid|string
+hub_label|string
 patient_uid|string
 time|string
 is_valid|boolean
 is_alert|boolean
+is_test|boolean
 extra|map
 
 Order will be observation's time, descending. Can be reversed with `order`
@@ -286,6 +293,7 @@ Similar to view_list_observations, but it only counts the number of records matc
 |Field|Type|Description
 |---|---|---
 start_time|string|Minimum time if order is asc, maximum if order is desc
+stop_time|string|Maximum time if order is asc, minimum if order is desc
 type|string
 device_id|string
 device_uid|string
@@ -296,4 +304,5 @@ hub_label|string
 patient_uid|string
 is_valid|boolean
 is_alert|boolean
+is_test|boolean
 
