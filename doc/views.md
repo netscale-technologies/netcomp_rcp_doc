@@ -19,6 +19,7 @@ status|string|Get patients having this status
 office_uid|string|
 organization_uid|string|
 primary_medical_uid|string|Get patients having this doctor as primary
+primary_nurse_uid|string or null|Get patients having this nurse as primary
 medical_uid|string|Get patients having this doctor (any role)
 main_program|string|Get patients having this "main program"
 name_or_surname_prefix|string|Get patients with name or surname starting with this
@@ -39,6 +40,7 @@ gender|string| M,F,U,O
 office_uid|string|
 organization_uid|string|
 primary_medical_uid|string|Get patients having this doctor as primary
+primary_nurse_uid|string|Get patients having this doctor as primary
 medical_uid|string|Get patients having this doctor (any role)
 main_program|string|Get patients having this "main program"
 risk_factor|integer|
@@ -59,6 +61,7 @@ status|string|Get patients having this status
 office_uid|string|
 organization_uid|string|
 primary_medical_uid|string|Get patients having this doctor as primary
+primary_nurse_uid|string or null|Get patients having this nurse as primary
 main_program|string|Get patients having this "main program"
 name_or_surname_prefix|string|Get patients with name or surname starting with this
 
