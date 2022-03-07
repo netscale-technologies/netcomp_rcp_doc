@@ -26,6 +26,9 @@ Spec object:
 |time|string|Y|Datetime of observation
 |is_valid|boolean|N|Default true
 |is_test|boolean|N|Default false
+|reporter_uid|string|N|
+|virtual_device_id|string|N|
+|notes|string|N|**Should be used only for notes (JSON or text), not operation info**
 |meta|object|H|Additional data
 
 Returns:
