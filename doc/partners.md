@@ -116,6 +116,15 @@ Returns ok or error
 
 Allows to delete an existing partner. Same parameters as get_partner
 
+### update_partner_status
+Allows to update partner's status and status reason
+
+|Field|Type|Mandatory|Description
+|---|---|---|---
+|uid|string|Y|Unique UUID
+|status|spec|Y|Current status
+|reason|spec|Y|Reason for change
+
 
 ### search_partners
 Allows for a powerful search operation on partners
@@ -127,6 +136,7 @@ Allows for a powerful search operation on partners
 |deep|boolean|If true, will search in sub-domains
 |id|string|Actor generated id
 |name|string|User friendly description
+|status|string|Filter having this status
 |fts_name|string|See bellow
 |url|string|URL or partner or clinic website
 |phone|string|Phone
