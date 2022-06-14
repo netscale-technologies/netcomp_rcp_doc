@@ -28,6 +28,7 @@ Spec object:
 |timezone|string|N|Must be a valid timezone
 |organization_uid|string|N|UID of valid organization
 |avatar|string|N|
+|branding|string|N|Branding for hubs
 
 
 
