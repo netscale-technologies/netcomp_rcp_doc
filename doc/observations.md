@@ -139,6 +139,26 @@ Changes the status of some fields. Fields not included will be left
 |is_valid|boolean|-|
 |is_false|boolean|-|
 
+### check_observation_alerts
+
+Force the check of alerts for self-reported observations
+
+|Field|Type|Mandatory|Description
+|---|---|---|---
+|observation_uid|string|Y|
+
+
+### update_observation_notes
+
+Changes the 'notes' field of an observation
+
+|Field|Type|Mandatory|Description
+|---|---|---|---
+|observation_uid|string|Y|
+|notes|string|Y|Use a JSON
+
+
+
 
 ### make_observations_report
 
