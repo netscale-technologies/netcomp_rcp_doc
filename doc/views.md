@@ -311,3 +311,49 @@ is_valid|boolean
 is_alert|boolean
 is_test|boolean
 
+
+
+### view_list_timeslots
+
+|Field|Type|Description
+|---|---|---
+timeslot_uid|string|If provided, returns a single notification
+cursor|string|Pagination
+type|string|
+user_uid|string
+patient_uid|string
+month|string|year+month string
+size|string|Number of records to return (default 50)
+order|string|`asc` (default) or `desc`
+
+
+Following fields are returned:
+
+|Field|Type|Description
+|---|---|---
+timeslot_uid|string
+cursor|string|Pagination
+type|string|
+user_uid|string
+patient_uid|string
+month|string|year+month string
+start_time|string|
+duration|integer|In secs
+extra|map
+
+Order will be timeslots's time, descending. Can be reversed with `order`
+
+
+### view_count_timeslots
+
+Similar to view_list_timeslots, but it only counts the number of records matching the filter
+
+|Field|Type|Description
+|---|---|---
+timeslot_uid|string|If provided, returns a single notification
+type|string|
+user_uid|string
+patient_uid|string
+month|string|year+month string
+
+
