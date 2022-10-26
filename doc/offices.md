@@ -28,6 +28,7 @@ Spec object:
 |timezone|string|N|Must be a valid timezone
 |organization_uid|string|N|UID of valid organization
 |avatar|string|N|
+|branding|string|N|Branding for hubs
 
 
 
@@ -128,6 +129,14 @@ Returns ok or error
 
 Allows to delete an existing office. Same parameters as get_office
 
+### update_office_status
+Allows to update office's status and status reason
+
+|Field|Type|Mandatory|Description
+|---|---|---|---
+|uid|string|Y|Unique UUID
+|status|spec|Y|Current status
+|reason|spec|Y|Reason for change
 
 ### search_offices
 Allows for a powerful search operation on offices
@@ -141,6 +150,7 @@ Allows for a powerful search operation on offices
 |name|string|User friendly description
 |fts_name|string|See bellow
 |url|string|URL or office or clinic website
+|status|string|Filter having this status
 |phone|string|Phone
 |phone_sms|string|Phone
 |phone_mpro|string|Phone

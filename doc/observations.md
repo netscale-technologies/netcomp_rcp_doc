@@ -26,6 +26,9 @@ Spec object:
 |time|string|Y|Datetime of observation
 |is_valid|boolean|N|Default true
 |is_test|boolean|N|Default false
+|reporter_uid|string|N|
+|virtual_device_id|string|N|
+|notes|string|N|**Should be used only for notes (JSON or text), not operation info**
 |meta|object|H|Additional data
 
 Returns:
@@ -135,6 +138,26 @@ Changes the status of some fields. Fields not included will be left
 |observation_uid|string|Y|
 |is_valid|boolean|-|
 |is_false|boolean|-|
+
+### check_observation_alerts
+
+Force the check of alerts for self-reported observations
+
+|Field|Type|Mandatory|Description
+|---|---|---|---
+|observation_uid|string|Y|
+
+
+### update_observation_notes
+
+Changes the 'notes' field of an observation
+
+|Field|Type|Mandatory|Description
+|---|---|---|---
+|observation_uid|string|Y|
+|notes|string|Y|Use a JSON
+
+
 
 
 ### make_observations_report
