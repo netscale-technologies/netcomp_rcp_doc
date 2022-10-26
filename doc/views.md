@@ -19,6 +19,7 @@ status|string|Get patients having this status
 office_uid|string|
 organization_uid|string|
 primary_medical_uid|string|Get patients having this doctor as primary
+primary_nurse_uid|string or null|Get patients having this nurse as primary
 medical_uid|string|Get patients having this doctor (any role)
 main_program|string|Get patients having this "main program"
 name_or_surname_prefix|string|Get patients with name or surname starting with this
@@ -39,6 +40,7 @@ gender|string| M,F,U,O
 office_uid|string|
 organization_uid|string|
 primary_medical_uid|string|Get patients having this doctor as primary
+primary_nurse_uid|string|Get patients having this doctor as primary
 medical_uid|string|Get patients having this doctor (any role)
 main_program|string|Get patients having this "main program"
 risk_factor|integer|
@@ -59,6 +61,7 @@ status|string|Get patients having this status
 office_uid|string|
 organization_uid|string|
 primary_medical_uid|string|Get patients having this doctor as primary
+primary_nurse_uid|string or null|Get patients having this nurse as primary
 main_program|string|Get patients having this "main program"
 name_or_surname_prefix|string|Get patients with name or surname starting with this
 
@@ -206,6 +209,7 @@ notification_uid|string|If provided, returns a single notification
 topic|string|To use in pagination
 start_time|string|Minimum time if order is asc, maximum if order is desc
 is_read|boolean|
+group|string|"medical" or "staff"
 priority_min|integer|
 priority_max|integer|
 size|string|Number of records to return (default 50)
@@ -237,6 +241,7 @@ Similar to view_list_notifications, but it only counts the number of records mat
 topic|string|To use in pagination
 start_time|string|Minimum time if order is asc, maximum if order is desc
 is_read|boolean|
+group|string|"medical" or "staff"
 priority_min|integer|
 priority_max|integer|
 
@@ -249,6 +254,7 @@ priority_max|integer|
 |---|---|---
 observation_uid|string|If provided, returns a single notification
 start_time|string|Minimum time if order is asc, maximum if order is desc
+stop_time|string|Maximum time if order is asc, minimum if order is desc
 type|string
 device_id|string
 device_uid|string
@@ -259,6 +265,7 @@ hub_label|string
 patient_uid|string
 is_valid|boolean
 is_alert|boolean
+is_test|boolean
 size|string|Number of records to return (default 50)
 order|string|`asc` (default) or `desc`
 
@@ -269,11 +276,16 @@ Following fields are returned:
 observation_uid|string
 type|string
 device_uid|string
+device_type|string
+device_protocol|string
+device_label|string
 hub_uid|string
+hub_label|string
 patient_uid|string
 time|string
 is_valid|boolean
 is_alert|boolean
+is_test|boolean
 extra|map
 
 Order will be observation's time, descending. Can be reversed with `order`
@@ -286,6 +298,7 @@ Similar to view_list_observations, but it only counts the number of records matc
 |Field|Type|Description
 |---|---|---
 start_time|string|Minimum time if order is asc, maximum if order is desc
+stop_time|string|Maximum time if order is asc, minimum if order is desc
 type|string
 device_id|string
 device_uid|string
@@ -296,4 +309,51 @@ hub_label|string
 patient_uid|string
 is_valid|boolean
 is_alert|boolean
+is_test|boolean
+
+
+
+### view_list_timeslots
+
+|Field|Type|Description
+|---|---|---
+timeslot_uid|string|If provided, returns a single notification
+cursor|string|Pagination
+type|string|
+user_uid|string
+patient_uid|string
+month|string|year+month string
+size|string|Number of records to return (default 50)
+order|string|`asc` (default) or `desc`
+
+
+Following fields are returned:
+
+|Field|Type|Description
+|---|---|---
+timeslot_uid|string
+cursor|string|Pagination
+type|string|
+user_uid|string
+patient_uid|string
+month|string|year+month string
+start_time|string|
+duration|integer|In secs
+extra|map
+
+Order will be timeslots's time, descending. Can be reversed with `order`
+
+
+### view_count_timeslots
+
+Similar to view_list_timeslots, but it only counts the number of records matching the filter
+
+|Field|Type|Description
+|---|---|---
+timeslot_uid|string|If provided, returns a single notification
+type|string|
+user_uid|string
+patient_uid|string
+month|string|year+month string
+
 
