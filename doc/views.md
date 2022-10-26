@@ -376,14 +376,14 @@ Following fields are returned:
 
 |Field|Type|Description
 |---|---|---
-observation_uid|string
-type|string
-device_uid|string
-hub_uid|string
+timeslot_uid|string
+cursor|string|Pagination
+type|string|
+user_uid|string
 patient_uid|string
-time|string
-is_valid|boolean
-is_alert|boolean
+month|string|year+month string
+start_time|string|
+duration|integer|In secs
 extra|map
 
 Order will be timeslots's time, descending. Can be reversed with `order`
@@ -400,4 +400,5 @@ type|string|
 user_uid|string
 patient_uid|string
 month|string|year+month string
+
 
