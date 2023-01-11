@@ -21,6 +21,9 @@ Spec object:
 |meta|map|N|
 |test_device|boolean|N|If true, no real connection is done
 |device_is_master|boolean|N|If true, devices are copied from device and overwritten in db
+|location|string|N|To be used by Odoo
+|financially_liable|string|N|To be used by Odoo
+
 
 Returns:
 
