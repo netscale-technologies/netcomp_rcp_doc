@@ -40,6 +40,7 @@ Spec object:
 | ---- | ---- | ---- | ---- |
 | code | string | Y | ICD10 code |
 | type | string | Y | Code type|
+| text | string | N | Additional text|
 
 
 #### condition object
