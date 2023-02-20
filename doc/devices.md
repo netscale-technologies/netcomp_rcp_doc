@@ -19,6 +19,9 @@ Spec object:
 |label|string|Y|Label of device
 |status|string|N|Like "available". . OPTIONS NOT YET DEFINED
 |office_uid|string|N|Office this device is assigned to
+|location|string|N|To be used by Odoo
+|financially_liable|string|N|To be used by Odoo
+
 
 Returns:
 

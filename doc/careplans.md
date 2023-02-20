@@ -31,7 +31,17 @@ Spec object:
 |validation_time|RFC3339|N
 |review_meeting_type|string|N|One in "phone", "in-person", "videocall"
 |notes|string|N
-|conditions| [condition] string|Y|
+|codes| [code] |N|
+|conditions| [condition]|Y|
+
+#### code object
+
+| Field | Type | Mandatory | Description |
+| ---- | ---- | ---- | ---- |
+| code | string | Y | ICD10 code |
+| type | string | Y | Code type|
+| text | string | N | Additional text|
+
 
 #### condition object
 
@@ -44,6 +54,8 @@ Spec object:
 | [action_steps] | [action_step] | Y | See below |
 | [barriers] | [barrier] | Y | See below |
 | [support_tools] | [support_tool] | Y | See below |
+
+
 
 #### goal object
 
