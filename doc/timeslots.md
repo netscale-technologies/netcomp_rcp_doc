@@ -26,6 +26,7 @@ Spec object:
 |stop_time|string|N|Datetime of stopping slot (needed if no `duration_secs`)
 |duration_secs|integer|N|Duration in secs (needed if no `stop_time`)
 |tags|list of string|N|
+|program|string|
 |meta|object|N|Additional data
 
 Returns:
