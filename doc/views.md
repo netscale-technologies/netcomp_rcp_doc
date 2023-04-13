@@ -8,6 +8,115 @@ It should be very fast no matter the number of records, unless filtering means r
 For pagination, caller must repeat the query but including last "seen" cursor at `cursor` for ascending order. For descending, must provide 
 the first one.
 
+
+
+### view_list_partners
+
+|Field|Type|Description
+|---|---|---
+uid|string|If provided, returns a single object info
+status|string|Filter on status ("active" or "inactive")
+fts|string|Filter on records having this string or substrig in name, email or phone
+expand|boolean|If true, expanded fields are returned (see bellow)
+
+By default `expand` is false, and only name is returned, along with uid
+If `expand is true`, following fields are returned:
+
+
+|Field|Type|Description
+|---|---|---
+uid|stri
+name|string
+email|string
+phone|string
+status|string
+url|string
+children|integer|number of child organizations
+
+### view_count_partners
+
+Similar to view_list_partners, but it only counts the number of records matching the filter
+
+|Field|Type|Description
+|---|---|---
+status|string|Filter on status ("active" or "inactive")
+fts|string|Filter on records having this string or substring in name, email or phone
+
+
+### view_list_organizations
+
+|Field|Type|Description
+|---|---|---
+partner_uid|string|required
+uid|string|If provided, returns a single object info
+status|string|Filter on status ("active" or "inactive")
+fts|string|Filter on records having this string or substrig in name, email or phone
+expand|boolean|If true, expanded fields are returned (see bellow)
+
+By default `expand` is false, and only name is returned, along with uid
+If `expand is true`, following fields are returned:
+
+
+|Field|Type|Description
+|---|---|---
+uid|stri
+name|string
+email|string
+phone|string
+status|string
+url|string
+children|integer|number of child facilities
+partner_uid|string
+parent_name|name of partner
+
+### view_count_organizations
+
+Similar to view_list_organizations, but it only counts the number of records matching the filter
+
+|Field|Type|Description
+|---|---|---
+status|string|Filter on status ("active" or "inactive")
+fts|string|Filter on records having this string or substring in name, email or phone
+
+
+### view_list_offices
+
+|Field|Type|Description
+|---|---|---
+organization_uid|string|required
+uid|string|If provided, returns a single object info
+status|string|Filter on status ("active" or "inactive")
+fts|string|Filter on records having this string or substrig in name, email or phone
+expand|boolean|If true, expanded fields are returned (see bellow)
+
+By default `expand` is false, and only name is returned, along with uid
+If `expand is true`, following fields are returned:
+
+
+|Field|Type|Description
+|---|---|---
+uid|stri
+name|string
+email|string
+phone|string
+status|string
+url|string
+partner_uid|string
+organization_uid|string
+parent_name|name of organization
+
+### view_count_offices
+
+Similar to view_list_offices, but it only counts the number of records matching the filter
+
+|Field|Type|Description
+|---|---|---
+status|string|Filter on status ("active" or "inactive")
+fts|string|Filter on records having this string or substring in name, email or phone
+
+
+
+
 ### view_list_patients
 
 |Field|Type|Description
