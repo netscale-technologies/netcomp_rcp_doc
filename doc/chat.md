@@ -22,10 +22,7 @@ Returns array of messages. Each one containts the following fields:
 |creator_uid|string|UID of creator (patient or medical)
 |text|string|
 |type|string|either `patient` or `nurse`
-|metadata|object|see bellow
-
-Field metadata will contain different info depending on the context.
-For nurse messages, it will include field 'alias' with the name to show
+|alias|text|For nurse messages, it will include field 'alias' with the name to show
 
 
 ### patient_chat_nurse_post
@@ -40,3 +37,36 @@ Allows a medical to create a new message for a patient
 |alias|string|N|If not provided, real name will be used
 
 It returns message_uid
+
+### patient_chat_nurse_check
+
+Allows a medical to "check" a message
+
+|Field|Type|Mandatory|Description
+|---|---|---|---
+|patient_uid|string|Y|
+|medical_uid|string|Y|
+|message_uid|string|Y|
+|notification_uid|string|N|If provided, will be added to metadata
+
+### patient_chat_patient_post
+
+Allows a patient to create a new message
+
+|Field|Type|Mandatory|Description
+|---|---|---|---
+|patient_uid|string|Y|
+|text|string|Y|
+|hash|string|N
+
+It returns message_uid
+
+### patient_chat_patient_read
+
+Allows a patient to mark a message as "read"
+
+|Field|Type|Mandatory|Description
+|---|---|---|---
+|patient_uid|string|Y|
+|message_uid|string|Y|
+
