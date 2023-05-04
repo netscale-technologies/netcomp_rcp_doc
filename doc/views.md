@@ -115,6 +115,38 @@ status|string|Filter on status ("active" or "inactive")
 fts|string|Filter on records having this string or substring in name, email or phone
 
 
+### view_list_medicals
+
+|Field|Type|Description
+|---|---|---
+uid|string|If provided, returns a single object info
+status|string|Filter on status ("active" or "inactive")
+office_uid|string|Filter on this
+fts|string|Filter on records having this string or substrig in name, surname, npi or login
+cursor|string|Use las cursor to paginate
+size|integer|default 10
+Following fields are returned:
+
+|Field|Type|Description
+|---|---|---
+uid|stri
+name|string
+surname|string
+login|string
+npi|string
+status|string
+facility_uid|string
+                
+                
+### view_count_medicals
+
+Similar to view_list_medicals, but it only counts the number of records matching the filter
+
+|Field|Type|Description
+|---|---|---
+status|string|Filter on status ("active" or "inactive")
+office_uid|string|Filter on this
+fts|string|Filter on records having this string or substrig in name, surname, npi or login
 
 
 ### view_list_patients
