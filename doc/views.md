@@ -149,6 +149,43 @@ office_uid|string|Filter on this
 fts|string|Filter on records having this string or substrig in name, surname, npi or login
 
 
+
+
+### view_list_staff
+
+|Field|Type|Description
+|---|---|---
+uid|string|If provided, returns a single object info
+status|string|Filter on status ("active" or "inactive")
+office_uid|string|Filter on this
+fts|string|Filter on records having this string or substrig in name, surnam, or login
+cursor|string|Use las cursor to paginate
+size|integer|default 10
+
+Following fields are returned:
+
+|Field|Type|Description
+|---|---|---
+uid|stri
+name|string
+surname|string
+login|string
+status|string
+facility_uid|string
+                
+                
+### view_count_staff
+
+Similar to view_list_staff, but it only counts the number of records matching the filter
+
+|Field|Type|Description
+|---|---|---
+status|string|Filter on status ("active" or "inactive")
+office_uid|string|Filter on this
+fts|string|Filter on records having this string or substrig in name, surname or login
+
+
+
 ### view_list_patients
 
 |Field|Type|Description
