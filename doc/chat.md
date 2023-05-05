@@ -23,6 +23,8 @@ Returns array of messages. Each one containts the following fields:
 |text|string|
 |type|string|either `patient` or `nurse`
 |alias|text|For nurse messages, it will include field 'alias' with the name to show
+|patient_read|object or nil|it will include field 'time' if read by patient
+|nurse_check|object or nil|it will include fields 'nurse_uid' and 'time' if checked by nurse
 
 
 ### patient_chat_nurse_post
