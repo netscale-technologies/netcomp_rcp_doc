@@ -122,7 +122,8 @@ fts|string|Filter on records having this string or substring in name, email or p
 uid|string|If provided, returns a single object info
 status|string|Filter on status ("active" or "inactive")
 office_uid|string|Filter on this
-fts|string|Filter on records having this string or substrig in name, surname, npi or login
+organization_uid|string|Filter on this
+fts|string|Filter on records having this string or substrig in name, surname, npi, login, email, phone
 cursor|string|Use las cursor to paginate
 size|integer|default 10
 Following fields are returned:
@@ -136,6 +137,10 @@ login|string
 npi|string
 status|string
 facility_uid|string
+type|string
+email|string
+phone|string
+office_name|string
                 
                 
 ### view_count_medicals
@@ -146,8 +151,8 @@ Similar to view_list_medicals, but it only counts the number of records matching
 |---|---|---
 status|string|Filter on status ("active" or "inactive")
 office_uid|string|Filter on this
-fts|string|Filter on records having this string or substrig in name, surname, npi or login
-
+organization_uid|string|Filter on this
+fts|string|Filter on records having this string or substrig in name, surname, npi, login, email, phone
 
 
 
@@ -158,8 +163,8 @@ fts|string|Filter on records having this string or substrig in name, surname, np
 uid|string|If provided, returns a single object info
 status|string|Filter on status ("active" or "inactive")
 office_uid|string|Filter on this
-fts|string|Filter on records having this string or substrig in name, surnam, or login
-cursor|string|Use las cursor to paginate
+organization_uid|string|Filter on this
+fts|string|Filter on records having this string or substrig in name, surname, npi, login, email, phone
 size|integer|default 10
 
 Following fields are returned:
@@ -172,7 +177,11 @@ surname|string
 login|string
 status|string
 facility_uid|string
-                
+type|string
+email|string
+phone|string
+office_name|string
+      
                 
 ### view_count_staff
 
@@ -182,8 +191,8 @@ Similar to view_list_staff, but it only counts the number of records matching th
 |---|---|---
 status|string|Filter on status ("active" or "inactive")
 office_uid|string|Filter on this
-fts|string|Filter on records having this string or substrig in name, surname or login
-
+organization_uid|string|Filter on this
+fts|string|Filter on records having this string or substrig in name, surname, npi, login, email, phone
 
 
 ### view_list_patients
