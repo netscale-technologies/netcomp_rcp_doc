@@ -75,6 +75,39 @@ Metadata description:
 ### update_timeslot
 Timeslots _cannot_ be updated
 
+### user_update_timeslot
+This API can be used to update partially a timeslot
+
+|Field|Type|Mandatory|Description
+|---|---|---|---
+|uid|string|Y|UID of timeslot
+|user_uid|string|Y|User updating it
+|reason|string|Y|Reason for the update
+|spec|object|Y|A subset of fields can be updated (see bellow)
+
+Fields in spec that can be updated are:
+* description
+* start_time
+* stop_time
+* duration_secs
+* tags
+* program
+* meta
+
+To change the duration of the timeslots, fields start_time+duration_secs or start_time+stop_time must be provided
+
+Meta will **replace** the previous meta, so read it first and add fields if needed
+If the operation is successful, following fields will be added to meta:
+
+* is_updated: true
+* updater_uid: (provided by you)
+* updater_reason: (provided by you)
+
+Also, a new event with resource `timeslots` and type `user_update` will be fired with following fields:
+* user_uid
+* reason
+* new_spec
+
 
 ### delete_timeslot
 
