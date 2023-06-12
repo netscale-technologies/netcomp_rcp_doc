@@ -402,7 +402,6 @@ Allows to list "values" (big data readings) for a patient
 |type|string|Y|Type of the reading (currently only "glucose_est")
 |start_date|datetime|N
 |stop_date|datetime|N
-|cursor|string|Include it for pagination
 |size|integer|0-1000
 
 ### patient_count_values
@@ -429,7 +428,6 @@ Allows to list "summaries" (daily readings) for a patient
 |type|string|Y|Type of the reading (currently only "sleep_sum", "activity_sum", "heart_var_sum", "breath_sum", "spo2_sum"
 |start_date|datetime|N
 |stop_date|datetime|N
-|cursor|string|Include it for pagination
 |size|integer|0-1000
 
 ### patient_count_summaries
