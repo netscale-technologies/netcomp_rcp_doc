@@ -11,7 +11,8 @@ Performs a login and creates a new token
 |---|---|---|---
 |login|string|Y|Login of user. Mandatory if no token
 |password|string|Y|Mandatory if login is present
-|device|N|Device identification
+|device|Y|Device identification
+|push|N|Optional push object. See bellow
 
 A new token for new logins from the same device, deleting old token if present
 
@@ -39,6 +40,10 @@ Alternatively, you can login using an existing token:
 In this case, no new token will be generated, but the session will be authenticated as per the user this token belongs to. 
 
 You can also use the static _admin token_ from the the server, which allows any operation to be performed on the server without restrictions. 
+
+#### Push
+
+Login process allows to set up push information. To use it, `device` must idetify the unique app to receive the push, and field `push` must be an object containing two fields: `class` (a string to identify the class provider, must be supported in core before using it) and `data` containing an object to be sent to the push provider.
 
 
 ### logout
