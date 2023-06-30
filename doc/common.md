@@ -11,10 +11,11 @@ Performs a login and creates a new token
 |---|---|---|---
 |login|string|Y|Login of user. Mandatory if no token
 |password|string|Y|Mandatory if login is present
-|device|Y|Device identification
+|device|N|Device identification
 |push|N|Optional push object. See bellow
 
-A new token for new logins from the same device, deleting old token if present
+A new token for new logins from the same device, deleting old token if present.
+Token will be generated only if device is provided. Otherwhise, it will appear for compatibility but it will be invalid.
 
 If successful, replies:
 
@@ -43,7 +44,11 @@ You can also use the static _admin token_ from the the server, which allows any 
 
 #### Push
 
-Login process allows to set up push information. To use it, `device` must idetify the unique app to receive the push, and field `push` must be an object containing two fields: `class` (a string to identify the class provider, must be supported in core before using it) and `data` containing an object to be sent to the push provider.
+Login process allows to set up push information. To use it, `device` must idetify the unique app to receive the push, and field `push` must be an object containing followig fields:
+
+|Field|Type|Mandatory|Description
+|---|---|---|---
+|class|string|Y|Currently only `patient_app` is supported
 
 
 ### logout
