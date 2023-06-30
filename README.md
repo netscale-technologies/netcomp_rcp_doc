@@ -64,6 +64,7 @@ Commands available (all with cmd prefix `rcp/v1a1/`)
 * [Orders](doc/orders.md)
 * [Chat](doc/chat.md)
 * [Views](doc/views.md)
+* [Push](doc/push.md)
 
 
 
