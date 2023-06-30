@@ -10,7 +10,7 @@ This API allows to send a push to a registered application (see [login](common.m
 
 |Field|Type|Mandatory|Description
 |---|---|---|---
-|member_uid|string|Y|Target of push
+|member_uid|string|N|Target of push. If provided, currently connected user will be used
 |title|string|Y|
 |body|spec|Y|
 
