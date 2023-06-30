@@ -6,7 +6,7 @@
 
 ### send_push
 
-This API allows to send a push to a registered application (see login section)
+This API allows to send a push to a registered application (see [login](common.md#login) section)
 
 |Field|Type|Mandatory|Description
 |---|---|---|---
