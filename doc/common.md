@@ -50,6 +50,25 @@ Login process allows to set up push information. To use it, `device` must idetif
 |---|---|---|---
 |class|string|Y|Currently only `patient_app` is supported
 
+#### JWT
+
+You can now also login using a Keycloak Oauth token.
+Then token must be signed by the Keycloak sitting in same environment, and must include two claims:
+
+* preferred username (included by default)
+* rcp-core-ui: You must configure your client with a "Mapper" that adds attribute "rcp-core-uid" from patient into a claim with the same name
+
+Then you can use the format:
+
+|Field|Type|Mandatory|Description
+|---|---|---|---
+|jwt|string|Y|Keycloak token
+|device|N|Device identification
+|push|N|Optional push object. See above
+
+For now, core will be generating a new token working the same than classical login. **This will probably be dropped in the near future.**
+
+
 
 ### logout
 Performs a logout and removes token
