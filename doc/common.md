@@ -63,8 +63,8 @@ Then you can use the format:
 |Field|Type|Mandatory|Description
 |---|---|---|---
 |jwt|string|Y|Keycloak token
-|device|N|Device identification
-|push|N|Optional push object. See above
+|device|string|N|Device identification
+|push|object|N|Optional push object. See above
 
 For now, core will be generating a new token working the same than classical login. **This will probably be dropped in the near future.**
 
