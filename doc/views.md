@@ -526,8 +526,9 @@ type|string|
 user_uid|string
 patient_uid|string
 month|string|year+month string
+start_time|string|starting time to consider
+stop_time|string|stoppping time to coniser
 size|string|Number of records to return (default 50)
-order|string|`asc` (default) or `desc`
 
 
 Following fields are returned:
@@ -544,7 +545,7 @@ start_time|string|
 duration|integer|In secs
 extra|map
 
-Order will be timeslots's time, descending. Can be reversed with `order`
+Order will be timeslots's time, descending. 
 
 
 ### view_count_timeslots
@@ -558,6 +559,9 @@ type|string|
 user_uid|string
 patient_uid|string
 month|string|year+month string
+start_time|string|starting time to consider
+stop_time|string|stoppping time to coniser
+
 
 
 
