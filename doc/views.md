@@ -560,7 +560,21 @@ user_uid|string
 patient_uid|string
 month|string|year+month string
 start_time|string|starting time to consider
-stop_time|string|stoppping time to coniser
+stop_time|string|stoppping time to consider
+
+### view_report_timeslots
+
+Similar to view_list_timeslots, but it focuses on a single patient and a period maximum of a month
+
+|Field|Type|Description
+|---|---|---
+patient_uid|string (mandatory)
+start_time|string|starting time to consider (madnatory)
+stop_time|string|stoppping time to consider (mandatory)
+type|string|
+user_uid|string
+
+
 
 
 
