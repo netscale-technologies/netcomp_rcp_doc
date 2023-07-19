@@ -397,8 +397,6 @@ topic|string|To use in pagination
 start_time|string|Minimum time if order is asc, maximum if order is desc
 is_read|boolean|
 group|string|"medical" or "staff"
-priority_min|integer|
-priority_max|integer|
 size|string|Number of records to return (default 50)
 order|string|`asc` (default) or `desc`
 
@@ -432,8 +430,15 @@ group|string|"medical" or "staff"
 priority_min|integer|
 priority_max|integer|
 
+### view_list_notifications_readings
 
+Previous APIs exclude notifications with type 'patient_device_reading'. This isa specific API to return them
 
+|Field|Type|Description
+|---|---|---
+topic|string|To use in pagination
+start_time|string|Minimum time if order is asc, maximum if order is desc
+size|string|Number of records to return (default 50)
 
 ### view_list_observations
 
