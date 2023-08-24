@@ -3,7 +3,7 @@
 
 ## Summaries
 
-### insert_value
+### insert_summary
 Inserts a new 'summary' reading
 
 A 'summary' reading is intended for data meant to be stored only once per day. A date must be provided, and any previous reading with same class, type and date will be over written.
