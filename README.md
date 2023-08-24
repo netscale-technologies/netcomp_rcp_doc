@@ -66,6 +66,7 @@ Commands available (all with cmd prefix `rcp/v1a1/`)
 * [Views](doc/views.md)
 * [Push](doc/push.md)
 * [Values](doc/values.md)
+* [Summaries](doc/summaries.md)
 
 
 
