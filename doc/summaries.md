@@ -18,6 +18,9 @@ A 'summary' reading is intended for data meant to be stored only once per day. A
 |reading|map|Y|Reading itself. It should use standard format
 |extra|map|N|Extra information related to reading
 
+Returns:
+
+
 |Field|Type|Description
 |---|---|---
 |uid|string|UID of the created value
