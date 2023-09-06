@@ -396,6 +396,7 @@ notification_uid|string|If provided, returns a single notification
 topic|string|To use in pagination
 start_time|string|Minimum time if order is asc, maximum if order is desc
 is_read|boolean|
+type| "alerts|todos|all" | Default is "alerts"
 group|string|"medical" or "staff"
 size|string|Number of records to return (default 50)
 order|string|`asc` (default) or `desc`
@@ -426,6 +427,7 @@ Similar to view_list_notifications, but it only counts the number of records mat
 topic|string|To use in pagination
 start_time|string|Minimum time if order is asc, maximum if order is desc
 is_read|boolean|
+type| "alerts|todos|all" | Default is "alerts"
 group|string|"medical" or "staff"
 priority_min|integer|
 priority_max|integer|
