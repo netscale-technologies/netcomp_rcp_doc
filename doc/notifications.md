@@ -116,6 +116,19 @@ Returns ok or error
 Allows to delete an existing notification. Same parameters as get_notification.
 
 
+### medical_alert
+
+Sends a notification to the whole medical group of a patient
+
+|Field|Type|Mandatory|Description
+|---|---|---|---
+|patient_uid|string|Y|
+|class|string|Y|
+|type|spec|Y|
+|meta|object|Y|
+
+
+
 ### search_notifications
 Allows for a powerful search operation on notifications. This api can however produce non optimal queries on the server, use `list_notification_by_time` and `list_notification_by_priority`
 
