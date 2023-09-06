@@ -8,6 +8,193 @@ It should be very fast no matter the number of records, unless filtering means r
 For pagination, caller must repeat the query but including last "seen" cursor at `cursor` for ascending order. For descending, must provide 
 the first one.
 
+
+
+### view_list_partners
+
+|Field|Type|Description
+|---|---|---
+uid|string|If provided, returns a single object info
+status|string|Filter on status ("active" or "inactive")
+fts|string|Filter on records having this string or substrig in name, email or phone
+expand|boolean|If true, expanded fields are returned (see bellow)
+
+By default `expand` is false, and only name is returned, along with uid
+If `expand is true`, following fields are returned:
+
+
+|Field|Type|Description
+|---|---|---
+uid|stri
+name|string
+email|string
+phone|string
+status|string
+url|string
+children|integer|number of child organizations
+
+### view_count_partners
+
+Similar to view_list_partners, but it only counts the number of records matching the filter
+
+|Field|Type|Description
+|---|---|---
+status|string|Filter on status ("active" or "inactive")
+fts|string|Filter on records having this string or substring in name, email or phone
+
+
+### view_list_organizations
+
+|Field|Type|Description
+|---|---|---
+partner_uid|string|required
+uid|string|If provided, returns a single object info
+status|string|Filter on status ("active" or "inactive")
+fts|string|Filter on records having this string or substrig in name, email or phone
+expand|boolean|If true, expanded fields are returned (see bellow)
+
+By default `expand` is false, and only name is returned, along with uid
+If `expand is true`, following fields are returned:
+
+
+|Field|Type|Description
+|---|---|---
+uid|stri
+name|string
+email|string
+phone|string
+status|string
+url|string
+children|integer|number of child facilities
+partner_uid|string
+parent_name|name of partner
+
+### view_count_organizations
+
+Similar to view_list_organizations, but it only counts the number of records matching the filter
+
+|Field|Type|Description
+|---|---|---
+status|string|Filter on status ("active" or "inactive")
+fts|string|Filter on records having this string or substring in name, email or phone
+
+
+### view_list_offices
+
+|Field|Type|Description
+|---|---|---
+organization_uid|string|required
+uid|string|If provided, returns a single object info
+status|string|Filter on status ("active" or "inactive")
+fts|string|Filter on records having this string or substrig in name, email or phone
+expand|boolean|If true, expanded fields are returned (see bellow)
+
+By default `expand` is false, and only name is returned, along with uid
+If `expand is true`, following fields are returned:
+
+
+|Field|Type|Description
+|---|---|---
+uid|stri
+name|string
+email|string
+phone|string
+status|string
+url|string
+partner_uid|string
+organization_uid|string
+parent_name|name of organization
+
+### view_count_offices
+
+Similar to view_list_offices, but it only counts the number of records matching the filter
+
+|Field|Type|Description
+|---|---|---
+status|string|Filter on status ("active" or "inactive")
+fts|string|Filter on records having this string or substring in name, email or phone
+
+
+### view_list_medicals
+
+|Field|Type|Description
+|---|---|---
+uid|string|If provided, returns a single object info
+status|string|Filter on status ("active" or "inactive")
+office_uid|string|Filter on this
+organization_uid|string|Filter on this
+fts|string|Filter on records having this string or substrig in name, surname, npi, login, email, phone
+cursor|string|Use las cursor to paginate
+size|integer|default 10
+Following fields are returned:
+
+|Field|Type|Description
+|---|---|---
+uid|stri
+name|string
+surname|string
+login|string
+npi|string
+status|string
+facility_uid|string
+type|string
+email|string
+phone|string
+office_name|string
+                
+                
+### view_count_medicals
+
+Similar to view_list_medicals, but it only counts the number of records matching the filter
+
+|Field|Type|Description
+|---|---|---
+status|string|Filter on status ("active" or "inactive")
+office_uid|string|Filter on this
+organization_uid|string|Filter on this
+fts|string|Filter on records having this string or substrig in name, surname, npi, login, email, phone
+
+
+
+### view_list_staff
+
+|Field|Type|Description
+|---|---|---
+uid|string|If provided, returns a single object info
+status|string|Filter on status ("active" or "inactive")
+office_uid|string|Filter on this
+organization_uid|string|Filter on this
+fts|string|Filter on records having this string or substrig in name, surname, npi, login, email, phone
+size|integer|default 10
+
+Following fields are returned:
+
+|Field|Type|Description
+|---|---|---
+uid|stri
+name|string
+surname|string
+login|string
+status|string
+facility_uid|string
+type|string
+email|string
+phone|string
+office_name|string
+      
+                
+### view_count_staff
+
+Similar to view_list_staff, but it only counts the number of records matching the filter
+
+|Field|Type|Description
+|---|---|---
+status|string|Filter on status ("active" or "inactive")
+office_uid|string|Filter on this
+organization_uid|string|Filter on this
+fts|string|Filter on records having this string or substrig in name, surname, npi, login, email, phone
+
+
 ### view_list_patients
 
 |Field|Type|Description
@@ -209,9 +396,8 @@ notification_uid|string|If provided, returns a single notification
 topic|string|To use in pagination
 start_time|string|Minimum time if order is asc, maximum if order is desc
 is_read|boolean|
+class| alerts, todos or all| Default is "alerts"
 group|string|"medical" or "staff"
-priority_min|integer|
-priority_max|integer|
 size|string|Number of records to return (default 50)
 order|string|`asc` (default) or `desc`
 
@@ -241,12 +427,20 @@ Similar to view_list_notifications, but it only counts the number of records mat
 topic|string|To use in pagination
 start_time|string|Minimum time if order is asc, maximum if order is desc
 is_read|boolean|
+class | alerts, todos or all| Default is "alerts"
 group|string|"medical" or "staff"
 priority_min|integer|
 priority_max|integer|
 
+### view_list_notifications_readings
 
+Previous APIs exclude notifications with type 'patient_device_reading'. This isa specific API to return them
 
+|Field|Type|Description
+|---|---|---
+topic|string|To use in pagination
+start_time|string|Minimum time if order is asc, maximum if order is desc
+size|string|Number of records to return (default 50)
 
 ### view_list_observations
 
@@ -339,8 +533,9 @@ type|string|
 user_uid|string
 patient_uid|string
 month|string|year+month string
+start_time|string|starting time to consider
+stop_time|string|stoppping time to coniser
 size|string|Number of records to return (default 50)
-order|string|`asc` (default) or `desc`
 
 
 Following fields are returned:
@@ -357,7 +552,7 @@ start_time|string|
 duration|integer|In secs
 extra|map
 
-Order will be timeslots's time, descending. Can be reversed with `order`
+Order will be timeslots's time, descending. 
 
 
 ### view_count_timeslots
@@ -371,6 +566,23 @@ type|string|
 user_uid|string
 patient_uid|string
 month|string|year+month string
+start_time|string|starting time to consider
+stop_time|string|stoppping time to consider
+
+### view_report_timeslots
+
+Similar to view_list_timeslots, but it focuses on a single patient and a period maximum of a month
+
+|Field|Type|Description
+|---|---|---
+patient_uid|string (mandatory)
+start_time|string|starting time to consider (madnatory)
+stop_time|string|stoppping time to consider (mandatory)
+type|string|
+user_uid|string
+
+
+
 
 
 

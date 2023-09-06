@@ -12,8 +12,10 @@ Performs a login and creates a new token
 |login|string|Y|Login of user. Mandatory if no token
 |password|string|Y|Mandatory if login is present
 |device|N|Device identification
+|push|N|Optional push object. See bellow
 
-A new token for new logins from the same device, deleting old token if present
+A new token for new logins from the same device, deleting old token if present.
+Token will be generated only if device is provided. Otherwhise, it will appear for compatibility but it will be invalid.
 
 If successful, replies:
 
@@ -39,6 +41,33 @@ Alternatively, you can login using an existing token:
 In this case, no new token will be generated, but the session will be authenticated as per the user this token belongs to. 
 
 You can also use the static _admin token_ from the the server, which allows any operation to be performed on the server without restrictions. 
+
+#### Push
+
+Login process allows to set up push information. To use it, `device` must idetify the unique app to receive the push, and field `push` must be an object containing followig fields:
+
+|Field|Type|Mandatory|Description
+|---|---|---|---
+|class|string|Y|Currently only `patient_app` is supported
+
+#### JWT
+
+You can now also login using a Keycloak Oauth token.
+Then token must be signed by the Keycloak sitting in same environment, and must include two claims:
+
+* preferred username (included by default)
+* rcp-core-ui: You must configure your client with a "Mapper" that adds attribute "rcp-core-uid" from patient into a claim with the same name
+
+Then you can use the format:
+
+|Field|Type|Mandatory|Description
+|---|---|---|---
+|jwt|string|Y|Keycloak token
+|device|string|N|Device identification
+|push|object|N|Optional push object. See above
+
+For now, core will be generating a new token working the same than classical login. **This will probably be dropped in the near future.**
+
 
 
 ### logout
