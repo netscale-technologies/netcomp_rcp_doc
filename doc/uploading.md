@@ -64,7 +64,7 @@ You must provide the same parameters for above method.
 
 ### Direct API call
 
-You can also create files using the proxy's API call `upload_file`, however this is not yet implemented
+You can also create files using the proxy's API call `upload_file` see (see [Files](files.md))
 
 
 ## Downloading
