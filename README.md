@@ -81,3 +81,8 @@ Available APIs:
 
 * GET /test
 * GET /report_sample_data
+
+## File uploading
+
+To upload files to the platform, see [Uploading](doc/uploading.md)
+
