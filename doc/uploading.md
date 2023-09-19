@@ -7,7 +7,7 @@
 with the database (but size is limited to 16KB)
 * When uploaded to amazon, files are stored in the following S3 buckets. File name will be the same as returned UID
 * There is currently no security implementation yet, so anyone can upload and download files (if they know the file UID)
-* Once the file is uploaded, there are a number of APIs available to interact with them (see [Files](doc/files.md))
+* Once the file is uploaded, there are a number of APIs available to interact with them (see [Files](files.md))
 
 |env|bucket
 |---|---
