@@ -19,9 +19,9 @@ Base endpoints for uploading/downloadings are:
 
 |env|base
 |---|---
-|dev|https://files-dev.nk.rcp.care
-|qa|https://files-dev.nk.rcp.care
-|prod|https://files.nk.rcp.care
+|dev|https://upload-dev.nk.rcp.care
+|qa|https://upload-qa.nk.rcp.care
+|prod|https://upload.nk.rcp.care
 
 
 ## Uploading
