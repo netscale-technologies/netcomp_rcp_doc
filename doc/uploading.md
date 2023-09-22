@@ -49,7 +49,7 @@ Example of file upload with curl:
 
 ```
 curl -v \
---data-binary @~/Downloads/programming-phoenix-liveview_B9.0.pdf \
+--data-binary @my_file.pdf \
 -H "Content-Type: application/pdf" \
 https://files-dev.nk.rcp.care/upload?class=test&parent_uid=123
 ```
@@ -62,9 +62,25 @@ using header `content-type: multipart/form-data; boundary=...`  (using RFC2388, 
 Only one file is allowed per request. Standard variables `name` and `filename`, if provided in header `content-disposition` will be stored along with file's data.
 You must provide the same parameters for above method.
 
+Example of file upload with curl using multipart
+
+```
+curl -v \
+-F upload=@my_file.pdf \
+-H "Content-Type: application/pdf" \
+https://files-dev.nk.rcp.care/upload?class=test&parent_uid=123
+```
+
 ### Direct API call
 
 You can also create files using the proxy's API call `upload_file` see (see [Files](files.md))
+
+### Currenyly supported Class and Type
+
+class|type
+---|---
+test|test
+
 
 
 ## Downloading
@@ -76,6 +92,11 @@ To download a file, you must perform a GET request to (base)/download/(file_uid)
 * File will be found, decrypted, hash checked and included in get's response as body
 * Headers `content-type` and `content-type` will be populated
 
+Example of file upload with curl using multipart
+
+```
+curl -o my_file.pdf https://files-dev.nk.rcp.care/download/(UID)
+```
 
 
 
