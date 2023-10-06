@@ -396,8 +396,10 @@ notification_uid|string|If provided, returns a single notification
 topic|string|To use in pagination
 start_time|string|Minimum time if order is asc, maximum if order is desc
 is_read|boolean|
-class| alerts, todos or all| Default is "alerts"
+mode| alerts, todos or all| Default is "alerts"
 group|string|"medical" or "staff"
+class|string
+type|string
 size|string|Number of records to return (default 50)
 order|string|`asc` (default) or `desc`
 
@@ -427,12 +429,14 @@ Similar to view_list_notifications, but it only counts the number of records mat
 topic|string|To use in pagination
 start_time|string|Minimum time if order is asc, maximum if order is desc
 is_read|boolean|
-class | alerts, todos or all| Default is "alerts"
+mode| alerts, todos or all| Default is "alerts"
 group|string|"medical" or "staff"
+class|string
+type|string
 priority_min|integer|
 priority_max|integer|
 
-### view_list_notifications_readings
+### view_list_notifications_readings (DEPRECATED)
 
 Previous APIs exclude notifications with type 'patient_device_reading'. This isa specific API to return them
 
