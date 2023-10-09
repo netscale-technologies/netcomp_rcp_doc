@@ -132,7 +132,7 @@ Sends a notification to the whole medical group of a patient
 |---|---|---|---
 |patient_uid|string|Y|
 |class|string|Y|
-|type|spec|Y|
+|type|string|Y|
 |meta|object|Y|
 
 ### medical_todo
@@ -143,7 +143,7 @@ Sends a todo to the whole medical group of a patient
 |---|---|---|---
 |patient_uid|string|Y|
 |class|string|Y|
-|type|spec|Y|
+|type|string|Y|
 |meta|object|Y|
 
 ### search_notifications
