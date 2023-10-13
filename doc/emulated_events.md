@@ -77,3 +77,25 @@ All events follow the same format, with followig fields:
 * type will be `deleted`
 
 ## Patient Calls  
+
+An event will be generated when a call is finished:
+
+* resource is `patient_calls`
+* type is `updated`
+* target is call's uid
+* data is:
+
+```javascript
+{
+  "status": "finished",
+  "patient_uid": "<patient_uid>",
+  "user_uid": "<caller_uid>",
+  "program": "<program>",
+  "start_time": "<call start time>",
+  "duration_secs": "<call duration in secs>",
+  "call_id": "<COMM engine call id>"
+}
+            
+
+
+
