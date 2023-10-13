@@ -87,3 +87,7 @@ Available APIs:
 
 To upload files to the platform, see [Uploading](doc/uploading.md)
 
+## Events
+
+Documenation for [V1 Emulated Events](doc/emulated_events.md)
+
