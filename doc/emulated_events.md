@@ -95,7 +95,17 @@ An event will be generated when a call is finished:
   "duration_secs": "<call duration in secs>",
   "call_id": "<COMM engine call id>"
 }
-            
+```
+
+## Careplans
+
+An event will be generated when a careplan is created, updated or deleted
+
+* resource is `careplans`
+* type is `create`, `update` or `delete`
+* target is carenplan's uid
+* data will include "spec" with updated careplan spec
+
 
 
 
