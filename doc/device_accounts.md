@@ -66,7 +66,18 @@ Finds an existing devide account with this external_id. Returned fields will be 
 
 ### device_account_find_by_patient
 
-Finds all existing devce accounts for this partient. Returned fields will include "items" with a list of objects as above
+Finds all existing devce accounts for this patient. Returned fields will include "items" with a list of objects as above
 |Field|Type|Mandatory|Description
 |---|---|---|---
 |patient_uid|string|Y|
+
+
+### device_account_find_by_patient_group
+
+Specialized call to finds all existing devce accounts for one or more partients. 
+
+|Field|Type|Mandatory|Description
+|---|---|---|---
+|patient_uids|list of string|Y|
+
+It will return field "patients" with a map, one key for each patient, and for each one a list of objects including fields uid, class, is_authorized and devices.
