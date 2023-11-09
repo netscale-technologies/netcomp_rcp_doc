@@ -68,6 +68,7 @@ Commands available (all with cmd prefix `rcp/v1a1/`)
 * [Values](doc/values.md)
 * [Summaries](doc/summaries.md)
 * [Files](doc/files.md)
+* [DeviceAccounts](doc/device_accounts.md)
 
 
 
