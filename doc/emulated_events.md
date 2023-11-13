@@ -106,6 +106,147 @@ An event will be generated when a careplan is created, updated or deleted
 * target is carenplan's uid
 * data will include "spec" with updated careplan spec
 
+## Orders
+
+An event will be generated when an order is created, updated, deleted or its status is updated
+
+* resource is `orders`
+* target is ordcer's uid
+
+### create sample
+
+```javascript
+{                                                                                                              
+  "group": "rcp-v2",
+  "date": "2023-11-13T15:20:43.090222Z",
+  "metadata": {
+    "trace_id": "372a734e1c783f5d"
+  },
+  "namespace": "",
+  "resource": "orders",
+  "target": "order-1hf4kah7lCjbgdut2SthClv4Ccq",
+  "type": "updated",
+  "uid": "1HF4KAIAI-2PEP6EY02KINA1FEBV",
+  "data": {                                                                                                    
+    "spec": {                                                                                                  
+      "address": {                                                                                             
+        "street": "calle1"                                                                                     
+      },                                                                                                       
+      "devices": [
+        {
+          "type": "t1",
+          "units": 2
+        }
+      ],
+      "email": "carlosj.gf@gmail.com",
+      "locale": "es",
+      "meta": {
+        "a": 2
+      },
+      "name": "name1",
+      "patient_uid": "patients-016d96379484Aaib3ZrYEjceD27",
+      "phone": "1234567890",
+      "phone_sms": "14354126330",
+      "surname": "González Florido",
+      "timezone": "Europe/Madrid"
+    },
+    "status": {
+      "last_status": "created",
+      "last_status_time": "2023-11-13T15:20:41.973638Z"
+    }
+  },
+}
+```
+
+### update sample
+
+```javascript
+{                                                                                                              
+  "group": "rcp-v2",
+  "date": "2023-11-13T15:20:43.090222Z",
+  "metadata": {
+    "trace_id": "372a734e1c783f5d"
+  },
+  "namespace": "",
+  "resource": "orders",
+  "target": "order-1hf4kah7lCjbgdut2SthClv4Ccq",
+  "type": "updated",
+  "uid": "1HF4KAIAI-2PEP6EY02KINA1FEBV",
+  "data": {                                                                                                    
+    "spec": {                                                                                                  
+      "address": {                                                                                             
+        "street": "calle1"                                                                                     
+      },                                                                                                       
+      "devices": [
+        {
+          "type": "t1",
+          "units": 2
+        }
+      ],
+      "email": "carlosj.gf@gmail.com",
+      "locale": "es",
+      "meta": {
+        "a": 2
+      },
+      "name": "name1",
+      "patient_uid": "patients-016d96379484Aaib3ZrYEjceD27",
+      "phone": "1234567890",
+      "phone_sms": "14354126330",
+      "surname": "González Florido",
+      "timezone": "Europe/Madrid"
+    },
+    "status": {
+      "last_status": "created",
+      "last_status_time": "2023-11-13T15:20:41.973638Z"
+    }
+  }
+}
+```
+
+### status update sample
+
+```javascript
+{                                                                                                              
+  "group": "rcp-v2",
+  "date": "2023-11-13T15:20:44.108768Z",
+  "metadata": {
+    "trace_id": "399d8f9bef927b3a"
+  },
+  "namespace": "",
+  "resource": "orders",
+  "target": "order-1hf4kah7lCjbgdut2SthClv4Ccq",
+  "type": "status_updated",
+  "uid": "1HF4KAJAC-958O1IB9INWGSRZFNV",
+  "data": {                                                                                                    
+    "status": {                                                                                 
+      "last_status": "created",
+      "last_status_time": "2023-11-13T15:20:41.973638Z"
+    }
+  }
+}
+```
+
+### delete sample
+
+```javascript
+{                                                                                                              
+  "group": "rcp-v2",
+  "metadata": {
+    "trace_id": "7deaf83c6548fb79"
+  },
+  "namespace": "",
+  "resource": "orders",
+  "target": "order-1hf4kah7lCjbgdut2SthClv4Ccq",
+  "type": "deleted",
+  "uid": "1HF4KAKUG-MK4LHB7IYAGK428I56",
+  "data": {},                                                                                             
+  "date": "2023-11-13T15:20:45.776276Z"
+}
+```
+
+
+
+
 
 
 
