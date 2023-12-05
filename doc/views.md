@@ -539,10 +539,10 @@ patient_uid|string
 month|string|year+month string
 start_time|string|starting time to consider
 stop_time|string|stoppping time to coniser
-visible|boolean|See bellow
+invisible|boolean|See bellow
 size|string|Number of records to return (default 50)
 
-By default, both visible and invisible entries will be returned. You can focus on any of them using 'visible' parameter
+By default, both visible and invisible entries will be returned. You can focus on any of them using 'invisible' parameter
 
 
 Following fields are returned:
@@ -557,7 +557,7 @@ patient_uid|string
 month|string|year+month string
 start_time|string|
 duration|integer|In secs
-visible|boolean|See bellow
+invisible|boolean|See bellow
 extra|map
 
 Order will be timeslots's time, descending. 
@@ -576,9 +576,9 @@ patient_uid|string
 month|string|year+month string
 start_time|string|starting time to consider
 stop_time|string|stoppping time to consider
-visible|boolean|See bellow
+invisible|boolean|See bellow
 
-By default, both visible and invisible entries will be added. You can focus on any of them using 'visible' parameter
+By default, both visible and invisible entries will be added. You can focus on any of them using 'invisible' parameter
 
 
 ### view_report_timeslots
