@@ -592,6 +592,8 @@ start_time|string|starting time to consider (madnatory)
 stop_time|string|stoppping time to consider (mandatory)
 type|string|
 user_uid|string
+invisible|boolean|See bellow
+
 
 
 
