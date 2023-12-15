@@ -200,7 +200,7 @@ fts|string|Filter on records having this string or substrig in name, surname, np
 |Field|Type|Description
 |---|---|---
 patient_uid|string|If provided, returns a single patient info
-cursor|string|Last seen cursor, if order=asc, or first if order=desc to provide pagination
+cursor|string|Last seen cursor
 ehr_id_prefix|string|Get patients with ehr_id starting with this. Very fast, since it has specific index for it.
 status|string|Get patients having this status
 office_uid|string|
@@ -258,7 +258,7 @@ name_or_surname_prefix|string|Get patients with name or surname starting with th
 |Field|Type|Description
 |---|---|---
 device_uid|string|If provided, returns a single hub info
-cursor|string|Last seen cursor, if order=asc, or first if order=desc to provide pagination
+cursor|string|Last seen cursor
 device_id|string|If provided, returns a single hub info
 device_id4|string|Last four digits of device_id
 label_prefix|string
@@ -306,7 +306,7 @@ organization_uid|string|
 |Field|Type|Description
 |---|---|---
 device_uid|string|If provided, returns a single hub info
-cursor|string|Last seen cursor, if order=asc, or first if order=desc to provide pagination
+cursor|string|Last seen cursor
 device_id|string|If provided, returns a single hub info
 label_prefix|string|
 type|string|
@@ -352,25 +352,11 @@ organization_uid|string|
 |---|---|---
 order_uid|string|If provided, returns a single patient info
 patient_uid|string|
-cursor|string|Last seen cursor, if order=asc, or first if order=desc to provide pagination
+cursor|string|Last seen cursor
 name_or_surname_prefix|string|Get patients with name or surname starting with this
 last_status|string|
 size|string|Number of records to return (default 50)
-order|string|`asc` (default) or `desc`
 
-Following fields are returned:
-
-|Field|Type|Description
-|---|---|---
-order_uid|sting
-cursor|string|To use in pagination
-patient_uid|string|
-creation_timer|string|
-last_status|string|
-last_status_time|string|
-extra|object|Will include name, surname, address, phone and devices
-
-devices will be a list of devices including 'type' and 'units'
 
 Order will be creation time, descending. Can be reversed with `order`
 
@@ -396,8 +382,10 @@ notification_uid|string|If provided, returns a single notification
 topic|string|To use in pagination
 start_time|string|Minimum time if order is asc, maximum if order is desc
 is_read|boolean|
-class| alerts, todos or all| Default is "alerts"
+mode| alerts, todos or all| Default is "alerts"
 group|string|"medical" or "staff"
+class|string
+type|string
 size|string|Number of records to return (default 50)
 order|string|`asc` (default) or `desc`
 
@@ -427,12 +415,14 @@ Similar to view_list_notifications, but it only counts the number of records mat
 topic|string|To use in pagination
 start_time|string|Minimum time if order is asc, maximum if order is desc
 is_read|boolean|
-class | alerts, todos or all| Default is "alerts"
+mode| alerts, todos or all| Default is "alerts"
 group|string|"medical" or "staff"
+class|string
+type|string
 priority_min|integer|
 priority_max|integer|
 
-### view_list_notifications_readings
+### view_list_notifications_readings (DEPRECATED)
 
 Previous APIs exclude notifications with type 'patient_device_reading'. This isa specific API to return them
 
@@ -535,7 +525,10 @@ patient_uid|string
 month|string|year+month string
 start_time|string|starting time to consider
 stop_time|string|stoppping time to coniser
+invisible|boolean|See bellow
 size|string|Number of records to return (default 50)
+
+By default, both visible and invisible entries will be returned. You can focus on any of them using 'invisible' parameter
 
 
 Following fields are returned:
@@ -550,6 +543,7 @@ patient_uid|string
 month|string|year+month string
 start_time|string|
 duration|integer|In secs
+invisible|boolean|See bellow
 extra|map
 
 Order will be timeslots's time, descending. 
@@ -568,6 +562,10 @@ patient_uid|string
 month|string|year+month string
 start_time|string|starting time to consider
 stop_time|string|stoppping time to consider
+invisible|boolean|See bellow
+
+By default, both visible and invisible entries will be added. You can focus on any of them using 'invisible' parameter
+
 
 ### view_report_timeslots
 
@@ -580,6 +578,8 @@ start_time|string|starting time to consider (madnatory)
 stop_time|string|stoppping time to consider (mandatory)
 type|string|
 user_uid|string
+invisible|boolean|See bellow
+
 
 
 

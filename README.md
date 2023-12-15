@@ -67,6 +67,8 @@ Commands available (all with cmd prefix `rcp/v1a1/`)
 * [Push](doc/push.md)
 * [Values](doc/values.md)
 * [Summaries](doc/summaries.md)
+* [Files](doc/files.md)
+* [DeviceAccounts](doc/device_accounts.md)
 
 
 
@@ -81,3 +83,12 @@ Available APIs:
 
 * GET /test
 * GET /report_sample_data
+
+## File uploading
+
+To upload files to the platform, see [Uploading](doc/uploading.md)
+
+## Events
+
+Documenation for [V1 Emulated Events](doc/emulated_events.md)
+

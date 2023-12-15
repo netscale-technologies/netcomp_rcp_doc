@@ -24,6 +24,7 @@ Spec object:
 |duration_secs|integer|N|Duration in secs (needed if no `stop_time`)
 |tags|list of string|N|
 |program|string|
+|invisible|boolean|N|Default: false
 |meta|object|N|Additional data
 
 Returns:

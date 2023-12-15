@@ -87,8 +87,16 @@ Sets a notification as read
 |notification_uid|string|Y|
 |member_uid|string|Y|
 
+### set_notification_refresh
+_Refreshes_ the notification so its _time_ is updated to _now_, so it should move to the
+top of any time-based list.
 
+You must also provide a meta that **will overwrite current notification's meta**
 
+|Field|Type|Mandatory|Description
+|---|---|---|---
+|notification_uid|string|Y|
+|meta|object|Y|
 
 ### update_notification
 Allows to update notification's data
@@ -124,10 +132,19 @@ Sends a notification to the whole medical group of a patient
 |---|---|---|---
 |patient_uid|string|Y|
 |class|string|Y|
-|type|spec|Y|
+|type|string|Y|
 |meta|object|Y|
 
+### medical_todo
 
+Sends a todo to the whole medical group of a patient
+
+|Field|Type|Mandatory|Description
+|---|---|---|---
+|patient_uid|string|Y|
+|class|string|Y|
+|type|string|Y|
+|meta|object|Y|
 
 ### search_notifications
 Allows for a powerful search operation on notifications. This api can however produce non optimal queries on the server, use `list_notification_by_time` and `list_notification_by_priority`
