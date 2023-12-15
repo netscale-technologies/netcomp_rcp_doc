@@ -200,7 +200,7 @@ fts|string|Filter on records having this string or substrig in name, surname, np
 |Field|Type|Description
 |---|---|---
 patient_uid|string|If provided, returns a single patient info
-cursor|string|Last seen cursor, if order=asc, or first if order=desc to provide pagination
+cursor|string|Last seen cursor
 ehr_id_prefix|string|Get patients with ehr_id starting with this. Very fast, since it has specific index for it.
 status|string|Get patients having this status
 office_uid|string|
@@ -258,7 +258,7 @@ name_or_surname_prefix|string|Get patients with name or surname starting with th
 |Field|Type|Description
 |---|---|---
 device_uid|string|If provided, returns a single hub info
-cursor|string|Last seen cursor, if order=asc, or first if order=desc to provide pagination
+cursor|string|Last seen cursor
 device_id|string|If provided, returns a single hub info
 device_id4|string|Last four digits of device_id
 label_prefix|string
@@ -306,7 +306,7 @@ organization_uid|string|
 |Field|Type|Description
 |---|---|---
 device_uid|string|If provided, returns a single hub info
-cursor|string|Last seen cursor, if order=asc, or first if order=desc to provide pagination
+cursor|string|Last seen cursor
 device_id|string|If provided, returns a single hub info
 label_prefix|string|
 type|string|
@@ -352,25 +352,11 @@ organization_uid|string|
 |---|---|---
 order_uid|string|If provided, returns a single patient info
 patient_uid|string|
-cursor|string|Last seen cursor, if order=asc, or first if order=desc to provide pagination
+cursor|string|Last seen cursor
 name_or_surname_prefix|string|Get patients with name or surname starting with this
 last_status|string|
 size|string|Number of records to return (default 50)
-order|string|`asc` (default) or `desc`
 
-Following fields are returned:
-
-|Field|Type|Description
-|---|---|---
-order_uid|sting
-cursor|string|To use in pagination
-patient_uid|string|
-creation_timer|string|
-last_status|string|
-last_status_time|string|
-extra|object|Will include name, surname, address, phone and devices
-
-devices will be a list of devices including 'type' and 'units'
 
 Order will be creation time, descending. Can be reversed with `order`
 
