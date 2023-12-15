@@ -244,6 +244,21 @@ An event will be generated when an order is created, updated, deleted or its sta
 }
 ```
 
+## Summaries
+
+An event will be generated on each summary update
+
+* resource is `summaries`
+* target is summaries's uid
+
+### sample
+
+```javascript
+{                                                                                                              
+}
+```
+
+
 
 
 
