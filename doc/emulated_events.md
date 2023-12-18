@@ -255,6 +255,39 @@ An event will be generated on each summary update
 
 ```javascript
 {                                                                                                              
+    "data": {
+        "extra": {
+            "last_update": "2023-12-18T11:29:40.088073",
+            "updates": 22
+        },
+        "spec": {
+            "class": "fitbit",
+            "date": "2023-12-18",
+            "patient_uid": "patients-0L84YBQR5UJRlFkItr7H98ZUXnj",
+            "protocol": "activity_sum_0",
+            "reading": {
+                "distance_meters": 0,
+                "fairly_active_seconds": 0,
+                "lightly_active_seconds": 0,
+                "sedentary_seconds": 19740,
+                "steps": 0,
+                "very_active_seconds": 0
+            },
+            "timestamp": "2023-12-18T11:29:38.117368",
+            "type": "activity_sum",
+            "user_id": "Fitbit-38J9HN"
+        }
+    },
+    "date": "2023-12-18T11:29:40.093887Z",
+    "group": "rcp-v2",
+    "metadata": {
+        "trace_id": "0a7b2015091a1c1b"
+    },
+    "namespace": "",
+    "resource": "summaries",
+    "target": "summary-1hhtogr20BkCqMjTFsDwjkJ5g7b",
+    "type": "inserted",
+    "uid": "1HHUB0L7T-8SPKYPYR5ECM0PU0M2"
 }
 ```
 
