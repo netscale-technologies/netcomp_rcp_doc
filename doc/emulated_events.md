@@ -291,7 +291,18 @@ An event will be generated on each summary update
 }
 ```
 
+## Observations
 
+An event will be generated when an observation is created, updated or deleted
+
+* resource is `observations`
+* type is `created`, `updated`, `deleted`
+* target is call's uid
+
+sample:
+
+```javascript
+```
 
 
 
