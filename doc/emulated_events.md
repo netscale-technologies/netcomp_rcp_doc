@@ -297,11 +297,45 @@ An event will be generated when an observation is created, updated or deleted
 
 * resource is `observations`
 * type is `created`, `updated`, `deleted`
-* target is call's uid
+* target is observations's uid
 
 sample:
 
 ```javascript
+{
+    "data": {
+        "extra": {
+            "office_uid": "offices-0K5FF6PFK2Rb2vq54a0Gfg07lwk",
+            "organization_uid": "organizations-0K8II43GUS0Rf0WppIhbo11geVr",
+            "partner_uid": "partners-0KNQE5Y6DAgzVBbkKt7q1oo3Dha"
+        },
+        "spec": {
+            "notes": "abc",
+            "patient_uid": "patients-0K5FF7TIIW5YGqTI2VEuGQyGu90",
+            "time": "2023-12-20 17:53:18.420876Z",
+            "type": "bpm",
+            "device_protocol": "adfb102w",
+            "device_uid": "devices-016efebc2588AsPqAzbHIjJGt69",
+            "is_alert": true,
+            "is_self_report": true,
+            "is_test": true,
+            "is_valid": false,
+            "notification_uid": "notifications-1hi45oj6gSNuKlSzbUuCkNOjZLM",
+            "reporter_uid": "r1",
+            "virtual_device_id": "v1"
+        }
+    },
+    "date": "2023-12-20T17:53:19.588608Z",
+    "group": "rcp-v2",
+    "metadata": {
+        "trace_id": "a000d329a265b5a7"
+    },
+    "namespace": "",
+    "resource": "observations",
+    "target": "observations-1hi45oimtX5SlIeGG4vF7j7eHfl",
+    "type": "updated",
+    "uid": "1HI45OJ74-QGW6TFPUSQJJFYEWU2"
+}
 ```
 
 
