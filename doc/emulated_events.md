@@ -305,36 +305,45 @@ sample:
 {
     "data": {
         "extra": {
-            "office_uid": "offices-0K5FF6PFK2Rb2vq54a0Gfg07lwk",
-            "organization_uid": "organizations-0K8II43GUS0Rf0WppIhbo11geVr",
-            "partner_uid": "partners-0KNQE5Y6DAgzVBbkKt7q1oo3Dha"
+            "office_uid": "offices-016d4dc11e16SrGukg8CI0io2se",
+            "organization_uid": "organizations-016e46137059Fw7IyqENPAeud9c",
+            "partner_uid": "partners-0KN8XO2ZQIsBe1Iu2VvOl2gzf3e",
+            "reporter_uid": "r1",
+            "virtual_device_id": "v1"
         },
         "spec": {
+            "alerts": {
+                "bpm": {
+                    "min": 1.0,
+                    "value": 0.0
+                }
+            },
             "notes": "abc",
-            "patient_uid": "patients-0K5FF7TIIW5YGqTI2VEuGQyGu90",
-            "time": "2023-12-20 17:53:18.420876Z",
+            "patient_uid": "patients-016d96379484Aaib3ZrYEjceD27",
+            "reading": {
+                "bpm": 0
+            },
+            "time": "2023-12-21 11:11:01.175285Z",
             "type": "bpm",
             "device_protocol": "adfb102w",
+            "device_type": "bpm",
             "device_uid": "devices-016efebc2588AsPqAzbHIjJGt69",
             "is_alert": true,
             "is_self_report": true,
             "is_test": true,
-            "is_valid": false,
-            "notification_uid": "notifications-1hi45oj6gSNuKlSzbUuCkNOjZLM",
-            "reporter_uid": "r1",
-            "virtual_device_id": "v1"
+            "is_valid": false
         }
     },
-    "date": "2023-12-20T17:53:19.588608Z",
+    "date": "2023-12-21T11:11:02.490591Z",
     "group": "rcp-v2",
     "metadata": {
-        "trace_id": "a000d329a265b5a7"
+        "trace_id": "bc58c7a96e439440"
     },
     "namespace": "",
     "resource": "observations",
-    "target": "observations-1hi45oimtX5SlIeGG4vF7j7eHfl",
-    "type": "updated",
-    "uid": "1HI45OJ74-QGW6TFPUSQJJFYEWU2"
+    "target": "observations-1hi614mk9P0d5u7779CGkyLPS2I",
+    "type": "created",
+    "uid": "1HI614MQQ-FG8TZBHD1Z6VNF0M7Z"
 }
 ```
 
