@@ -347,6 +347,44 @@ sample:
 }
 ```
 
+## Hubs
+
+An event will be generated when a hub is created, updated or deleted
+
+* resource is `devicehubs`
+* type is `created`, `updated`, `deleted`
+* target is hubs's uid
+
+sample:
+
+```
+{
+  "data": {
+    "spec": {
+      "devicebox_uid": null,
+      "financially_liable": "",
+      "hub_id": "hub123",
+      "label": "H-KKK",
+      "location": "loc",
+      "meta": {},
+      "status": "my-status"
+    }
+  },
+  "metadata": {
+    "trace_id": "91e7d0c396a003d5"
+  },
+  "resource": "devicehubs",
+  "target": "devicehubs-0LR69MMPSGw8We1msyOUTKHuAc9",
+  "timestamp": "2024-01-09T11:25:42.828498Z",
+  "type": "update",
+  "uid": "1HJMVH7HC-4GQF4F69TAC82L9QIY"
+}
+```
+
+also, an event for resouce 'patients' will be generated when a hub is attached or detached from a patient. 
+
+sample:
+
 
 
 
