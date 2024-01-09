@@ -413,6 +413,34 @@ sample:
 
 
 
+## Devices
+
+An event will be generated when a device is created, updated or deleted
+
+* resource is `devices`
+* type is `created`, `updated`, `deleted` and `office_updated`
+* target is devices's uid
+
+sample:
+
+```
+```
+
+sample for office_updated:
+
+```
+```
+
+also, an event for resouce 'patients' will be generated when a device is attached or detached from a patient. 
+
+* resource is `patients`
+* type is `device_attached` or `device_detached`
+* target is patient's uid
+
+sample:
+
+```
+```
 
 
 
