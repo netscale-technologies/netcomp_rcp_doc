@@ -383,7 +383,33 @@ sample:
 
 also, an event for resouce 'patients' will be generated when a hub is attached or detached from a patient. 
 
+* resource is `patients`
+* type is `devicehub_attached` or `devicehub_detached`
+* target is patient's uid
+
 sample:
+
+```
+{
+    "data": {
+        "extra": {
+            "organization_uid": null
+        },
+        "hub_uid": "devicehubs-0LR6AQU9FWaJZ1eJDRsMIM3FYKH"
+    },
+    "date": "2024-01-09T11:57:05.019479Z",
+    "group": "rcp-v2",
+    "metadata": {
+        "patient_uid": "patients-016d96379484Aaib3ZrYEjceD27",
+        "trace_id": "ab70eb5c613ef8e4"
+    },
+    "namespace": "",
+    "resource": "patients",
+    "target": "patients-016d96379484Aaib3ZrYEjceD27",
+    "type": "devicehub_detached",
+    "uid": "1HJN1ALJR-3ADURXCABAGD141VK8"
+}
+```
 
 
 
