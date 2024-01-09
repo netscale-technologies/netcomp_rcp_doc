@@ -424,11 +424,53 @@ An event will be generated when a device is created, updated or deleted
 sample:
 
 ```
+{
+    "data": {
+        "spec": {
+            "device_id": "AA:BB:CC:DD:EE:FF",
+            "financially_liable": "liable",
+            "label": "BP01-KKK",
+            "location": "loc",
+            "meta": {},
+            "status": "my-status"
+        }
+    },
+    "date": "2024-01-09T16:58:21.976996Z",
+    "group": "rcp-v2",
+    "metadata": {
+        "trace_id": "a53a68ad872d12ce"
+    },
+    "namespace": "",
+    "resource": "devices",
+    "target": "devices-0LR6LIHXX4BC17L3K7Ybs8VtDck",
+    "type": "create",
+    "uid": "1HJNIIASO-F8IRS2F2O763SMW2SF"
+}
 ```
 
 sample for office_updated:
 
 ```
+{
+    "data": {
+        "prev_uid": null,
+        "time": "2024-01-09T16:58:30.460691Z",
+        "uid": "offices-016d4dc11e16SrGukg8CI0io2se"
+    },
+    "date": "2024-01-09T16:58:30.871068Z",
+    "group": "rcp-v2",
+    "metadata": {
+        "device_id": "AA:BB:CC:DD:EE:FF",
+        "device_uid": "devices-0LR6LIHXX4BC17L3K7Ybs8VtDck",
+        "label": "BP01-KKK",
+        "trace_id": "bf5316219c09b794"
+    },
+    "namespace": "",
+    "resource": "patients",
+    "target": "",
+    "type": "office_updated",
+    "uid": "1HJNIIJIN-5FLDWCO473JWAOND35"
+}
 ```
 
 also, an event for resouce 'patients' will be generated when a device is attached or detached from a patient. 
@@ -440,6 +482,24 @@ also, an event for resouce 'patients' will be generated when a device is attache
 sample:
 
 ```
+{
+    "data": {
+        "device_id": "AA:BB:CC:DD:EE:FF",
+        "device_uid": "devices-0LR6LIHXX4BC17L3K7Ybs8VtDck",
+        "label": "BP01-KKK"
+    },
+    "date": "2024-01-09T16:58:23.033169Z",
+    "group": "rcp-v2",
+    "metadata": {
+        "patient_uid": "patients-016d96379484Aaib3ZrYEjceD27",
+        "trace_id": "5417fadc65dd135f"
+    },
+    "namespace": "",
+    "resource": "patients",
+    "target": "patients-016d96379484Aaib3ZrYEjceD27",
+    "type": "device_attached",
+    "uid": "1HJNIIBTP-CLZKEWK89ZU5A4MI7L"
+}
 ```
 
 
