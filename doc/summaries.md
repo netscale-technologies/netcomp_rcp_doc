@@ -38,7 +38,7 @@ Marks an existing summary as 'reviewed'
 If summary is not already reviewed, a new object "review" will be added to 'extra', containing "reviewer_uid" and "time",
 and `{"result": true}` will be returned.
 
-It is already reviewed, nothing is changed and  `{"result": false}` is returned
+If it is already reviewed (field "extra.review" exists), nothing is changed and  `{"result": false}` is returned
 
 If later on, you call insert_summary again for the same class, type and date (because of new data or because you want to add a notification_uid), **field 'extra' will be overwritten**, so marking the summary as 'not reviewed' again
 
