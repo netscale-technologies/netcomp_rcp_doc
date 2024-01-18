@@ -32,7 +32,7 @@ Marks an existing summary as 'reviwed'
 
 |Field|Type|Mandatory|Description
 |---|---|---|---
-|summary_uid|string|Y|UID of summary to updated
+|summary_uid|string|Y|UID of summary to update
 |reviewer_uid|string|Y|UID of reviewer
 
 If summary is not already reviewed, a new object "review" will be added to 'extra', containing "reviewer_uid" and "time",
