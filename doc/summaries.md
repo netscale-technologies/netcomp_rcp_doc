@@ -28,7 +28,7 @@ Returns:
 
 ### summary_set_reviewed
 
-Marks an existing summary as 'reviwed'
+Marks an existing summary as 'reviewed'
 
 |Field|Type|Mandatory|Description
 |---|---|---|---
