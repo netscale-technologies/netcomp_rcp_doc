@@ -40,5 +40,5 @@ and `{"result": true}` will be returned.
 
 It is already reviewed, nothing is changed and  `{"result": false}` is returned
 
-If later on, you call insert_summary again for the same class, type and date (because of new data or because you want to add a notification_uid), **field 'extra' will be overwritten**, so marking the summary as 'not reviwed' again
+If later on, you call insert_summary again for the same class, type and date (because of new data or because you want to add a notification_uid), **field 'extra' will be overwritten**, so marking the summary as 'not reviewed' again
 
