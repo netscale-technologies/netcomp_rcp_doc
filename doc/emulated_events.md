@@ -19,6 +19,86 @@ All events follow the same format, with followig fields:
 ```
 
 
+## Partners
+
+* resouce will be `partners`
+* target is partner's uid
+* type will be `created` | `updated` | `deleted`
+
+**create sample**
+
+```javascript
+{
+    "data": {
+        "spec": {
+            "name": "partner1"
+        },
+        "status": {
+            "status": "active"
+        }
+    },
+    "date": "2024-01-22T18:53:14.271276Z",
+    "group": "rcp-v2",
+    "metadata": {
+        "trace_id": "b0808cba6de4cc43"
+    },
+    "namespace": "",
+    "resource": "partners",
+    "target": "partners-0LRPACB1ZLIKDTDzVEImjEcZs2f",
+    "type": "created",
+    "uid": "1HKP8A0KV-9TCW2W3UMIEB5WVN67"
+}
+```
+
+**update sample**
+
+```javascript
+{
+    "data": {
+        "update": {
+            "spec": {
+                "name": "carlos3"
+            },
+            "status": {
+                "status": "active"
+            }
+        }
+    },
+    "date": "2024-01-22T19:06:05.799727Z",
+    "group": "rcp-v2",
+    "metadata": {
+        "trace_id": "237c1e9ae1b8d876"
+    },
+    "namespace": "",
+    "resource": "partners",
+    "target": "partners-0LRPAS29PAJBOrTU5Tq0WkuhTNW",
+    "type": "updated",
+    "uid": "1HKP91I37-BACH34WHCF4ZZOLR9F"
+}
+```
+
+**delete sample**
+
+```javascript
+{
+    "data": {},
+    "date": "2024-01-22T19:04:37.021053Z",
+    "group": "rcp-v2",
+    "metadata": {
+        "trace_id": "6d8f0effd32df71a"
+    },
+    "namespace": "",
+    "resource": "partners",
+    "target": "partners-0LRPACB1ZLIKDTDzVEImjEcZs2f",
+    "type": "deleted",
+    "uid": "1HKP8URCT-JC8IFVICYTUVFBKYY9"
+}
+```
+
+
+
+
+
 ## Timeslots
 
 * resource will be `timeslots`
