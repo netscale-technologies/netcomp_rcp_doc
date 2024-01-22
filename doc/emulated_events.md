@@ -148,24 +148,6 @@ All events follow the same format, with followig fields:
 }
 ```
 
-**delete sample**
-
-```javascript
-{
-    "data": {},
-    "date": "2024-01-22T19:14:35.671352Z",
-    "group": "rcp-v2",
-    "metadata": {
-        "trace_id": "46b5618560ab7b21"
-    },
-    "namespace": "",
-    "resource": "organizations",
-    "target": "organizations-0LRPAXGQZE1IzAcmQlcZ87OYu5y",
-    "type": "deleted",
-    "uid": "1HKP9H40N-TQO4LDS0AJY36BLVJZ"
-}
-```
-
 ## Offices
 
 * resouce will be `offices`
@@ -175,17 +157,29 @@ All events follow the same format, with followig fields:
 **create sample**
 
 ```javascript
-
-```
-
-**update sample**
-
-```javascript
-```
-
-**delete sample**
-
-```javascript
+{
+    "data": {
+        "spec": {
+            "name": "carlos1",
+            "timezone": "GMT",
+            "branding": "brand, 
+            "organization_uid": "organizations-0LRPB4KPCBR6pIiShlQQpGlGroN"
+        },
+        "status": {
+            "status": "active"
+        }
+    },
+    "date": "2024-01-22T19:22:32.463285Z",
+    "group": "rcp-v2",
+    "metadata": {
+        "trace_id": "aa6f55b9a992cca6"
+    },
+    "namespace": "",
+    "resource": "offices",
+    "target": "offices-0LRPBDZ7KSDGRcfij6ldOpIA6JI",
+    "type": "created",
+    "uid": "1HKP9VLKF-24DWG6L6111BBK50RQ"
+}
 ```
 
 
