@@ -96,6 +96,97 @@ All events follow the same format, with followig fields:
 ```
 
 
+## Organizations
+
+* resouce will be `organizations`
+* target is organizatuion's uid
+* type will be `created` | `updated` | `deleted`
+
+**create sample**
+
+```javascript
+{
+    "data": {},
+    "date": "2024-01-22T19:14:35.671352Z",
+    "group": "rcp-v2",
+    "metadata": {
+        "trace_id": "46b5618560ab7b21"
+    },
+    "namespace": "",
+    "resource": "organizations",
+    "target": "organizations-0LRPAXGQZE1IzAcmQlcZ87OYu5y",
+    "type": "deleted",
+    "uid": "1HKP9H40N-TQO4LDS0AJY36BLVJZ"
+}
+```
+
+**update sample**
+
+```javascript
+{
+    "data": {
+        "update": {
+            "spec": {
+                "name": "org1",
+                "partner_uid": "partners-0LRPAS29PAJBOrTU5Tq0WkuhTNW"
+            },
+            "status": {
+                "status": "active"
+            }
+        }
+    },
+    "date": "2024-01-22T19:13:58.967101Z",
+    "group": "rcp-v2",
+    "metadata": {
+        "trace_id": "af9a18e975fe9697"
+    },
+    "namespace": "",
+    "resource": "organizations",
+    "target": "organizations-0LRPAXGQZE1IzAcmQlcZ87OYu5y",
+    "type": "updated",
+    "uid": "1HKP9G05N-L2NOKGSY5CL3EQJQVK"
+}
+```
+
+**delete sample**
+
+```javascript
+{
+    "data": {},
+    "date": "2024-01-22T19:14:35.671352Z",
+    "group": "rcp-v2",
+    "metadata": {
+        "trace_id": "46b5618560ab7b21"
+    },
+    "namespace": "",
+    "resource": "organizations",
+    "target": "organizations-0LRPAXGQZE1IzAcmQlcZ87OYu5y",
+    "type": "deleted",
+    "uid": "1HKP9H40N-TQO4LDS0AJY36BLVJZ"
+}
+```
+
+## Offices
+
+* resouce will be `offices`
+* target is office's uid
+* type will be `created` | `updated` | `deleted`
+
+**create sample**
+
+```javascript
+
+```
+
+**update sample**
+
+```javascript
+```
+
+**delete sample**
+
+```javascript
+```
 
 
 
