@@ -247,7 +247,7 @@ If the hub is created, "owner" will be set to "patient" and field "uid" will poi
 
 |Field|Type|Mandatory|Description
 |---|---|---|---
-|member_uid|N|Member to provision
+|member_uid|string|N|Member to provision
 |password|string|Y|New password
 
 User to provision in KC must exist and have a valid "login".
