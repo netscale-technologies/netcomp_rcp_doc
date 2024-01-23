@@ -251,7 +251,7 @@ If the hub is created, "owner" will be set to "patient" and field "uid" will poi
 |password|string|Y|New password
 
 User to provision in KC must exist and have a valid "login".
-Password will be updated and user will be created or updated in KC
+Password will be updated in core and user will be created or updated in KC
 
 
 
