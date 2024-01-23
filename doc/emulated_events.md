@@ -288,11 +288,73 @@ An event will be generated when a staff is created, updated or deleted
 ### create sample
 
 ```javascript
+{
+    "data": {
+        "data": {
+            "spec": {
+                "email": "a@a",
+                "locale": "es",
+                "login": "test-proxy@staff",
+                "name": "test-proxy",
+                "offices": [
+                    "offices-0LRQ9M6P740Dxvwwn1nBvNtz704"
+                ],
+                "phone": "001234567890",
+                "surname": "surname",
+                "timezone": "Europe/Madrid",
+                "type": "staff"
+            },
+            "status": {}
+        }
+    },
+    "date": "2024-01-23T11:39:14.646772Z",
+    "group": "rcp-v2",
+    "metadata": {
+        "trace_id": "64c5a7bdfa19b8f9"
+    },
+    "namespace": "",
+    "resource": "staff",
+    "target": "staff-0LRQAA11VJBRtOHDJZXcaHOdbYD",
+    "type": "created",
+    "uid": "1HKR1S2AM-N7TNXFSIYJAUFVYAV8"
+}
 ```
 
 ### update sample
 
 ```javascript
+{
+    "data": {
+        "update": {
+            "data": {
+                "spec": {
+                    "email": "a@a",
+                    "locale": "es",
+                    "login": "test-proxy@staff",
+                    "name": "test-proxy2",
+                    "offices": [
+                        "offices-0LRQ9M6P740Dxvwwn1nBvNtz704"
+                    ],
+                    "phone": "11234567890",
+                    "surname": "surname",
+                    "timezone": "Europe/Madrid",
+                    "type": "staff"
+                },
+                "status": {}
+            }
+        }
+    },
+    "date": "2024-01-23T11:39:16.009841Z",
+    "group": "rcp-v2",
+    "metadata": {
+        "trace_id": "ecab8c90b93558ce"
+    },
+    "namespace": "",
+    "resource": "staff",
+    "target": "staff-0LRQAA11VJBRtOHDJZXcaHOdbYD",
+    "type": "updated",
+    "uid": "1HKR1S3L9-BEK6A9832EIWRYT82K"
+}
 ```
 
 
