@@ -182,6 +182,119 @@ All events follow the same format, with followig fields:
 }
 ```
 
+## Medicals
+
+An event will be generated when a medical is created, updated or deleted
+
+* resource is `medicals`
+* type is `created`|`updated`|`deleted`
+* target device medicals's uid
+* 
+
+### create sample
+
+```javascript
+{
+    "data": {
+        "data": {
+            "spec": {
+                "email": "a@a",
+                "is_primary": false,
+                "locale": "es",
+                "login": "test-proxy@medical",
+                "name": "test-proxy",
+                "npi": "123",
+                "offices": [
+                    "offices-0K5F4MI9G9GsVOt1L98gm9tBN7A"
+                ],
+                "phone": "001234567890",
+                "roles": [
+                    "role1"
+                ],
+                "surname": "surname",
+                "timezone": "Europe/Madrid",
+                "type": "medical"
+            },
+            "status": {}
+        }
+    },
+    "date": "2024-01-23T10:15:59.263751Z",
+    "group": "rcp-v2",
+    "metadata": {
+        "trace_id": "55bf81cbab14c16e"
+    },
+    "namespace": "",
+    "resource": "medicals",
+    "target": "medicals-0LRQ7AYCEPZbpjIyLriCMQb617C",
+    "type": "created",
+    "uid": "1HKQT3K0V-J67CNHD5STQOJNPHHO"
+}
+```
+
+### update sample
+
+```javascript
+{
+    "data": {
+        "update": {
+            "data": {
+                "spec": {
+                    "email": "a@a",
+                    "is_primary": false,
+                    "locale": "es",
+                    "login": "test-proxy2@medical",
+                    "name": "test-proxy2",
+                    "npi": "proxynpi",
+                    "offices": [
+                        "offices-0LRQ96OR2JFuLaleztXShU8gE1G"
+                    ],
+                    "phone": "11234567890",
+                    "roles": [
+                        "role1"
+                    ],
+                    "surname": "surname",
+                    "timezone": "Europe/Madrid",
+                    "type": "medical"
+                },
+                "status": {}
+            }
+        }
+    },
+    "date": "2024-01-23T11:08:41.326446Z",
+    "group": "rcp-v2",
+    "metadata": {
+        "trace_id": "cd247244fd7f4e9e"
+    },
+    "namespace": "",
+    "resource": "medicals",
+    "target": "medicals-0LRQ96PN487MJ2qUidvUjvOF4wn",
+    "type": "updated",
+    "uid": "1HKR043VE-FCDXTC58DITKZEPKNG"
+}
+
+
+```
+
+
+## Staff
+
+An event will be generated when a staff is created, updated or deleted
+
+* resource is `staff`
+* type is `created`|`updated`|`deleted`
+* target device medicals's uid
+* 
+
+### create sample
+
+```javascript
+```
+
+### update sample
+
+```javascript
+```
+
 
 
 ## Timeslots
@@ -241,9 +354,10 @@ All events follow the same format, with followig fields:
 
 * type will be `deleted`
 
+
 ## Device Accounts
 
-An event will be generated when a device account in created, updated or deleted
+An event will be generated when a device account is created, updated or deleted
 
 * resource is `deviceaccounts`
 * type is `created`|`updated`|`deleted`
