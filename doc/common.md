@@ -243,6 +243,15 @@ Data in "info" will have the followig fields interpolated:
 
 If the hub is created, "owner" will be set to "patient" and field "uid" will point to patient's uid. Also office will be copied from patient's office
 
+### provision_kc_user
+
+|Field|Type|Mandatory|Description
+|---|---|---|---
+|member_uid|N|Member to provision
+|password|string|Y|New password
+
+User to provision in KC must exist and have a valid "login".
+Password will be updated and user will be created or updated in KC
 
 
 
