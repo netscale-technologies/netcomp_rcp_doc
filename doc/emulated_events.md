@@ -241,6 +241,44 @@ All events follow the same format, with followig fields:
 
 * type will be `deleted`
 
+## Device Accounts
+
+An event will be generated when a device account in created, updated or deleted
+
+* resource is `deviceaccounts`
+* type is `created`|`updated`|`deleted`
+* target device accounts's uid
+* data contains spec (same for create and update)
+
+### sample
+
+```javascript
+{
+    "data": {
+        "spec": {
+            "class": "test",
+            "devices": [],
+            "is_authorized": true,
+            "patient_uid": "patients-016d96379484Aaib3ZrYEjceD27",
+            "scopes": [],
+            "user_id": "user_id"
+        }
+    },
+    "date": "2024-01-23T09:43:40.314665Z",
+    "group": "rcp-v2",
+    "metadata": {
+        "trace_id": "96f29fb0ad30bd29"
+    },
+    "namespace": "",
+    "resource": "deviceaccounts",
+    "target": "DeviceAccount-1hkqr8e3dTxcLfkvJwJOfFKYSPg",
+    "type": "created",
+    "uid": "1HKQR8EGQ-8DQD9WQ28C9XW81DEA"
+}
+```
+
+
+
 ## Patient Calls  
 
 An event will be generated when a call is finished:
