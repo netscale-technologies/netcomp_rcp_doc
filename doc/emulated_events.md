@@ -442,6 +442,162 @@ An event will be generated when a patient is created, updated or deleted
 
 See down events for _device_attached_, _device_detached_, _devicehub_attached_ and _devicehub_detached_ in their corresponding _Device_ and _Hub_ sections
 
+
+## Hubs
+
+An event will be generated when a hub is created, updated or deleted
+
+* resource is `devicehubs`
+* type is `created`, `updated`, `deleted`
+* target is hubs's uid
+
+sample:
+
+```
+{
+  "data": {
+    "spec": {
+      "devicebox_uid": null,
+      "financially_liable": "",
+      "hub_id": "hub123",
+      "label": "H-KKK",
+      "location": "loc",
+      "meta": {},
+      "status": "my-status"
+    }
+  },
+  "metadata": {
+    "trace_id": "91e7d0c396a003d5"
+  },
+  "resource": "devicehubs",
+  "target": "devicehubs-0LR69MMPSGw8We1msyOUTKHuAc9",
+  "timestamp": "2024-01-09T11:25:42.828498Z",
+  "type": "update",
+  "uid": "1HJMVH7HC-4GQF4F69TAC82L9QIY"
+}
+```
+
+also, an event for resouce 'patients' will be generated when a hub is attached or detached from a patient. 
+
+* resource is `patients`
+* type is `devicehub_attached` or `devicehub_detached`
+* target is patient's uid
+
+sample:
+
+```
+{
+    "data": {
+        "extra": {
+            "organization_uid": null
+        },
+        "hub_uid": "devicehubs-0LR6AQU9FWaJZ1eJDRsMIM3FYKH"
+    },
+    "date": "2024-01-09T11:57:05.019479Z",
+    "group": "rcp-v2",
+    "metadata": {
+        "patient_uid": "patients-016d96379484Aaib3ZrYEjceD27",
+        "trace_id": "ab70eb5c613ef8e4"
+    },
+    "namespace": "",
+    "resource": "patients",
+    "target": "patients-016d96379484Aaib3ZrYEjceD27",
+    "type": "devicehub_detached",
+    "uid": "1HJN1ALJR-3ADURXCABAGD141VK8"
+}
+```
+
+
+
+## Devices
+
+An event will be generated when a device is created, updated or deleted
+
+* resource is `devices`
+* type is `created`, `updated`, `deleted` and `office_updated`
+* target is devices's uid
+
+sample:
+
+```
+{
+    "data": {
+        "spec": {
+            "device_id": "AA:BB:CC:DD:EE:FF",
+            "financially_liable": "liable",
+            "label": "BP01-KKK",
+            "location": "loc",
+            "meta": {},
+            "status": "my-status"
+        }
+    },
+    "date": "2024-01-09T16:58:21.976996Z",
+    "group": "rcp-v2",
+    "metadata": {
+        "trace_id": "a53a68ad872d12ce"
+    },
+    "namespace": "",
+    "resource": "devices",
+    "target": "devices-0LR6LIHXX4BC17L3K7Ybs8VtDck",
+    "type": "create",
+    "uid": "1HJNIIASO-F8IRS2F2O763SMW2SF"
+}
+```
+
+sample for office_updated:
+
+```
+{
+    "data": {
+        "prev_uid": null,
+        "time": "2024-01-09T16:58:30.460691Z",
+        "uid": "offices-016d4dc11e16SrGukg8CI0io2se"
+    },
+    "date": "2024-01-09T16:58:30.871068Z",
+    "group": "rcp-v2",
+    "metadata": {
+        "device_id": "AA:BB:CC:DD:EE:FF",
+        "device_uid": "devices-0LR6LIHXX4BC17L3K7Ybs8VtDck",
+        "label": "BP01-KKK",
+        "trace_id": "bf5316219c09b794"
+    },
+    "namespace": "",
+    "resource": "patients",
+    "target": "",
+    "type": "office_updated",
+    "uid": "1HJNIIJIN-5FLDWCO473JWAOND35"
+}
+```
+
+also, an event for resouce 'patients' will be generated when a device is attached or detached from a patient. 
+
+* resource is `patients`
+* type is `device_attached` or `device_detached`
+* target is patient's uid
+
+sample:
+
+```
+{
+    "data": {
+        "device_id": "AA:BB:CC:DD:EE:FF",
+        "device_uid": "devices-0LR6LIHXX4BC17L3K7Ybs8VtDck",
+        "label": "BP01-KKK"
+    },
+    "date": "2024-01-09T16:58:23.033169Z",
+    "group": "rcp-v2",
+    "metadata": {
+        "patient_uid": "patients-016d96379484Aaib3ZrYEjceD27",
+        "trace_id": "5417fadc65dd135f"
+    },
+    "namespace": "",
+    "resource": "patients",
+    "target": "patients-016d96379484Aaib3ZrYEjceD27",
+    "type": "device_attached",
+    "uid": "1HJNIIBTP-CLZKEWK89ZU5A4MI7L"
+}
+```
+
 ## Device Accounts
 
 An event will be generated when a device account is created, updated or deleted
@@ -808,161 +964,6 @@ sample:
     "target": "observations-1hi614mk9P0d5u7779CGkyLPS2I",
     "type": "created",
     "uid": "1HI614MQQ-FG8TZBHD1Z6VNF0M7Z"
-}
-```
-
-## Hubs
-
-An event will be generated when a hub is created, updated or deleted
-
-* resource is `devicehubs`
-* type is `created`, `updated`, `deleted`
-* target is hubs's uid
-
-sample:
-
-```
-{
-  "data": {
-    "spec": {
-      "devicebox_uid": null,
-      "financially_liable": "",
-      "hub_id": "hub123",
-      "label": "H-KKK",
-      "location": "loc",
-      "meta": {},
-      "status": "my-status"
-    }
-  },
-  "metadata": {
-    "trace_id": "91e7d0c396a003d5"
-  },
-  "resource": "devicehubs",
-  "target": "devicehubs-0LR69MMPSGw8We1msyOUTKHuAc9",
-  "timestamp": "2024-01-09T11:25:42.828498Z",
-  "type": "update",
-  "uid": "1HJMVH7HC-4GQF4F69TAC82L9QIY"
-}
-```
-
-also, an event for resouce 'patients' will be generated when a hub is attached or detached from a patient. 
-
-* resource is `patients`
-* type is `devicehub_attached` or `devicehub_detached`
-* target is patient's uid
-
-sample:
-
-```
-{
-    "data": {
-        "extra": {
-            "organization_uid": null
-        },
-        "hub_uid": "devicehubs-0LR6AQU9FWaJZ1eJDRsMIM3FYKH"
-    },
-    "date": "2024-01-09T11:57:05.019479Z",
-    "group": "rcp-v2",
-    "metadata": {
-        "patient_uid": "patients-016d96379484Aaib3ZrYEjceD27",
-        "trace_id": "ab70eb5c613ef8e4"
-    },
-    "namespace": "",
-    "resource": "patients",
-    "target": "patients-016d96379484Aaib3ZrYEjceD27",
-    "type": "devicehub_detached",
-    "uid": "1HJN1ALJR-3ADURXCABAGD141VK8"
-}
-```
-
-
-
-## Devices
-
-An event will be generated when a device is created, updated or deleted
-
-* resource is `devices`
-* type is `created`, `updated`, `deleted` and `office_updated`
-* target is devices's uid
-
-sample:
-
-```
-{
-    "data": {
-        "spec": {
-            "device_id": "AA:BB:CC:DD:EE:FF",
-            "financially_liable": "liable",
-            "label": "BP01-KKK",
-            "location": "loc",
-            "meta": {},
-            "status": "my-status"
-        }
-    },
-    "date": "2024-01-09T16:58:21.976996Z",
-    "group": "rcp-v2",
-    "metadata": {
-        "trace_id": "a53a68ad872d12ce"
-    },
-    "namespace": "",
-    "resource": "devices",
-    "target": "devices-0LR6LIHXX4BC17L3K7Ybs8VtDck",
-    "type": "create",
-    "uid": "1HJNIIASO-F8IRS2F2O763SMW2SF"
-}
-```
-
-sample for office_updated:
-
-```
-{
-    "data": {
-        "prev_uid": null,
-        "time": "2024-01-09T16:58:30.460691Z",
-        "uid": "offices-016d4dc11e16SrGukg8CI0io2se"
-    },
-    "date": "2024-01-09T16:58:30.871068Z",
-    "group": "rcp-v2",
-    "metadata": {
-        "device_id": "AA:BB:CC:DD:EE:FF",
-        "device_uid": "devices-0LR6LIHXX4BC17L3K7Ybs8VtDck",
-        "label": "BP01-KKK",
-        "trace_id": "bf5316219c09b794"
-    },
-    "namespace": "",
-    "resource": "patients",
-    "target": "",
-    "type": "office_updated",
-    "uid": "1HJNIIJIN-5FLDWCO473JWAOND35"
-}
-```
-
-also, an event for resouce 'patients' will be generated when a device is attached or detached from a patient. 
-
-* resource is `patients`
-* type is `device_attached` or `device_detached`
-* target is patient's uid
-
-sample:
-
-```
-{
-    "data": {
-        "device_id": "AA:BB:CC:DD:EE:FF",
-        "device_uid": "devices-0LR6LIHXX4BC17L3K7Ybs8VtDck",
-        "label": "BP01-KKK"
-    },
-    "date": "2024-01-09T16:58:23.033169Z",
-    "group": "rcp-v2",
-    "metadata": {
-        "patient_uid": "patients-016d96379484Aaib3ZrYEjceD27",
-        "trace_id": "5417fadc65dd135f"
-    },
-    "namespace": "",
-    "resource": "patients",
-    "target": "patients-016d96379484Aaib3ZrYEjceD27",
-    "type": "device_attached",
-    "uid": "1HJNIIBTP-CLZKEWK89ZU5A4MI7L"
 }
 ```
 
