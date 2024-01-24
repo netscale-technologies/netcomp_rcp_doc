@@ -81,3 +81,17 @@ Specialized call to finds all existing devce accounts for one or more partients.
 |patient_uids|list of string|Y|
 
 It will return field "patients" with a map, one key for each patient, and for each one a list of objects including fields uid, class, is_authorized and devices.
+
+
+### device_account_iterate
+
+Allows to iterate over all device accounts, sorted by uid.
+Results can be paginated using "last_uid" of last returned uid to restart on next one.
+
+|Field|Type|Mandatory|Description
+|---|---|---|---
+|last_uid|string|N|Default is ""
+|size|intege|N|Default is 2.000
+
+
+
