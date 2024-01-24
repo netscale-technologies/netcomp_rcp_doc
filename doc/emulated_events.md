@@ -438,6 +438,75 @@ An event will be generated when a patient is created, updated or deleted
 ### update sample
 
 ```javascript
+{
+    "data": {
+        "extra": {
+            "office_uid": "offices-0K5F4MI9G9GsVOt1L98gm9tBN7A",
+            "organization_uid": "organizations-0K9NW330VRVPHFJAMmQHO28zIa0",
+            "partner_uid": "partners-0KN8XO2ZQIsBe1Iu2VvOl2gzf3e"
+        },
+        "update": {
+            "data": {
+                "spec": {
+                    "alternative_id": "aid2",
+                    "contact_preference": "text",
+                    "ehr": {
+                        "birth_time": "2020-01-01T00:00:00Z",
+                        "height": 100,
+                        "meta": {
+                            "notes": "abc"
+                        }
+                    },
+                    "ehr_id": "p-ehrid",
+                    "gender": "U",
+                    "insurance_meta": {
+                        "a": 1
+                    },
+                    "is_billable": true,
+                    "locale": "es",
+                    "login": "test-proxy2@patient",
+                    "medicals": [
+                        {
+                            "primary": false,
+                            "role": "m",
+                            "uid": "medicals-0K5F7CKVOA4mq4CAPB63Oqs39DT"
+                        }
+                    ],
+                    "name": "test-proxy2",
+                    "office_uid": "offices-0K5F4MI9G9GsVOt1L98gm9tBN7A",
+                    "primary_medical": "medicals-0K5F7CKVOA4mq4CAPB63Oqs39DT",
+                    "primary_nurse": "medicals-0K5F7CKVOA4mq4CAPB63Oqs39DT",
+                    "programs": [
+                        "TLH"
+                    ],
+                    "risk_factor": 1,
+                    "surname": "surname",
+                    "timezone": "Europe/Madrid"
+                },
+                "status": {
+                    "activation_time": null,
+                    "conditions": [],
+                    "parameters": {
+                        "ranges": {}
+                    },
+                    "send_reminders": true,
+                    "status": "inactive",
+                    "status_reason": "creation"
+                }
+            }
+        }
+    },
+    "date": "2024-01-24T15:33:00.865952Z",
+    "group": "rcp-v2",
+    "metadata": {
+        "trace_id": "77f39a89e47466ac"
+    },
+    "namespace": "",
+    "resource": "patients",
+    "target": "patients-0LRRY2G4VR3eksSbcmLVvjK0Fjq",
+    "type": "updated",
+    "uid": "1HKU1KQQ1-KL449M0B677LR9KBPT"
+}
 ```
 
 See down events for _device_attached_, _device_detached_, _devicehub_attached_ and _devicehub_detached_ in their corresponding _Device_ and _Hub_ sections
