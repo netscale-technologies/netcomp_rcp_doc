@@ -271,10 +271,7 @@ An event will be generated when a medical is created, updated or deleted
     "type": "updated",
     "uid": "1HKR043VE-FCDXTC58DITKZEPKNG"
 }
-
-
 ```
-
 
 ## Staff
 
@@ -356,6 +353,94 @@ An event will be generated when a staff is created, updated or deleted
     "uid": "1HKR1S3L9-BEK6A9832EIWRYT82K"
 }
 ```
+
+## Patient
+
+An event will be generated when a patient is created, updated or deleted
+
+* resource is `patients`
+* type is `created`|`updated`|`deleted`
+* target device pateints's uid
+* 
+
+### create sample
+
+```javascript
+{
+    "data": {
+        "data": {
+            "spec": {
+                "alternative_id": "aid",
+                "contact_preference": "call",
+                "ehr": {
+                    "birth_time": "2020-01-01T00:00:00Z",
+                    "height": 100,
+                    "meta": {
+                        "notes": "abc"
+                    }
+                },
+                "ehr_id": "p-ehrid",
+                "gender": "U",
+                "insurance_meta": {
+                    "a": 1
+                },
+                "is_billable": false,
+                "locale": "es",
+                "login": "test-proxy@patient",
+                "medicals": [
+                    {
+                        "primary": true,
+                        "role": "m",
+                        "uid": "medicals-0K5F7CKVOA4mq4CAPB63Oqs39DT"
+                    }
+                ],
+                "name": "test-proxy",
+                "office_uid": "offices-0K5F4MI9G9GsVOt1L98gm9tBN7A",
+                "primary_medical": "medicals-0K5F7CKVOA4mq4CAPB63Oqs39DT",
+                "primary_nurse": "medicals-0K5F7CKVOA4mq4CAPB63Oqs39DT",
+                "programs": [
+                    "TLH"
+                ],
+                "risk_factor": 1,
+                "surname": "surname",
+                "timezone": "Europe/Madrid"
+            },
+            "status": {
+                "activation_time": null,
+                "conditions": [],
+                "parameters": {
+                    "ranges": {}
+                },
+                "send_reminders": true,
+                "status": "inactive",
+                "status_reason": ""
+            }
+        },
+        "extra": {
+            "office_uid": "offices-0K5F4MI9G9GsVOt1L98gm9tBN7A",
+            "organization_uid": "organizations-0K9NW330VRVPHFJAMmQHO28zIa0",
+            "partner_uid": "partners-0KN8XO2ZQIsBe1Iu2VvOl2gzf3e"
+        }
+    },
+    "date": "2024-01-24T10:34:16.186772Z",
+    "group": "rcp-v2",
+    "metadata": {
+        "trace_id": "6ac9f83fdc845c20"
+    },
+    "namespace": "",
+    "resource": "ehrs",
+    "target": "EHR-1hktghppi3igCczrECJEHqFsVT2",
+    "type": "created",
+    "uid": "1HKTGHQ7Q-NSED7GNOFVQA100776"
+}
+```
+
+### update sample
+
+```javascript
+```
+
+See down events for _device_attached_, _device_detached_, _devicehub_attached_ and _devicehub_detached_ in their corresponding _Device_ and _Hub_ sections
 
 ## Device Accounts
 
