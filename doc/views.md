@@ -212,6 +212,7 @@ main_program|string|Get patients having this "main program"
 name_or_surname_prefix|string|Get patients with name or surname starting with this
 size|string|Number of records to return (default 50)
 order|string|`asc` (default) or `desc`
+expand_nurse_name|boolean|If `true`, fields `primary_nurse_name` and `primary_nurse_surname` will be added
 
 Following fields are returned:
 
@@ -233,6 +234,8 @@ main_program|string|Get patients having this "main program"
 risk_factor|integer|
 devices| [object] |List of devices associated to this patient
 extra| [object] |Additional data (name, surname, programs)
+primary_nurse_name|string|Only if `expand_nurse_name` is true and name is available
+primary_nurse_surname|string|Only if `expand_nurse_name` is true and surname is available
 
 Order will be by (surname, name) in normalized form, ascending. Can be reversed with `order`
 
