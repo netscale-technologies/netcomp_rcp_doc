@@ -210,6 +210,7 @@ primary_nurse_uid|string or null|Get patients having this nurse as primary
 medical_uid|string|Get patients having this doctor (any role)
 main_program|string|Get patients having this "main program"
 name_or_surname_prefix|string|Get patients with name or surname starting with this
+fts|string|Search on name, surname, phone, login, ehr_id
 size|string|Number of records to return (default 50)
 order|string|`asc` (default) or `desc`
 expand_nurse_name|boolean|If `true`, fields `primary_nurse_name` and `primary_nurse_surname` will be added
