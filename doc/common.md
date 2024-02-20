@@ -108,6 +108,9 @@ Normal users must include password and old_password.
 
 Staff users must include password and member_uid of te member to change the password to.
 
+After updating the password in core, it will try to update it in Keycloak too.
+Returning field 'keycloak' will inform about the result of the operation: `ok` | `user_not_found` | `error`
+
 
 ### upload_avatar
 
