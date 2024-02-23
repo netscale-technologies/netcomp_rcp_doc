@@ -93,5 +93,14 @@ Results can be paginated using "last_uid" of last returned uid to restart on nex
 |last_uid|string|N|Default is ""
 |size|intege|N|Default is 2.000
 
+### device_account_delete
+
+Deletes an existing device account.
+Be careful since this means it cannot be used any more to know the patient had this account in the past.
+
+|Field|Type|Mandatory|Description
+|---|---|---|---
+|uid|string|Y|
+
 
 
