@@ -88,8 +88,8 @@ Sets a notification as read
 |member_uid|string|Y|
 
 ### set_notification_refresh
-_Refreshes_ the notification so its _time_ is updated to _now_, so it should move to the
-top of any time-based list.
+_Refreshes_ the notification so its _update_time_ is updated to _now_, so it should move to the
+top of any time-based list, since listing is based on this field.
 
 You must also provide a meta that **will overwrite current notification's meta**
 
