@@ -523,7 +523,8 @@ device_uid|string|
 |---|---|---
 timeslot_uid|string|If provided, returns a single notification
 cursor|string|Pagination
-type|string|
+type|string|See bellow
+tags_any| [string] |See bellow
 user_uid|string
 patient_uid|string
 month|string|year+month string
@@ -534,6 +535,7 @@ size|string|Number of records to return (default 50)
 
 By default, both visible and invisible entries will be returned. You can focus on any of them using 'invisible' parameter
 
+If type is provided, it will find records having that type. If tags_any, records having any of the tags. If both, records having the type or any of the tags
 
 Following fields are returned:
 
@@ -560,7 +562,8 @@ Similar to view_list_timeslots, but it only counts the number of records matchin
 |Field|Type|Description
 |---|---|---
 timeslot_uid|string|If provided, returns a single notification
-type|string|
+type|string|See above
+tags_any| [string] |See above
 user_uid|string
 patient_uid|string
 month|string|year+month string
@@ -580,7 +583,8 @@ Similar to view_list_timeslots, but it focuses on a single patient and a period 
 patient_uid|string (mandatory)
 start_time|string|starting time to consider (madnatory)
 stop_time|string|stoppping time to consider (mandatory)
-type|string|
+type|string|See above
+tags_any| [string] |See above
 user_uid|string
 invisible|boolean|See bellow
 
