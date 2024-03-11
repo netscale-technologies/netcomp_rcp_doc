@@ -97,6 +97,11 @@ You must also provide a meta that **will overwrite current notification's meta**
 |---|---|---|---
 |notification_uid|string|Y|
 |meta|object|Y|
+|recreate|boolean|N|see bellow (default false)
+
+If recreate is set to `true`, notification will be deleted and created again using same UID. 
+This way, possible changes in patient's name or medical group will be taken into account again.
+
 
 ### update_notification
 Allows to update notification's data
