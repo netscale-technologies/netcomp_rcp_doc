@@ -8,6 +8,19 @@ Each device account has an unique "external_id" (like "4456-2375-6786")
 
 
 
+### device_account_create
+
+Creates a new (unauthorized) device account
+
+|Field|Type|Mandatory|Description
+|---|---|---|---
+|class|string|Y|The class of the account. Current classes are "dexcom", "fitbit" and "rescom"
+|patient_uid|string|Y|Our existing patient uid
+|user_id|string|N|User ID on remote
+|devices|array of objects|N|If available, specific info on devices
+|extra|object|N|Additional metadata to keep
+
+
 ### device_account_register
 
 You can use this API to "register" a patient with an existing "account"
@@ -16,7 +29,7 @@ You can use this API to "register" a patient with an existing "account"
 |---|---|---|---
 |class|string|Y|The class of the account. Current classes are "dexcom", "fitbit" and "rescom"
 |patient_uid|string|Y|Our existing patient uid
-|user_id|string|N|User ID on remote
+|user_id|string|Y|User ID on remote
 |scopes|array of strings|N|Available scopes granted to this user
 |devices|array of objects|N|If available, specific info on devices
 |extra|object|N|Additional metadata to keep
