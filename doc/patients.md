@@ -402,6 +402,9 @@ Allows to list "values" (big data readings) for a patient
 |type|string|Y|Type of the reading (currently only "glucose_est")
 |start_date|datetime|N
 |stop_date|datetime|N
+|start_datetime|datetime|N
+|stop_datetime|datetime|N
+|order|asc or desc|N
 |size|integer|0-1000
 
 ### patient_count_values
