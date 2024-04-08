@@ -27,8 +27,8 @@ Spec object:
 |address|address|N|See bellow
 |timezone|string|N|Must be a valid timezone
 |organization_uid|string|N|UID of valid organization
-|avatar|string|N|
 |branding|string|N|Branding for hubs
+|send_reminders|boolean|N|Assumed yes if not present
 
 
 
