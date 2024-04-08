@@ -26,8 +26,7 @@ Spec object:
 |email|string|N|Contact email
 |address|address|N|See bellow
 |partner_uid|string|Y|Partner that this organization belongs to
-|avatar|string|N|
-
+|send_reminders|boolean|N|Assumed yes if not present
 
 Address object:
 
