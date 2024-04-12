@@ -1043,7 +1043,7 @@ An event will be generated every time a launched event updates its status
 
 * resource is `surveys`
 * type is `status`
-* possible values for last_status are `launched`, `sent`, `answered`, `error`
+* possible values for last_status are `launched`, `sent`, `answered`, `error`, `expired`
 
 sample:
 
