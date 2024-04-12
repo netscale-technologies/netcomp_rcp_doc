@@ -1043,7 +1043,7 @@ An event will be generated every time a launched event updates its status
 
 * resource is `surveys`
 * type is `status`
-* possible values for last_status are `launched`, ...
+* possible values for last_status are `launched`, `sent`, `answered`, `error`
 
 sample:
 
@@ -1080,8 +1080,66 @@ If the survey is answered, questions and answers will appear:
 
 ```javascript
 {
-}
-```
+    "data": {
+        "spec": {
+            "type": "text",
+            "script_id": "ccm_08_diabetes_type2_survey",
+            "expire_time": "2024-04-12T11:30:34.408050Z",
+            "patient_uid": "patients-016d96379484Aaib3ZrYEjceD27",
+            "careplan_uid": "",
+            "survey_uid": "Survey-1hr900pgp6LdeoMDyMBSDEPJUcH"
+        },
+        "status": {
+            "last_status_time": "2024-04-12T11:18:51.957671Z",
+            "last_status": "answered",
+            "questions": [
+                {
+                    "id": "taken_reading",
+                    "status": "alert",
+                    "number": 1,
+                    "question": {
+                        "en": "Have you taken a blood glucose reading today?"
+                    },
+                    "answer": {
+                        "en": "no"
+                    }
+                },
+                {
+                    "id": "weak_sweating",
+                    "status": "alert",
+                    "number": 2,
+                    "question": {
+                        "en": "Have you been or are you now feeling weak, shaky, or waking up sweating in the middle of the night?"
+                    },
+                    "answer": {
+                        "en": "yes"
+                    }
+                },
+                {
+                    "id": "vision_changes",
+                    "status": "alert",
+                    "number": 3,
+                    "question": {
+                        "en": "Have you been or are you now experiencing any significant vision changes?"
+                    },
+                    "answer": {
+                        "en": "yes"
+                    }
+                }
+            ]
+        },
+    },
+    "type": "status",
+    "date": "2024-04-12T11:18:52.111962Z",
+    "group": "rcp-v2",
+    "metadata": {
+        "trace_id": "eb2960485ecbdbcf"
+    },
+    "uid": "1HR90G8EF-STPIARK9OOYH3QO7J7-239",
+    "resource": "surveys",
+    "target": "surveys-1hr9012d8LJSRnWSkVGJfsCVbho",
+    "namespace": ""
+}```
 
 
 
