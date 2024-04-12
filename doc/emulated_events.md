@@ -1037,4 +1037,51 @@ sample:
 ```
 
 
+### Survey launches
+
+An event will be generated every time a launched event updates its status
+
+* resource is `surveys`
+* type is `status`
+* possible values for last_status are `launched`, ...
+
+sample:
+
+```javascript
+{
+    "data": {
+        "spec": {
+            "type": "text",
+            "script_id": "ccm_08_diabetes_type2_survey",
+            "expire_time": "2024-04-12T11:30:34.408050Z",
+            "patient_uid": "patients-016d96379484Aaib3ZrYEjceD27",
+            "careplan_uid": "",
+            "survey_uid": "Survey-1hr900pgp6LdeoMDyMBSDEPJUcH"
+        }
+        "status": {
+            "last_status_time": "2024-04-12T11:10:34.408438Z",
+            "last_status": "launched"
+        },
+    },
+    "type": "status",
+    "date": "2024-04-12T11:10:34.674495Z",
+    "group": "rcp-v2",
+    "metadata": {
+        "trace_id": "26f49ea46d0cacca"
+    },
+    "uid": "1HR9012LI-PAFA81Z1PNB1KS7YY4-514",
+    "resource": "surveys",
+    "target": "surveys-1hr9012d8LJSRnWSkVGJfsCVbho",
+    "namespace": ""
+}
+```
+
+If the survey is answered, questions and answers will appear:
+
+```javascript
+{
+}
+```
+
+
 
