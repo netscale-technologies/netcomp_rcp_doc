@@ -214,6 +214,7 @@ fts|string|Search on name, surname, phone, login, ehr_id
 size|string|Number of records to return (default 50)
 order|string|`asc` (default) or `desc`
 expand_nurse_name|boolean|If `true`, fields `primary_nurse_name` and `primary_nurse_surname` will be added
+get_contact|boolean|If `true`, fields `address` and `phone_sms` will be added
 
 Following fields are returned:
 
