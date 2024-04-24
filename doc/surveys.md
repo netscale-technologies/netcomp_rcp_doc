@@ -46,12 +46,12 @@ You can paginate using cursor
 |Field|Type|Mandatory|Description
 |---|---|---|---
 |patient_uid|string|Y|
-|script_id|string|
-|rule_uid|string|
-|cursor|string|set it to last cursor in previous answer
-|start_time|string|Get only items over this time (in last_status_time)
-|stop_time|string|Get only items under this time (in last_status_time)
-|size|integer|Number or records to retrieve
+|script_id|string|N|
+|rule_uid|string|N|
+|cursor|string|N|set it to last cursor in previous answer
+|start_time|string|N|Get only items over this time (in last_status_time)
+|stop_time|string|N|Get only items under this time (in last_status_time)
+|size|integer|N|Number or records to retrieve
 
 ### view_count_surveys
 Allows for counting of surveys launches.
@@ -59,10 +59,10 @@ Allows for counting of surveys launches.
 |Field|Type|Mandatory|Description
 |---|---|---|---
 |patient_uid|string|Y|
-|script_id|string|
-|rule_uid|string|
-|start_time|string|Get only items over this time (in last_status_time)
-|stop_time|string|Get only items under this time (in last_status_time)
+|script_id|string|N|
+|rule_uid|string|N|
+|start_time|string|N|Get only items over this time (in last_status_time)
+|stop_time|string|N|Get only items under this time (in last_status_time)
 
 ### surveys_set_reviewed
 
