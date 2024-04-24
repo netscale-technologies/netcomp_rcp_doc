@@ -350,7 +350,7 @@ New facility should be under the same organization
 |Field|Type|Mandatory|Description
 |---|---|---|---
 |uid|string|string|Y|
-|facility_uid|string|Y
+|facility_uid|string|Y|
 
 ### add_patient_survey_rule (TO BE REMOVED)
 
