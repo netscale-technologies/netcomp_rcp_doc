@@ -3,9 +3,7 @@
 
 ## Surveys
 
-
-
-### search_surveys
+### search_surveys (DEPRECATED)
 Allows for a powerful search operation on surveys
 
 
@@ -38,6 +36,33 @@ Allows for a powerful search operation on surveys
 * Can sort on one or several fields, ascending or descending: `"sort": ["asc:update_time", "timezone"]` 
 * Operations on field 'name' will be performed over a 'normalized' version of the field (without uppercase, utf8, etc.)
 
+
+
+### view_list_surveys
+Allows for listing of surveys launches.
+Sorting will be `last_status_time`, descending.
+You can paginate using cursor
+
+|Field|Type|Mandatory|Description
+|---|---|---|---
+|patient_uid|string|Y|
+|script_id|string|
+|rule_uid|string|
+|cursor|string|set it to last cursor in previous answer
+|start_time|string|Get only items over this time (in last_status_time)
+|stop_time|string|Get only items under this time (in last_status_time)
+|size|integer|Number or records to retrieve
+
+### view_count_surveys
+Allows for counting of surveys launches.
+
+|Field|Type|Mandatory|Description
+|---|---|---|---
+|patient_uid|string|Y|
+|script_id|string|
+|rule_uid|string|
+|start_time|string|Get only items over this time (in last_status_time)
+|stop_time|string|Get only items under this time (in last_status_time)
 
 ### surveys_set_reviewed
 
