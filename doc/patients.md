@@ -343,7 +343,14 @@ Condition objet
 |code|string|N|Code of the condition
 |text|string|N|Text for it
 
+### update_patient_facility
+Allows to change patient's facility
+New facility should be under the same organization
 
+|Field|Type|Mandatory|Description
+|---|---|---|---
+|uid|string|string|Y|
+|facility_uid|string|Y
 
 ### add_patient_survey_rule (TO BE REMOVED)
 
