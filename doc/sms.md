@@ -11,5 +11,6 @@ Sends a new sms for a patient
 |class|string|Y|Class of the message, related to campaign. Current valid options: ["test1"]
 |text|string|Y|Body
 |priority|integer|N|0-9 (default 5). Higher numbers will be sent first
+
 If the user has opted-out for this number, corresponding error will be returned.
 Otherwise, uid of pending-to-send message will be returned
