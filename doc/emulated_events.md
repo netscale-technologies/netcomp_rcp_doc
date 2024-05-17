@@ -1139,7 +1139,37 @@ If the survey is answered, questions and answers will appear:
     "resource": "surveys",
     "target": "surveys-1hr9012d8LJSRnWSkVGJfsCVbho",
     "namespace": ""
-}```
+}
+```
+
+### Survey review
+
+An event will be generated every time a survey answer is reviewed
+
+* resource is `surveys`
+* type is `reviewed`
+
+sample:
+
+```javascript
+{
+    "data": {
+        "reviewer_uid": "Medical-XXX",
+        "review_time": "2024-04-12T11:30:34.408050Z"
+    },
+    "type": "review",
+    "date": "2024-04-12T11:10:34.674495Z",
+    "group": "rcp-v2",
+    "metadata": {
+        "trace_id": "26f49ea46d0cacca"
+    },
+    "uid": "1HR9012LI-PAFA81Z1PNB1KS7YY4-514",
+    "resource": "surveys",
+    "target": "surveys-1hr9012d8LJSRnWSkVGJfsCVbho",
+    "namespace": ""
+}
+```
+
 
 
 
