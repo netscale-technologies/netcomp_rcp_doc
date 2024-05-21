@@ -74,21 +74,21 @@ Example:
 
 If everything is ok, you will get a new patient_meds' uid
 
-### get_last_patient_med
+### get_last_patient_meds
 
 Gets the last (with higher serial) patient med.
 Then only required field is `patient_uid`
 
 You will get the included _spec_ along with serial, uid, and next expected events
 
-### patient_med_set_active
+### patient_meds_set_active
 
 Marks a patient_med as active or inactive.
 Required fields are `uid` and `is_active`.
 To mark a patient_med as _active_, it must be the last one or an error will be returned (you cannot make active again an old patient_meds)
 
 
-### delete_patient_med
+### delete_patient_meds
 
 Removes a patient meds and stops all pending reminders for it.
 Only mandatory field is `uid`
