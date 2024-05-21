@@ -1,6 +1,6 @@
 # API
 
-There are two objects to model the whole Medications Engine.
+There are two objects to model Core Medications Engine.
 
 * `patient_meds` refers to a current "medication list" for a patient, including the scheduling for the reminder of each one.
 * `med_taken` rerers to an indivudual "take" of a specific medication for an specific patient
