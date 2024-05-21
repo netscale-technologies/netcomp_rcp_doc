@@ -7,7 +7,7 @@ There are two objects to model Core Medications Engine.
 
 ## PatientMeds
 
-### create_patient_med
+### create_patient_meds
 
 You can _create_ or _update_ a medication list for a patient calling to this API 
 * Included schedules for all medications will be processed and cron jobs will be started to be launched at each specific time
