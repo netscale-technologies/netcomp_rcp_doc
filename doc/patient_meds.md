@@ -141,7 +141,7 @@ In the near future, updater_uid and updater_kind will probably be extracted from
 You can call this API multiple times, and the last one will be considered the "last" status.
 All previous statuses are stored inside the object.
 
-### med_taken_get
+### get_med_taken
 
 Allows to get a specific record. Mandatory field is `uid`
 
