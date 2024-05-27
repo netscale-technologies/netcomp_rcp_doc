@@ -141,21 +141,6 @@ In the near future, updater_uid and updater_kind will probably be extracted from
 You can call this API multiple times, and the last one will be considered the "last" status.
 All previous statuses are stored inside the object.
 
-### med_taken_set_status_code
-
-Allows you to set a med_taken as "taken" or "skipped", if you don't know the UID for this instance but you know `patient_meds_uid`, `fire_time` and `code` (for example from push notification)
-
-|Field|Type|Mandatory|Description
-|---|---|---|---
-|patient_meds_uid|string|Y|
-|fire_time|string|Y|
-|code|string|Y|
-|status|string|Y| "taken" or "skipped"
-|updater_uid|string|N|UID of Patient or Medical calling the API (provisional)
-|updater_kind|string|N| "Patient" or "Medical" (provisional)
-|updater_timestamp|string|N|Datetime of "taken" if not the same as now
-
-
 ### med_taken_get
 
 Allows to get a specific record. Mandatory field is `uid`
