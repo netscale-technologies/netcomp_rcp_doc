@@ -88,8 +88,8 @@ Sets a notification as read
 |member_uid|string|Y|
 
 ### set_notification_refresh
-_Refreshes_ the notification so its _time_ is updated to _now_, so it should move to the
-top of any time-based list.
+_Refreshes_ the notification so its _update_time_ is updated to _now_, so it should move to the
+top of any time-based list, since listing is based on this field.
 
 You must also provide a meta that **will overwrite current notification's meta**
 
@@ -97,6 +97,11 @@ You must also provide a meta that **will overwrite current notification's meta**
 |---|---|---|---
 |notification_uid|string|Y|
 |meta|object|Y|
+|recreate|boolean|N|see bellow (default false)
+
+If recreate is set to `true`, notification will be deleted and created again using same UID. 
+This way, possible changes in patient's name or medical group will be taken into account again.
+
 
 ### update_notification
 Allows to update notification's data

@@ -24,3 +24,21 @@ Returns:
 |Field|Type|Description
 |---|---|---
 |uid|string|UID of the created value
+
+
+### summary_set_reviewed
+
+Marks an existing summary as 'reviewed'
+
+|Field|Type|Mandatory|Description
+|---|---|---|---
+|summary_uid|string|Y|UID of summary to update
+|reviewer_uid|string|Y|UID of reviewer
+
+If summary is not already reviewed, a new object "review" will be added to 'extra', containing "reviewer_uid" and "time",
+and `{"result": true}` will be returned.
+
+If it is already reviewed (field "extra.review" exists), nothing is changed and  `{"result": false}` is returned
+
+If later on, you call insert_summary again for the same class, type and date (because of new data or because you want to add a notification_uid), **field 'extra' will be overwritten**, so marking the summary as 'not reviewed' again
+

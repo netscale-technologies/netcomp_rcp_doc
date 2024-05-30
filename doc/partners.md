@@ -22,7 +22,8 @@ Spec object:
 |phone|string|N|Phone
 |email|string|N|Contact email
 |address|address|N|See bellow
-|avatar|string|N|
+|send_reminders|boolean|N|Assumed yes if not present
+
 
 
 Address object:
