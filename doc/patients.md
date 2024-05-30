@@ -343,7 +343,14 @@ Condition objet
 |code|string|N|Code of the condition
 |text|string|N|Text for it
 
+### update_patient_facility
+Allows to change patient's facility
+New facility should be under the same organization
 
+|Field|Type|Mandatory|Description
+|---|---|---|---
+|uid         |string|Y|
+|facility_uid|string|Y|
 
 ### add_patient_survey_rule (TO BE REMOVED)
 
@@ -402,6 +409,9 @@ Allows to list "values" (big data readings) for a patient
 |type|string|Y|Type of the reading (currently only "glucose_est")
 |start_date|datetime|N
 |stop_date|datetime|N
+|start_datetime|datetime|N
+|stop_datetime|datetime|N
+|order|asc or desc|N
 |size|integer|0-1000
 
 ### patient_count_values
@@ -415,6 +425,24 @@ Allows to count "values" (big data readings) for a patient
 |type|string|Y|Type of the reading (currently only "glucose_est")
 |start_date|datetime|N
 |stop_date|datetime|N
+
+
+### patient_list_values_daily
+
+Works like `patient_list_values` but it will group values by date, taking timezone into account.
+It will generate a record for each date. In each one, for each detected values, stats "min", "max", "count" and "sum"
+will be calculated.
+
+First call for a set of params may take some time. Next calls with the same parameters will use pre-calculated data
+
+|Field|Type|Mandatory|Description
+|---|---|---|---
+|uid|string|Y|UID of patient
+|timezone|string|Y|Timezone for day calculations
+|class|string|Y|Class of the reading (currently only "dexcom")
+|type|string|Y|Type of the reading (currently only "glucose_est")
+|start_date|date|Y
+|stop_date|datetime|Y
 
 
 ### patient_list_summaries

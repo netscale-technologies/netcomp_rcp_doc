@@ -108,6 +108,9 @@ Normal users must include password and old_password.
 
 Staff users must include password and member_uid of te member to change the password to.
 
+After updating the password in core, it will try to update it in Keycloak too.
+Returning field 'keycloak' will inform about the result of the operation: `ok` | `user_not_found` | `error`
+
 
 ### upload_avatar
 
@@ -243,6 +246,15 @@ Data in "info" will have the followig fields interpolated:
 
 If the hub is created, "owner" will be set to "patient" and field "uid" will point to patient's uid. Also office will be copied from patient's office
 
+### provision_kc_user
+
+|Field|Type|Mandatory|Description
+|---|---|---|---
+|member_uid|string|N|Member to provision
+|password|string|Y|New password
+
+User to provision in KC must exist and have a valid "login".
+Password will be updated in core and user will be created or updated in KC
 
 
 

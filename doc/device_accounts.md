@@ -8,6 +8,19 @@ Each device account has an unique "external_id" (like "4456-2375-6786")
 
 
 
+### device_account_create
+
+Creates a new (unauthorized) device account
+
+|Field|Type|Mandatory|Description
+|---|---|---|---
+|class|string|Y|The class of the account. Current classes are "dexcom", "fitbit" and "rescom"
+|patient_uid|string|Y|Our existing patient uid
+|user_id|string|N|User ID on remote
+|devices|array of objects|N|If available, specific info on devices
+|extra|object|N|Additional metadata to keep
+
+
 ### device_account_register
 
 You can use this API to "register" a patient with an existing "account"
@@ -23,7 +36,7 @@ You can use this API to "register" a patient with an existing "account"
 
 When calling this function, first we try to locate an existing device account that matches:
 * If a device account is found for this patient with same class and user_id, it is used
-* If none is found, but one exists with same lass and user_id=null, it is used and user_id is updated (this is used in some pre-provision scenarios)
+* If none is found, but one exists with same class and user_id=null, it is used and user_id is updated (this is used in some pre-provision scenarios)
 * If none is found again, a new one is created (along with a new external_id)
 
 After calling this function, new or existing device account will be flagged as "authorized"
@@ -81,3 +94,26 @@ Specialized call to finds all existing devce accounts for one or more partients.
 |patient_uids|list of string|Y|
 
 It will return field "patients" with a map, one key for each patient, and for each one a list of objects including fields uid, class, is_authorized and devices.
+
+
+### device_account_iterate
+
+Allows to iterate over all device accounts, sorted by uid.
+Results can be paginated using "last_uid" of last returned uid to restart on next one.
+
+|Field|Type|Mandatory|Description
+|---|---|---|---
+|last_uid|string|N|Default is ""
+|size|intege|N|Default is 2.000
+
+### device_account_delete
+
+Deletes an existing device account.
+Be careful since this means it cannot be used any more to know the patient had this account in the past.
+
+|Field|Type|Mandatory|Description
+|---|---|---|---
+|uid|string|Y|
+
+
+

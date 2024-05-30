@@ -210,8 +210,11 @@ primary_nurse_uid|string or null|Get patients having this nurse as primary
 medical_uid|string|Get patients having this doctor (any role)
 main_program|string|Get patients having this "main program"
 name_or_surname_prefix|string|Get patients with name or surname starting with this
+fts|string|Search on name, surname, phone, login, ehr_id
 size|string|Number of records to return (default 50)
 order|string|`asc` (default) or `desc`
+expand_nurse_name|boolean|If `true`, fields `primary_nurse_name` and `primary_nurse_surname` will be added
+get_contact|boolean|If `true`, fields `address` and `phone_sms` will be added
 
 Following fields are returned:
 
@@ -233,6 +236,8 @@ main_program|string|Get patients having this "main program"
 risk_factor|integer|
 devices| [object] |List of devices associated to this patient
 extra| [object] |Additional data (name, surname, programs)
+primary_nurse_name|string|Only if `expand_nurse_name` is true and name is available
+primary_nurse_surname|string|Only if `expand_nurse_name` is true and surname is available
 
 Order will be by (surname, name) in normalized form, ascending. Can be reversed with `order`
 
@@ -519,7 +524,8 @@ device_uid|string|
 |---|---|---
 timeslot_uid|string|If provided, returns a single notification
 cursor|string|Pagination
-type|string|
+type|string|See bellow
+tags_any| [string] |See bellow
 user_uid|string
 patient_uid|string
 month|string|year+month string
@@ -530,6 +536,7 @@ size|string|Number of records to return (default 50)
 
 By default, both visible and invisible entries will be returned. You can focus on any of them using 'invisible' parameter
 
+If type is provided, it will find records having that type. If tags_any, records having any of the tags. If both, records having the type or any of the tags
 
 Following fields are returned:
 
@@ -556,7 +563,8 @@ Similar to view_list_timeslots, but it only counts the number of records matchin
 |Field|Type|Description
 |---|---|---
 timeslot_uid|string|If provided, returns a single notification
-type|string|
+type|string|See above
+tags_any| [string] |See above
 user_uid|string
 patient_uid|string
 month|string|year+month string
@@ -576,7 +584,8 @@ Similar to view_list_timeslots, but it focuses on a single patient and a period 
 patient_uid|string (mandatory)
 start_time|string|starting time to consider (madnatory)
 stop_time|string|stoppping time to consider (mandatory)
-type|string|
+type|string|See above
+tags_any| [string] |See above
 user_uid|string
 invisible|boolean|See bellow
 
