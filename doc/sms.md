@@ -24,3 +24,4 @@ curl -v -X POST \
  -d '{"cmd":"send_sms", "data": {"number": "18139023251", "class": "app-register", "text": "Test1"}}' \
  https://v1-proxy-dev.nk.rcp.care/api
 ```
+
