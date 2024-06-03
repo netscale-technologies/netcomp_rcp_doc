@@ -445,6 +445,25 @@ First call for a set of params may take some time. Next calls with the same para
 |stop_date|datetime|Y
 
 
+### patient_list_values_hourly
+
+Works like `patient_list_values` but it will group values by date and hour, taking timezone into account.
+It will generate a record for each date & hour. In each one, for each detected values, stats "min", "max", "count" and "sum"
+will be calculated.
+
+First call for a set of params may take some time. Next calls with the same parameters will use pre-calculated data
+
+|Field|Type|Mandatory|Description
+|---|---|---|---
+|uid|string|Y|UID of patient
+|timezone|string|Y|Timezone for day calculations
+|class|string|Y|Class of the reading (currently only "dexcom")
+|type|string|Y|Type of the reading (currently only "glucose_est")
+|start_date|date|Y
+|stop_date|datetime|Y
+
+
+
 ### patient_list_summaries
 
 Allows to list "summaries" (daily readings) for a patient
