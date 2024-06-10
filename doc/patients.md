@@ -20,6 +20,7 @@ Spec object:
 |login|N|For future use
 |name|string|Y|Name (or full name) of user
 |surname|string|N|Surname of user (optional)
+|name_extra|string|N|Extra parts of name
 |gender|string|N|Must be 'M', 'F', 'O' or 'U'
 |phone|string|N|Phone
 |phone_sms|string|N|Alternative phone
