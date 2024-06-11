@@ -1,1 +1,13 @@
+# AuthRequests
+
+These APIs allow to "send" an authorization request from a _target_ to an _authorized_. Once both parties _authorize_ the request,
+indicated roles will be applied to _authorized_ over _target_.
+
+Typically, _target_ will be a _Patient_ and _authorized_ will be a _Companion_
+
+### parent_uid ###
+
+
+
+
 
