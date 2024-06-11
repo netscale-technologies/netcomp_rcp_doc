@@ -15,11 +15,11 @@ Field 'spec' must be provided with following information:
 |target_uid|string|Y|patient's uid
 |authorized_uid|string|Y|companion's uid
 |roles| [string] |Y|List of roles. Allowed values: `["test"]`
+|ttl_secs|integer|N|Expiration ttl (default 24h)
 
 Returns UID of the config object
 
 Request will be deleted once both parties approved it, or the timeout happens.
-Initial timeout is 24h
 
 ### auth_request_target_approve
 
@@ -53,6 +53,6 @@ Lists pending auth requests
 
 |Field|Type|Mandatory|Description
 |---|---|---|---
-|parent_uid|string|Y|UID of owner (typically patient)
+|target_uid|string|Y|UID of target (typically patient)
 
 
