@@ -58,6 +58,7 @@ EHR object:
 |---|---|---|---
 |birth_time|string|N|RFC3339 date
 |height|integer|N|
+|weight|integer|N|
 |meta|object|N|
 
 
