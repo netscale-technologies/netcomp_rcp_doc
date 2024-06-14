@@ -20,6 +20,7 @@ Spec object:
 |login|N|For future use
 |name|string|Y|Name (or full name) of user
 |surname|string|N|Surname of user (optional)
+|name_extra|string|N|Extra parts of name
 |gender|string|N|Must be 'M', 'F', 'O' or 'U'
 |phone|string|N|Phone
 |phone_sms|string|N|Alternative phone
@@ -58,6 +59,7 @@ EHR object:
 |---|---|---|---
 |birth_time|string|N|RFC3339 date
 |height|integer|N|
+|weight|integer|N|
 |meta|object|N|
 
 
@@ -445,6 +447,25 @@ First call for a set of params may take some time. Next calls with the same para
 |type|string|Y|Type of the reading (currently only "glucose_est")
 |start_date|date|Y
 |stop_date|datetime|Y
+
+
+### patient_list_values_hourly
+
+Works like `patient_list_values` but it will group values by date and hour, taking timezone into account.
+It will generate a record for each date & hour. In each one, for each detected values, stats "min", "max", "count" and "sum"
+will be calculated.
+
+First call for a set of params may take some time. Next calls with the same parameters will use pre-calculated data
+
+|Field|Type|Mandatory|Description
+|---|---|---|---
+|uid|string|Y|UID of patient
+|timezone|string|Y|Timezone for day calculations
+|class|string|Y|Class of the reading (currently only "dexcom")
+|type|string|Y|Type of the reading (currently only "glucose_est")
+|start_date|date|Y
+|stop_date|datetime|Y
+
 
 
 ### patient_list_summaries

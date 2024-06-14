@@ -31,8 +31,7 @@ Spec object:
 |locale|string|N|Must be a valid locale
 |address|address|N|See bellow
 |offices|\[office]|N|See bellow
-|is_primary|boolean|N|
-|avatar|string|N|
+|npi|string|N|Medical's NPI
 
 
 Address object:

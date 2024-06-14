@@ -37,13 +37,17 @@ Medications must use following format:
 |code|string|Y|Unique code for this medication
 |name|string|Y|Medication name
 |description|string|Y|Medication description
-|schedules| [schedule] |Y|Scheduling for reminders
+|schedules| [schedule] |N|Scheduling for reminders
+
+**If no schedules are defined, no reminders events will be sent, and it will not be possible to marks meds as taken or skipped**
+
 
 Schedules use the following format:
 
 |Field|Type|Mandatory|Description
 |---|---|---|---
 |display|string|Y|User-based time like "breakfast"
+|description|string|n|User-based description for this specific schedule, like "take two pills"
 |repeat|string|Y|"daily", "weekly", "monthly"
 |hour|integer|Y|0-23
 |minute|integer|Y|0-59
