@@ -12,8 +12,8 @@ Sends a new sms for a patient
 |text|string|Y|Body
 |priority|integer|N|0-9 (default 5). Higher priorities will be sent first
 
-If the user has opted-out for this number, corresponding error will be returned.
-Otherwise, uid of pending-to-send message will be returned
+uid of pending-to-send message will be returned
+If the user has opt-opt, the message will not be sent and last_status will be "opt-out"
 
 Example
 
