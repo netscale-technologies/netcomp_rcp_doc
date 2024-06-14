@@ -25,3 +25,34 @@ curl -v -X POST \
  https://v1-proxy-dev.nk.rcp.care/api
 ```
 
+
+### list_sms_messages
+
+|Field|Type|Mandatory|Description
+|---|---|---|---
+|uid|string|N|Specific UID
+|class|string|N|For example "app-register"
+|direction|string|N|"inbound" or "outbound"
+|number|string|N|User's number
+|trunk|string|N|Used trunk number
+|user_uid|string|N|User's uid, if available
+|last_status|string|N|
+|start_time|string|N|Minimum timestamp for last_status_time
+|stop_time|string|N|Maximum timestamp for last_status_time
+|size|integer|N|Default 1000
+
+Order wil be last_status_time, descending
+
+### list_sms_users
+
+|Field|Type|Mandatory|Description
+|---|---|---|---
+|number|string|N|User's number
+|class|string|N|For example "app-register"
+|user_uid|string|N|User's uid, if available
+|last_status|string|N|
+|start_time|string|N|Minimum timestamp for last_status_time
+|stop_time|string|N|Maximum timestamp for last_status_time
+|size|integer|N|Default 1000
+
+Order wil be last_status_time, descending
