@@ -8,7 +8,7 @@ Sends a new sms for a patient
 |---|---|---|---
 |user_uid|string|N|UID of destination user. Field phone_sms will be used.
 |number|string|N|Override destination number (mandatory if no `user_uid`)
-|class|string|Y|Class of the message, related to campaign. Current valid options: ["test", "app-register"]
+|class|string|Y|Class of the message, related to campaign. Current valid options: ["test", "app-register", "app-reminder"]
 |text|string|Y|Body
 |priority|integer|N|0-9 (default 5). Higher priorities will be sent first
 
