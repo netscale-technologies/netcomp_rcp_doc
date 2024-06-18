@@ -117,6 +117,7 @@ Status description:
 |Field|Type|Description
 |---|---|---
 |conditions| [ condition ] | See bellow
+|diagnoses| [ diagnose ] | See bellow
 |parameters| object | See parameters discussion bellow
 |send_reminders|boolean|
 |status|string|"inative", "testing" or "active"
@@ -130,6 +131,16 @@ Condition object
 |code|string|
 |text|string|
 |date|string|
+
+Diagnose object
+
+|Field|Type|Description
+|---|---|---
+|type|string|"ICD10"
+|code|string|code itself
+|text|string|
+|date|string|
+|from|string|Origin or UID of update
 
 Metadata description:
 
