@@ -122,6 +122,7 @@ Status description:
 |send_reminders|boolean|
 |status|string|"inative", "testing" or "active"
 |status_reason|string|
+|ellegible_ccm|boolean
 
 Condition object
 
