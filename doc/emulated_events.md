@@ -1171,5 +1171,39 @@ sample:
 ```
 
 
+### External event
+
+This event is generared when an external event is inserted into the core
+
+* resource is `external-events`
+* type is events' class
+* data will include event itself
+
+sample:
+
+```javascript
+{
+    "resource": "external-events",
+    "type": "watch-event",
+    "uid": "1HR9012LI-PAFA81Z1PNB1KS7YY4-514",
+    "target": null,
+    "data": {
+      "class": "watch-event",
+      "type": "subtype"
+      "target": null,
+      "payload": {} 
+    },
+    "date": "2024-04-12T11:10:34.674495Z",
+    "group": "rcp-v2",
+    "metadata": {
+        "trace_id": "26f49ea46d0cacca"
+    },
+}
+```
+
+
+
+
+
 
 
