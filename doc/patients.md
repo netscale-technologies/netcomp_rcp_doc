@@ -357,6 +357,19 @@ Condition objet
 |code|string|N|Code of the condition
 |text|string|N|Text for it
 
+### update_patient_diagnose
+Allows to add, update or delete a diagnose.
+
+|Field|Type|Mandatory|Description
+|---|---|---|---
+|uid|string|Y|Patient's UID
+|type|string|N|Default: "icd10"
+|code|string|Y|Diagnose code (ICD10 code)
+|text|string|N|Optional text
+|from|string|N|Origin of code (import, careplan's UID...)
+|delete|boolean|N|true to delete this code
+
+
 ### update_patient_facility
 Allows to change patient's facility
 New facility should be under the same organization
