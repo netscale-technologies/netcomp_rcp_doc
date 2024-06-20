@@ -6,7 +6,7 @@ These APIs allow to create external-created events that will be stored in the co
 
 
 
-### event_create
+### create_event
 
 |Field|Type|Mandatory|Description
 |---|---|---|---
