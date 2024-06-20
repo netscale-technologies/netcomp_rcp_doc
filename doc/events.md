@@ -16,3 +16,5 @@ target|string|N|Target of the event, if available (like patient uid, or watch ui
 payload|object|Y|Body of event
 
 Events's uid will be returned, and kafka message will be sent
+
+Kafka generated event is documented [here](emulated_events.md#external-event)
