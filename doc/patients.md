@@ -120,7 +120,7 @@ Status description:
 |diagnoses| [ diagnose ] | See bellow
 |parameters| object | See parameters discussion bellow
 |send_reminders|boolean|
-|status|string|"inactive", "testing", "active", "paused"
+|status|string|"inactive", "testing", "active", "paused", "deactivated"
 |status_reason|string|
 |ellegible_ccm|boolean
 
