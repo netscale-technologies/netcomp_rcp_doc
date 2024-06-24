@@ -38,6 +38,7 @@ Spec object:
 |programs|\[string\]|N|List of programs (["CCM", "RCP"])
 |risk_factor|integer|N|Risk factor (0, 1, 2)
 |contact_preference|string|N|"SMS", "VOICE"
+|ellegible_ccm|boolean
 |meta|object|N|
 
 Address object:
@@ -122,7 +123,6 @@ Status description:
 |send_reminders|boolean|
 |status|string|"inactive", "testing", "active", "paused", "deactivated"
 |status_reason|string|
-|ellegible_ccm|boolean
 
 Condition object
 
@@ -222,18 +222,6 @@ Allows to update patient's data
 |reason|string|N|
 
 Returns ok or error
-
-### update_patient_ellegible_ccm,
-Allows to update patient's ellegible_ccm status
-
-|Field|Type|Mandatory|Description
-|---|---|---|---
-|uid|string|Y|Unique UUID
-|ellegible_ccm|boolean|Y|New status
-
-Returns ok or error
-
-
 
 ### update_patient_send_reminders
 Allows to update patient's "send_reminders" flag
