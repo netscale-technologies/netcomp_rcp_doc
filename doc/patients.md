@@ -223,6 +223,17 @@ Allows to update patient's data
 
 Returns ok or error
 
+### update_patient_ellegible_ccm,
+Allows to update patient's ellegible_ccm status
+
+|Field|Type|Mandatory|Description
+|---|---|---|---
+|uid|string|Y|Unique UUID
+|ellegible_ccm|boolean|Y|New status
+
+Returns ok or error
+
+
 
 ### update_patient_send_reminders
 Allows to update patient's "send_reminders" flag
