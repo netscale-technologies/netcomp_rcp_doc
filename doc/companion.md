@@ -83,7 +83,7 @@ Adds to a companion the role "core.companion" targetting the patient calling the
 Roles can be retrieved with `get_companion` in `metadata.roles`
 
 |Field|Type|Mandatory|Description
-|---|---|---
+|---|---|---|---
 |companion_uid|string|Y|Companion's UID
 
 
@@ -92,6 +92,6 @@ Removes from a Companion the role "core.companion" targetting the patient callin
 Roles can be retrieved with `get_companion` in `metadata.roles`
 
 |Field|Type|Mandatory|Description
-|---|---|---
+|---|---|---|---
 |companion_uid|string|Y|Companion's UID
 
