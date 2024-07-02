@@ -38,6 +38,7 @@ Medications must use following format:
 |name|string|Y|Medication name
 |description|string|Y|Medication description
 |schedules| [schedule] |N|Scheduling for reminders
+|fda_extra| fda_extra|N|See bellow
 
 **If no schedules are defined, no reminders events will be sent, and it will not be possible to marks meds as taken or skipped**
 
@@ -75,6 +76,23 @@ Example:
   ]
 }
 ```
+
+fda_extra format:
+
+|Field|Type|Mandatory|Description
+|---|---|---|---
+|active_ingredients| [ingredient] |N|
+|quantity|string|Y|
+|route|string|Y|
+|type| string |N|
+|conditions| [string] |N|
+
+ingredient format:
+
+|Field|Type|Mandatory|Description
+|---|---|---|---
+|name|string|N|
+|strentgh|string|N|
 
 If everything is ok, you will get a new patient_meds' uid
 
