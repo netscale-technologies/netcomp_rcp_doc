@@ -77,3 +77,21 @@ Allows for a powerful search operation on companions
 |fts|string|Finds in login, name, surname, phone and phone_sms
 |target_uid|string|Filter companions having roles over this target
 
+
+### companion_set_patient
+Adds to a companion the role "core.companion" targetting the patient calling the API.
+Roles can be retrieved with `get_companion` in `metadata.roles`
+
+|Field|Type|Mandatory|Description
+|---|---|---|---
+|companion_uid|string|Y|Companion's UID
+
+
+### companion_unset_patient
+Removes from a Companion the role "core.companion" targetting the patient calling the API.
+Roles can be retrieved with `get_companion` in `metadata.roles`
+
+|Field|Type|Mandatory|Description
+|---|---|---|---
+|companion_uid|string|Y|Companion's UID
+
