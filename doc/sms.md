@@ -8,12 +8,12 @@ Sends a new sms for a patient
 |---|---|---|---
 |user_uid|string|N|UID of destination user. Field phone_sms will be used.
 |number|string|N|Override destination number (mandatory if no `user_uid`)
-|class|string|Y|Class of the message, related to campaign. Current valid options: ["test", "app-register"]
+|class|string|Y|Class of the message, related to campaign. Current valid options: ["test", "app-register", "app-reminder"]
 |text|string|Y|Body
 |priority|integer|N|0-9 (default 5). Higher priorities will be sent first
 
-If the user has opted-out for this number, corresponding error will be returned.
-Otherwise, uid of pending-to-send message will be returned
+uid of pending-to-send message will be returned, along with "opt-out" status.
+If the user has opt-opt, the message will not be sent and last_status will be "opt-out"
 
 Example
 

@@ -38,6 +38,7 @@ Spec object:
 |programs|\[string\]|N|List of programs (["CCM", "RCP"])
 |risk_factor|integer|N|Risk factor (0, 1, 2)
 |contact_preference|string|N|"SMS", "VOICE"
+|ellegible_ccm|boolean
 |meta|object|N|
 
 Address object:
@@ -117,9 +118,10 @@ Status description:
 |Field|Type|Description
 |---|---|---
 |conditions| [ condition ] | See bellow
+|diagnoses| [ diagnose ] | See bellow
 |parameters| object | See parameters discussion bellow
 |send_reminders|boolean|
-|status|string|"inative", "testing" or "active"
+|status|string|"inactive", "testing", "active", "paused", "deactivated"
 |status_reason|string|
 
 Condition object
@@ -130,6 +132,16 @@ Condition object
 |code|string|
 |text|string|
 |date|string|
+
+Diagnose object
+
+|Field|Type|Description
+|---|---|---
+|type|string|"ICD10"
+|code|string|code itself
+|text|string|
+|date|string|
+|from|string|Origin or UID of update
 
 Metadata description:
 
@@ -210,7 +222,6 @@ Allows to update patient's data
 |reason|string|N|
 
 Returns ok or error
-
 
 ### update_patient_send_reminders
 Allows to update patient's "send_reminders" flag
@@ -344,6 +355,19 @@ Condition objet
 |type|string|Y|Primary or secondary
 |code|string|N|Code of the condition
 |text|string|N|Text for it
+
+### update_patient_diagnose
+Allows to add, update or delete a diagnose.
+
+|Field|Type|Mandatory|Description
+|---|---|---|---
+|uid|string|Y|Patient's UID
+|type|string|N|Default: "icd10"
+|code|string|Y|Diagnose code (ICD10 code)
+|text|string|N|Optional text
+|from|string|N|Origin of code (import, careplan's UID...)
+|delete|boolean|N|true to delete this code
+
 
 ### update_patient_facility
 Allows to change patient's facility
