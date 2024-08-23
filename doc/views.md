@@ -209,6 +209,9 @@ primary_medical_uid|string|Get patients having this doctor as primary
 primary_nurse_uid|string or null|Get patients having this nurse as primary
 medical_uid|string|Get patients having this doctor (any role)
 main_program|string|Get patients having this "main program"
+is_ccm|boolean|Get patients having this program
+is_rcm|boolean|Get patients having this program
+is_pcm|boolean|Get patients having this program
 name_or_surname_prefix|string|Get patients with name or surname starting with this
 fts|string|Search on name, surname, phone, login, ehr_id
 size|string|Number of records to return (default 50)
@@ -233,6 +236,9 @@ primary_medical_uid|string|Get patients having this doctor as primary
 primary_nurse_uid|string|Get patients having this doctor as primary
 medical_uid|string|Get patients having this doctor (any role)
 main_program|string|Get patients having this "main program"
+is_ccm|boolean|Get patients having this program
+is_rcm|boolean|Get patients having this program
+is_pcm|boolean|Get patients having this program
 risk_factor|integer|
 devices| [object] |List of devices associated to this patient
 extra| [object] |Additional data (name, surname, programs)
