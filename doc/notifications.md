@@ -151,6 +151,19 @@ Sends a todo to the whole medical group of a patient
 |type|string|Y|
 |meta|object|Y|
 
+### medical_task
+
+Sends a task (priority 200) to the whole medical group of a patient
+
+|Field|Type|Mandatory|Description
+|---|---|---|---
+|patient_uid|string|Y|
+|class|string|Y|
+|type|string|Y|
+|meta|object|Y|
+
+
+
 ### search_notifications
 Allows for a powerful search operation on notifications. This api can however produce non optimal queries on the server, use `list_notification_by_time` and `list_notification_by_priority`
 
