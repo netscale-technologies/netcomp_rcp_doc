@@ -85,5 +85,15 @@ Only field `duration_secs` will be updated. If the timeslot has a history of cha
 
 |Field|Type|Mandatory|Description
 |---|---|---|---
-|worklog_uid|string|Y|UID of timeslot
-|duration_secs|integer|Y|
+|uid|string|Y|UID of timeslot
+|spec|spec|Y|
+
+Spec object:
+
+|Field|Type|Mandatory|Description
+|---|---|---|---
+|type|string|N|
+|start_time|string|N|
+|duration_secs|integer|N|
+|program|string|N|
+|invisible|boolean|N|
