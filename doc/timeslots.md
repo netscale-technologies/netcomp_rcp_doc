@@ -78,4 +78,12 @@ If the operation is successful, update info will be added to status, and field '
 
 Allows to delete an existing timeslot. Same parameters as get_timeslot
 
+### patch_timeslot
+This API can be "patch" an existing a timeslot.
+Only field `duration_secs` will be updated. If the timeslot has a history of changes, last change updating 
+`duration_secs` (if existing) will be updated too.
 
+|Field|Type|Mandatory|Description
+|---|---|---|---
+|worklog_uid|string|Y|UID of timeslot
+|duration_secs|integer|Y|
