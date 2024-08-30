@@ -80,8 +80,7 @@ Allows to delete an existing timeslot. Same parameters as get_timeslot
 
 ### patch_timeslot
 This API can be "patch" an existing a timeslot.
-Only field `duration_secs` will be updated. If the timeslot has a history of changes, last change updating 
-`duration_secs` (if existing) will be updated too.
+If the timeslot has a history of changes, the call will fail.
 
 |Field|Type|Mandatory|Description
 |---|---|---|---
