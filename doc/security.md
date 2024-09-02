@@ -9,7 +9,7 @@ This api allows you to check if an specific user has one or several permissions 
 |token|string|Y|token identifying user requesting access (see bellow)
 |resource|string|Y|protected resource (for example, "medications.surescripts")
 |permissions| [string] |Y|requested permissions (for example ["view"])
-|target_uid|string|uid of the target to protect (usually a Patient's uid)
+|target_uid|string|Y|uid of the target to protect (usually a Patient's uid)
 
 For token, differente formats are supported:
 * Keycloak JWT token: token must be valid and not expired
