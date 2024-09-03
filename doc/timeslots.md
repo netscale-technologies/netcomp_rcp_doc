@@ -25,6 +25,7 @@ Spec object:
 |tags|list of string|N|
 |program|string|
 |invisible|boolean|N|Default: false
+|summary_procesS_id|string|N|
 |meta|object|N|Additional data
 
 Returns:
@@ -96,3 +97,4 @@ Spec object:
 |duration_secs|integer|N|
 |program|string|N|
 |invisible|boolean|N|
+|summary_procesS_id|string|N|
