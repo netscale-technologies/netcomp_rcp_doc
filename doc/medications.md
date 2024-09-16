@@ -60,7 +60,7 @@ Allows to list current medications for a patient.
 |code|string|N|
 |status|string|N
 
-### list_med_logs
+### list_medication_logs
 
 Allows to list "log updates" for a patient's medication. 
 You must provide patient's uid and medication's code.
