@@ -16,10 +16,12 @@ You must include field `spec` with following fields:
 |---|---|---|---
 |patient_uid|string|Y|Patient we refer to
 |code|string|Y|Code for medication, usually and NDC
-|code_type|string|Y|Type of code, for example "ndc"
+|code_type|string|Y|`ndc`, `rxcui`
 |name|string|Y|Medication's title
+|name_type|string|N|
 |status|string|Y|Current status. Accepted values: (TO DECIDE)
 |description|string|N|Extended description of medication
+|origin|string|Y|`surescripts` `openfda`, `nih`, `custom`
 |fda_extra| fda_extra|N|See bellow
 
 fda_extra format:
