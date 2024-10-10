@@ -70,6 +70,7 @@ You must provide medication_uid, and if will be sorted by `fill_date`, descendin
 |Field|Type|Mandatory|Description
 |---|---|---|---
 |medication_uid|string|Y|
+|patient_uid|string|N|Needed unless you have global permissions
 |cursor|string|N|For pagination, or going to a fixed date
 |size|integer|N|Max: 1000, default: 100
 
