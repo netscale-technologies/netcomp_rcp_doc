@@ -65,16 +65,12 @@ Allows to list current medications for a patient.
 ### list_medication_logs
 
 Allows to list "log updates" for a patient's medication. 
-You must provide patient's uid and medication's code.
-Results will be sorted by time (most recent first). 
-
+You must provide medication_uid, and if will be sorted by `fill_date`, descending
 
 |Field|Type|Mandatory|Description
 |---|---|---|---
-|patient_uid|string|Y|
-|code|string|Y|
-|start_time|string|N|Minimum timestamp
-|stop_time|string|N|Maximum timestamp
+|medication_uid|string|Y|
+|cursor|string|N|For pagination, or going to a fixed date
 |size|integer|N|Max: 1000, default: 100
 
 
