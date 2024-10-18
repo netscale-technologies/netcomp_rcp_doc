@@ -88,7 +88,30 @@ Creation fields (from user or Surescripts) will be returned into "spec" object. 
     "route": "...",
     "type": "..."
     "conditions": ["..."]
+  }
 }
+```
+
+
+Also, "status" object will return updates made to the core fields. It also contains last update from surescripts, if available:
+
+```json
+{
+  "updates": [
+    {
+      "update": {"directions": "... new directions ..."},
+      "timestamp": "2024-10-10T10:07:17.099262Z",
+      "made_by": "Medical-XXX"
+    }
+    {
+      "update": {"status": "pending"},
+      "timestamp": "2024-10-07T17:07:17.099262Z"
+    },
+    {
+      "update": {"status": "created"},
+      "timestamp": "2024-10-07T17:07:17.099262Z"
+    },
+  ],
   "sc_extra": {
     "medication": {
       "id": "fd9b2f06-935e-4f7b-8695-a2fdec7698f7",
@@ -170,29 +193,6 @@ Creation fields (from user or Surescripts) will be returned into "spec" object. 
       "latest_update_medication_source": "Pharmacy"
     }
   }
-}
-```
-
-
-Also, "status" object will return updates made to the core fields. Example:
-
-```json
-{
-  "updates": [
-    {
-      "update": {"directions": "... new directions ..."},
-      "timestamp": "2024-10-10T10:07:17.099262Z",
-      "made_by": "Medical-XXX"
-    }
-    {
-      "update": {"status": "pending"},
-      "timestamp": "2024-10-07T17:07:17.099262Z"
-    },
-    {
-      "update": {"status": "created"},
-      "timestamp": "2024-10-07T17:07:17.099262Z"
-    },
-  ]
 }
 ```
 
